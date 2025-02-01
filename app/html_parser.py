@@ -1,12 +1,17 @@
+# from jinaai import WebReader # Consider switching to this later - BeautifulSoup is used now as default, Jina-ai reader is used via API call
 from typing import Optional
 import random
 import requests
 import os
+import time  # ADDED: Import time module
+from .utils import config, logger # Import config and logger
 
-# filepath: app/pdf_downloader.py
-from utils import config, logger  # Use absolute import now
+# This module contains functions for parsing HTML content of research articles
+# into Markdown format. It includes functions using BeautifulSoup and
+# Jina Reader API for HTML parsing.
 
-# JINA_API_KEY = os.environ.get("JINA_API_KEY") # Removed: now load from config  - Get your Jina AI API key for free: https://jina.ai/?sui=apikey
+
+JINA_API_KEY = os.environ.get("JINA_API_KEY") # Get your Jina AI API key for free: https://jina.ai/?sui=apikey
 
 def parse_article_html_jina_reader_api(url: str) -> Optional[dict]:
     """
@@ -14,7 +19,7 @@ def parse_article_html_jina_reader_api(url: str) -> Optional[dict]:
     Returns a dictionary containing title and content (in Markdown) from Jina Reader API response.
     """
     headers = {
-        "Authorization": f"Bearer {config.jina_api_key}", # Get Jina AI API key from config
+        "Authorization": f"Bearer {JINA_API_KEY}", # Get your Jina AI API key for free: https://jina.ai/?sui=apikey
         "Content-Type": "application/json",
         "Accept": "application/json"
     }
@@ -101,7 +106,7 @@ def parse_article_html_bs4(url: str) -> Optional[dict]:
         return None
     finally:
         delay = random.uniform(config.rate_limit_delay_min, config.rate_limit_delay_max)
-        time.sleep(delay) # Rate limiting delay after each parsing attempt
+        time.sleep(delay) # Rate limiting delay
         logger.debug(f"Rate limiting (BeautifulSoup parsing): waiting for {delay:.2f} seconds.")
 
 

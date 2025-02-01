@@ -123,7 +123,14 @@ Before running the Article Downloader and Thematic Organizer, you need to comple
                 ```env
                 JINA_API_KEY=YOUR_JINA_API_KEY
                 ```
-        *   **Other API Keys (Optional, for future features):** If you plan to use API-based features in the future (e.g., for embeddings or enhanced PDF retrieval), you will also add API keys for those services (OpenAI, Google, Unpaywall, CORE API) to this `.env` file.  **Important:** Keep your `.env` file secure and do not commit it to public repositories as it contains sensitive API keys. **Important:** Keep your `.env` file secure and do not commit it to public repositories as it may contain sensitive API keys.
+        *   **Google API Key (Required for Gemini Embeddings):** If you want to use Gemini embeddings for article clustering, you need to:
+            *   Obtain a Google API key. You may need to create a project in the Google Cloud Console and enable the Gemini API.
+            *   Add the following line to your `.env` file, replacing `YOUR_GOOGLE_API_KEY` with your actual Google API key:
+
+                ```env
+                GOOGLE_API_KEY=YOUR_GOOGLE_API_KEY
+                ```
+        *   **Other API Keys (Optional, for future features):** If you plan to use API-based features in the future (e.g., for enhanced PDF retrieval), you will also add API keys for those services (OpenAI, CORE API) to this `.env` file.  **Important:** Keep your `.env` file secure and do not commit it to public repositories as it contains sensitive API keys.
 
 ## Configuration
 
@@ -163,8 +170,19 @@ The application's behavior can be configured using two files: `config.yaml` and 
 ## Usage Instructions
 
 1.  **Activate Conda Environment (if used):** `conda activate article_downloader_env`
-2.  **Navigate to Project Directory:** In your terminal, navigate to the `article_downloader_project` directory.
-3.  **Start Jupyter Notebook:** Run `jupyter notebook` or `jupyter lab` in your terminal. This will open the Jupyter Notebook interface in your web browser.
+2.  **Navigate to Project Directory:** In your terminal, navigate to the `article_downloader_project` directory. **It is recommended to run the Jupyter Notebook from the root directory of the project (`article_downloader_project/`) for proper module resolution.**
+
+    **Alternative: Running from `/app` Subfolder (Less Recommended):**
+
+    If you prefer to run the notebook from the `/app` subfolder (`article_downloader_project/app/`), you need to ensure that Python can find the `app` package correctly. You can do this in one of two ways:
+
+    *   **Option 1: Add `__init__.py` to `app` Folder:** Create an empty file named `__init__.py` inside the `app` directory (`article_downloader_project/app/__init__.py`). This explicitly tells Python that `app` is a package. You can then run Jupyter Notebook from the `/app` directory.
+
+    *   **Option 2: Move Notebook to Project Root:** Move the `article_downloader.ipynb` file from the `app` directory to the project root (`article_downloader_project/`). Then, navigate to the project root (`article_downloader_project/`) in your terminal and start Jupyter Notebook from there.  This is the cleaner and recommended approach for project structure.
+
+    **Note:** If you choose to run from the project root or use Option 2, you may need to adjust the import statements in `article_downloader.ipynb` to reflect the new location of the notebook relative to the `app` package (see comments in the notebook for potential import adjustments). For example, if notebook is in the root, imports might look like `from app.utils import ...`.
+
+3.  **Start Jupyter Notebook:** Run `jupyter notebook` or `jupyter lab` in your terminal (from the project root or `/app` if using Option 1). This will open the Jupyter Notebook interface in your web browser.
 4.  **Open `article_downloader.ipynb`:**  Open the `article_downloader.ipynb` file in the Jupyter Notebook interface.
 5.  **Run the Notebook Cells:** Execute the notebook cells sequentially by clicking on each cell and pressing `Shift + Enter`.
 6.  **Monitor Progress and Logs:** Observe the output of each cell and check the `scraper.log` file in the project directory for detailed logs, including progress, warnings, and errors.
