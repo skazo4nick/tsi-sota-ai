@@ -4,7 +4,7 @@ import random
 import requests
 import os
 import time  # ADDED: Import time module
-from .utils import config, logger # Import config and logger
+from utils import config, logger # Import config and logger
 
 # This module contains functions for parsing HTML content of research articles
 # into Markdown format. It includes functions using BeautifulSoup and

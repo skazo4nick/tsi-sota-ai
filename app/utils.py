@@ -3,7 +3,7 @@ from pydantic_settings import BaseSettings, SettingsConfigDict
 from typing import Optional
 
 class Config(BaseSettings):
-    model_config = SettingsConfigDict(env_file=".env", yaml_file="config.yaml")
+    model_config = SettingsConfigDict(env_file="/Users/max/Documents/Code/tsi-sota-ai/app/.env", yaml_file="/Users/max/Documents/Code/tsi-sota-ai/app/config.yaml")
 
     pdf_dir_root: str = "./data/pdfs"
     cluster_dir_format: str = "./data/cluster_{}"
