@@ -1,5 +1,6 @@
 from jinaai import WebReader # Consider switching to this later
 from typing import Optional
+import random
 from .utils import config, logger # Import config and logger
 
 def parse_article_html_bs4(url: str) -> Optional[dict]:

@@ -1,6 +1,7 @@
 import requests
 import os
 import re
+from typing import Optional
 from bs4 import BeautifulSoup
 from urllib.parse import urljoin
 import time
