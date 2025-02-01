@@ -1,0 +1,11 @@
+.ipynb_checkpoints/
+__pycache__/
+*.py[cod]
+*.log
+*.sqlite
+.env
+config.yaml  # If you don't want to commit your config, but better to have a default in repo and override by local .env and config.yaml
+data/pdfs/
+my_cache_dir/
+scraper.log
+my_cache.sqlite

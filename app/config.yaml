@@ -1,0 +1,9 @@
+pdf_dir_root: "./data/pdfs"
+cluster_dir_format: "./data/cluster_{}"
+use_clustering_in_pipeline: true
+n_clusters: 20
+user_agent: "MyArticleDownloader/1.0 (Contact: your-email@example.com)"
+rate_limit_delay_min: 0.5
+rate_limit_delay_max: 1.5
+unpaywall_email: "st83835@students.tsi.lv"  # Replace with your Unpaywall email if you use Unpaywall API
+# core_api_key: "YOUR_CORE_API_KEY"      # Uncomment and add your CORE API key if you use CORE API

@@ -1,0 +1,18 @@
+pandas
+requests
+jinaai # Or jina, if you prefer the original Jina library
+beautifulsoup4
+html2text
+scikit-learn
+python-dotenv
+tqdm
+pydantic-settings
+pyyaml
+aiohttp
+requests-cache
+diskcache
+pytest
+requests-mock
+responses
+ipykernel
+notebook
