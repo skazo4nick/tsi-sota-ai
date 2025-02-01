@@ -7,3 +7,4 @@ rate_limit_delay_min: 0.5
 rate_limit_delay_max: 1.5
 unpaywall_email: "st83835@students.tsi.lv"  # Replace with your Unpaywall email if you use Unpaywall API
 # core_api_key: "YOUR_CORE_API_KEY"      # Uncomment and add your CORE API key if you use CORE API
+use_jina_reader_api_config: true  # Added: Configuration to use Jina Reader API (default: false - BeautifulSoup)
