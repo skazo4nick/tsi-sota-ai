@@ -113,8 +113,52 @@ Before running the Article Downloader and Thematic Organizer, you need to comple
     ```
 
 6.  **Configuration (Optional):**
-    *   **`config.yaml`:**  Review and adjust settings in the `config.yaml` file as needed. This file allows you to configure clustering, rate limiting, and other application parameters.
-    *   **`.env`:** If you plan to use API-based features in the future (e.g., for embeddings or enhanced PDF retrieval), you will need to obtain API keys from the respective service providers (OpenAI, Google, Unpaywall, CORE API) and add them to the `.env` file.  **Important:** Keep your `.env` file secure and do not commit it to public repositories as it may contain sensitive API keys.
+    *   **`config.yaml`:**  Review and adjust settings in the `config.yaml` file as needed. This file allows you to configure clustering, rate limiting, choice of HTML parser, and other application parameters.
+    *   **`.env`:**  This file is used to store sensitive configuration information, such as API keys.
+        *   **Jina AI API Key (Required if using Jina Reader API):** If you want to use the Jina Reader API for HTML parsing (which may offer improved parsing quality), you need to:
+            *   Obtain a free Jina AI API key from [https://jina.ai/?sui=apikey](https://jina.ai/?sui=apikey).
+            *   Create a `.env` file in the `article_downloader_project` directory (if it doesn't exist).
+            *   Add the following line to your `.env` file, replacing `YOUR_JINA_API_KEY` with your actual API key:
+
+                ```env
+                JINA_API_KEY=YOUR_JINA_API_KEY
+                ```
+        *   **Other API Keys (Optional, for future features):** If you plan to use API-based features in the future (e.g., for embeddings or enhanced PDF retrieval), you will also add API keys for those services (OpenAI, Google, Unpaywall, CORE API) to this `.env` file.  **Important:** Keep your `.env` file secure and do not commit it to public repositories as it contains sensitive API keys. **Important:** Keep your `.env` file secure and do not commit it to public repositories as it may contain sensitive API keys.
+
+## Configuration
+
+The application's behavior can be configured using two files: `config.yaml` and `.env`.
+
+*   **`config.yaml`:** This file contains general application settings in YAML format. You can modify the following parameters:
+    *   `pdf_dir_root`:  Root directory where downloaded PDFs will be stored (default: `./data/pdfs`).
+    *   `cluster_dir_format`: Format string for cluster-specific PDF directories (default: `./data/cluster_{}`).
+    *   `use_clustering_in_pipeline`:  Boolean flag to enable or disable thematic clustering of articles (default: `true`).
+    *   `n_clusters`:  Number of clusters to use for K-Means clustering (default: `20`).
+    *   `user_agent`:  User-Agent string used for HTTP requests (default: `"MyArticleDownloader/1.0 (Contact: your-email@example.com)"`).
+    *   `rate_limit_delay_min`: Minimum delay (in seconds) between web requests for rate limiting (default: `0.5`).
+    *   `rate_limit_delay_max`: Maximum delay (in seconds) between web requests for rate limiting (default: `1.5`).
+    *   `use_jina_reader_api_config`: Boolean flag to enable or disable using Jina Reader API for HTML parsing. Set to `true` to use Jina Reader API (requires `JINA_API_KEY` to be set in `.env`), `false` to use BeautifulSoup and html2text (default: `false`).
+    *   `unpaywall_email`: Email address for Unpaywall API (optional, for future Unpaywall integration).
+    *   `core_api_key`: API key for CORE API (optional, for future CORE API integration).
+    *   `openai_api_key`: API key for OpenAI API (optional, for future embedding generation).
+    *   `google_api_key`: API key for Google API (optional, for future embedding generation - e.g., Gemini).
+
+*   **`.env`:** This file is used to store sensitive information as environment variables. **It is crucial to keep this file secure and NOT commit it to public version control.** You should add the following API keys to your `.env` file if you intend to use the corresponding features (create the file if it doesn't exist in the `article_downloader_project` directory):
+    *   `JINA_API_KEY`: Your Jina AI Reader API key (required if you set `use_jina_reader_api_config: true` in `config.yaml`). Get it from [https://jina.ai/?sui=apikey](https://jina.ai/?sui=apikey).
+    *   `OPENAI_API_KEY`: Your OpenAI API key (optional, for future embedding generation). Obtain it from the OpenAI platform.
+    *   `GOOGLE_API_KEY`: Your Google API key (optional, for future embedding generation - e.g., Gemini). Obtain it from the Google Cloud Console.
+    *   `CORE_API_KEY`: Your CORE API key (optional, for future CORE API integration). Obtain it by registering on the CORE website.
+
+    **Example `.env` file:**
+
+    ```env
+    JINA_API_KEY=YOUR_JINA_API_KEY
+    OPENAI_API_KEY=YOUR_OPENAI_API_KEY
+    # GOOGLE_API_KEY=YOUR_GOOGLE_API_KEY  # Optional, uncomment and add if needed
+    # CORE_API_KEY=YOUR_CORE_API_KEY      # Optional, uncomment and add if needed
+    ```
+
+    **Important:**  When using the Jina Reader API, ensure that you have set the `JINA_API_KEY` in your `.env` file and set `use_jina_reader_api_config: true` in `config.yaml`. If `use_jina_reader_api_config` is `false` or if the `JINA_API_KEY` is not found in `.env`, the application will default to using BeautifulSoup and html2text for HTML parsing.
 
 ## Usage Instructions
 

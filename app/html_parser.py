@@ -1,7 +1,56 @@
-from jinaai import WebReader # Consider switching to this later
+from jinaai import WebReader # Consider switching to this later - BeautifulSoup is used now as default, Jina-ai reader is used via API call
 from typing import Optional
 import random
+import requests
+import os
 from .utils import config, logger # Import config and logger
+
+# JINA_API_KEY = os.environ.get("JINA_API_KEY") # Removed: now load from config  - Get your Jina AI API key for free: https://jina.ai/?sui=apikey
+
+def parse_article_html_jina_reader_api(url: str) -> Optional[dict]:
+    """
+    Parses article HTML using Jina Reader API.
+    Returns a dictionary containing title and content (in Markdown) from Jina Reader API response.
+    """
+    headers = {
+        "Authorization": f"Bearer {config.jina_api_key}", # Get Jina AI API key from config
+        "Content-Type": "application/json",
+        "Accept": "application/json"
+    }
+    data = {
+        "url": url
+    }
+
+    try:
+        logger.info(f"Parsing HTML content from URL using Jina Reader API: {url}")
+        response = requests.post('https://r.jina.ai/', headers=headers, json=data, timeout=30) # POST request as per Jina API docs
+        response.raise_for_status() # Raise HTTPError for bad responses (4xx or 5xx)
+        response_json = response.json() # Parse JSON response
+
+        if response_json["code"] == 200 and response_json["status"] == 20000 and "data" in response_json and "content" in response_json["data"]:
+            content = response_json["data"]["content"]
+            title = response_json["data"].get("title", "No Title Found") # Extract title, default if not found
+            logger.info(f"Jina Reader API parsing successful for URL: {url}")
+            return {
+                'title': title,
+                'content': content,
+                'metadata': {'url': url, 'parser': 'Jina Reader API'}
+            }
+        else:
+            logger.warning(f"Jina Reader API returned an error or unexpected response for URL: {url}. Response: {response_json}")
+            return None
+
+    except requests.exceptions.RequestException as e:
+        logger.error(f"Request error during Jina Reader API parsing for {url}: {e}")
+        return None
+    except Exception as e:
+        logger.error(f"Unexpected error during Jina Reader API parsing for {url}: {e}", exc_info=True) # Log full exception info
+        return None
+    finally:
+        delay = random.uniform(config.rate_limit_delay_min, config.rate_limit_delay_max)
+        time.sleep(delay) # Rate limiting delay
+        logger.debug(f"Rate limiting (Jina Reader API parsing): waiting for {delay:.2f} seconds.")
+
 
 def parse_article_html_bs4(url: str) -> Optional[dict]:
     """
@@ -14,7 +63,7 @@ def parse_article_html_bs4(url: str) -> Optional[dict]:
 
     headers = {'User-Agent': config.user_agent}
     try:
-        logger.info(f"Parsing HTML content from URL: {url}")
+        logger.info(f"Parsing HTML content from URL using BeautifulSoup: {url}")
         response = requests.get(url, headers=headers, timeout=30) # Increased timeout for parsing
         response.raise_for_status()
 
@@ -36,7 +85,7 @@ def parse_article_html_bs4(url: str) -> Optional[dict]:
         h.ignore_links = False # Keep links in Markdown
         markdown_content = h.handle(html_content)
 
-        logger.info(f"HTML parsing successful for URL: {url}")
+        logger.info(f"HTML parsing using BeautifulSoup successful for URL: {url}")
         return {
             'title': title,
             'content': markdown_content.strip(),
@@ -44,53 +93,23 @@ def parse_article_html_bs4(url: str) -> Optional[dict]:
         }
 
     except requests.exceptions.RequestException as e:
-        logger.error(f"Request error during HTML parsing for {url}: {e}")
+        logger.error(f"Request error during BeautifulSoup HTML parsing for {url}: {e}")
         return None
     except Exception as e:
-        logger.error(f"Error parsing HTML from {url}: {e}", exc_info=True) # Log full exception info
+        logger.error(f"Error parsing HTML from {url} using BeautifulSoup: {e}", exc_info=True) # Log full exception info
         return None
     finally:
         delay = random.uniform(config.rate_limit_delay_min, config.rate_limit_delay_max)
         time.sleep(delay) # Rate limiting delay after each parsing attempt
-        logger.debug(f"Rate limiting (parsing): waiting for {delay:.2f} seconds.")
+        logger.debug(f"Rate limiting (BeautifulSoup parsing): waiting for {delay:.2f} seconds.")
 
 
-def parse_article_html_jinaai(url: str) -> Optional[dict]:
+def parse_article_html(url: str, use_jina_reader_api_config: bool = False) -> Optional[dict]:
     """
-    Parses article HTML using Jina-AI WebReader (to be implemented later).
-    This is a placeholder for future integration.
+    Main function to parse article HTML, choosing between BeautifulSoup and Jina Reader API based on config.
+    Defaults to BeautifulSoup initially or if Jina Reader API is not configured.
     """
-    reader = WebReader() # Initialize WebReader here, or globally if config allows
-
-    try:
-        logger.info(f"Parsing HTML content from URL using Jina-AI WebReader: {url}")
-        result = reader.get(url=url) # Simplified Jina-AI call
-        if result and result.content: # Check if content is not None and not empty
-            logger.info(f"HTML parsing with Jina-AI successful for URL: {url}")
-            return {
-                'title': result.title,
-                'content': result.content,
-                'metadata': result.metadata # Capture all metadata from Jina-AI
-            }
-        else:
-            logger.warning(f"Jina-AI WebReader returned no content for URL: {url}")
-            return None
-
-    except Exception as e:
-        logger.error(f"Error during Jina-AI WebReader parsing for {url}: {e}", exc_info=True)
-        return None
-    finally:
-        delay = random.uniform(config.rate_limit_delay_min, config.rate_limit_delay_max)
-        time.sleep(delay) # Rate limiting delay
-        logger.debug(f"Rate limiting (Jina-AI parsing): waiting for {delay:.2f} seconds.")
-
-
-def parse_article_html(url: str, use_jinaai: bool = False) -> Optional[dict]:
-    """
-    Main function to parse article HTML, choosing between BeautifulSoup and Jina-AI.
-    Defaults to BeautifulSoup initially.
-    """
-    if use_jinaai:
-        return parse_article_html_jinaai(url) # Implement Jina-AI parsing later
+    if use_jina_reader_api_config and config.jina_api_key: # Use Jina Reader API if configured and API key is available
+        return parse_article_html_jina_reader_api(url)
     else:
-        return parse_article_html_bs4(url) # Start with BeautifulSoup implementation
+        return parse_article_html_bs4(url) # Fallback to BeautifulSoup implementation

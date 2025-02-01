@@ -16,6 +16,8 @@ class Config(BaseSettings):
     core_api_key: Optional[str] = None      # Optional CORE API key
     openai_api_key: Optional[str] = None    # Optional OpenAI API key
     google_api_key: Optional[str] = None    # Optional Google API key
+    use_jina_reader_api_config: bool = False # New config option to use Jina Reader API
+    jina_api_key: Optional[str] = None      # Jina AI Reader API Key - loaded from .env
 
     def get_cluster_dir(self, cluster_id: int) -> str:
         return self.cluster_dir_format.format(cluster_id)
