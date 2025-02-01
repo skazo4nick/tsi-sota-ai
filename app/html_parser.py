@@ -1,9 +1,10 @@
-from jinaai import WebReader # Consider switching to this later - BeautifulSoup is used now as default, Jina-ai reader is used via API call
 from typing import Optional
 import random
 import requests
 import os
-from .utils import config, logger # Import config and logger
+
+# filepath: app/pdf_downloader.py
+from utils import config, logger  # Use absolute import now
 
 # JINA_API_KEY = os.environ.get("JINA_API_KEY") # Removed: now load from config  - Get your Jina AI API key for free: https://jina.ai/?sui=apikey
 

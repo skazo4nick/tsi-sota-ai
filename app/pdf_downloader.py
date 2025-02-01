@@ -6,7 +6,9 @@ from bs4 import BeautifulSoup
 from urllib.parse import urljoin
 import time
 import random
-from .utils import config, logger  # Import config and logger from utils.py
+
+# filepath: app/pdf_downloader.py
+from utils import config, logger  # Use absolute import now
 
 def resolve_pdf_url(doi: str) -> Optional[str]:
     """Multi-strategy PDF resolution with fallback mechanisms."""
