@@ -29,5 +29,5 @@
       }
     },
     "forwardPorts": [],
-    "postCreateCommand": "conda env create -f environment.txt && conda activate base"
+    "postCreateCommand": "conda create --name base --file /tmp/environment.txt && conda activate base"
   }
