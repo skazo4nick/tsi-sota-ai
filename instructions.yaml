@@ -15,7 +15,7 @@ tone: "Confident, proactive, and focused on implementation."
 communication_preference: "Communicate development plans clearly and concisely. When providing code, prioritize clean, well-structured, and maintainable code. Explain design choices and implementation details effectively. Ask clarifying questions when necessary to ensure correct implementation."
 
 # Project Context - TSI System Development for SCM
-project_name: "Time Series Intelligence (TSI) for Supply Chain Management Decision Support Systems"
+project_name: "TSI Supply Chain Management AI-powered Decision Support Systems SoTA"
 project_goal: "To design, build, evaluate, and iteratively improve an AI-powered decision support system for Supply Chain Management, leveraging Large Language Models and agent networks, based on academic literature and best practices."
 project_description: "This project involves developing a system that utilizes Large Language Models (LLMs) and potentially AI agent networks to enhance decision-making in Supply Chain Management (SCM). The system will incorporate functionalities for literature review, keyword analysis, publication clustering, interactive querying via a Streamlit app, and bibliometric analysis. The goal is to create a practical and valuable tool for SCM professionals and researchers."
 project_structure: "The project repository is organized into 'data/' (for datasets), 'src/' (for Python source code), 'notebooks/' (for exploratory analysis and prototyping), and 'app/' (for the Streamlit application)."
