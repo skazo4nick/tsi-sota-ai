@@ -1,4 +1,3 @@
-# Language: YAML
 name: tsi
 channels:
   - conda-forge
@@ -15,17 +14,13 @@ dependencies:
   - tqdm
   - pydantic-settings
   - pyyaml
-  - aiohttp
-  - requests-cache
-  - diskcache
   - pytest
   - requests-mock
   - responses
   - ipykernel
   - notebook
-  - hdbscan
-  - pyarrow
   - matplotlib
   - seaborn
-  - jinaai
-  - google-generativeai
+  - pip
+  - pip:
+      - google-generativeai
