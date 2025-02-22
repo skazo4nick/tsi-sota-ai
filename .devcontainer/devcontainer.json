@@ -21,10 +21,10 @@
         "ban.jupyter-notebook-renderers",
         "ms-jupyter.jupyter-cell-tags",
         "ms-jupyter.jupyter-keymap",
-        "saoudrizwan.claude-dev" // Cline extension added here!
+        "saoudrizwan.claude-dev"
       ]
     }
   },
   "forwardPorts": [],
-  "postCreateCommand": "conda env create --file /tmp/environment.yaml && conda activate tsi"
+  "postCreateCommand": "conda init bash && conda env create --file /tmp/environment.yaml && conda activate tsi"
 }
