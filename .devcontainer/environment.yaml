@@ -3,252 +3,33 @@ channels:
   - conda-forge
   - defaults
 dependencies:
-  - python=3.11.8  # Python version from your osx-arm64 environment
-  - aiohappyeyeballs  # No version in explicit list, latest from conda-forge
-  - aiosignal  # No version in explicit list, latest from conda-forge
-  - anyio  # No version in explicit list, latest from conda-forge
-  - appnope  # No version in explicit list, latest from conda-forge (macOS specific, might be optional on Linux)
-  - argon2-cffi-bindings=21.2.0 # Version from explicit list
-  - argon2-cffi  # No version in explicit list, latest from conda-forge
-  - arrow=1.3.0 # Version from explicit list
-  - async-lru  # No version in explicit list, latest from conda-forge
-  - asttokens  # No version in explicit list, latest from conda-forge
-  - attrs=25.1.0 # Version from explicit list
-  - aws-c-auth=0.8.1 # Version from explicit list
-  - aws-c-cal=0.8.1 # Version from explicit list
-  - aws-c-common=0.10.6 # Version from explicit list
-  - aws-c-compression=0.3.0 # Version from explicit list
-  - aws-c-event-stream=0.5.0 # Version from explicit list
-  - aws-c-http=0.9.2 # Version from explicit list
-  - aws-c-io=0.15.3 # Version from explicit list
-  - aws-c-mqtt=0.11.0 # Version from explicit list
-  - aws-c-s3=0.7.9 # Version from explicit list
-  - aws-c-sdkutils=0.2.2 # Version from explicit list
-  - aws-checksums=0.2.2 # Version from explicit list
-  - aws-crt-cpp=0.29.9 # Version from explicit list
-  - aws-sdk-cpp=1.11.489 # Version from explicit list
-  - azure-core-cpp=1.14.0 # Version from explicit list
-  - azure-identity-cpp=1.10.0 # Version from explicit list
-  - azure-storage-blobs-cpp=12.13.0 # Version from explicit list
-  - azure-storage-common-cpp=12.8.0 # Version from explicit list
-  - azure-storage-files-datalake-cpp=12.12.0 # Version from explicit list
-  - babel=2.16.0 # Version from explicit list
-  - beautifulsoup4=4.12.3 # Version from explicit list
-  - bleach-with-css=6.2.0 # Version from explicit list
-  - bleach=6.2.0 # Version from explicit list
-  - brotli-python=1.1.0 # Version from explicit list
-  - bzip2=1.0.8 # Version from explicit list
-  - c-ares=1.34.4 # Version from explicit list
-  - cached-property=1.5.2 # Version from explicit list (both cached-property and cached_property are listed, keeping cached-property)
-  - cachetools=5.5.1 # Version from explicit list
-  - ca-certificates=2025.1.31 # Version from explicit list
-  - cattrs=24.1.2 # Version from explicit list
-  - certifi=2025.1.31 # Version from explicit list
-  - cffi=1.17.1 # Version from explicit list
-  - charset-normalizer=3.4.1 # Version from explicit list
-  - cline # Cline extension - add this explicitly if needed, otherwise, VS Code extensions are handled separately
-  - colorama=0.4.6 # Version from explicit list
-  - comm=0.2.2 # Version from explicit list
-  - cryptography=44.0.0 # Version from explicit list
-  - debugpy=1.6.7 # Version from explicit list
-  - decorator=5.1.1 # Version from explicit list
-  - defusedxml=0.7.1 # Version from explicit list
-  - diskcache=5.6.3 # Version from explicit list
-  - exceptiongroup=1.2.2 # Version from explicit list
-  - executing=2.1.0 # Version from explicit list
-  - filelock=3.13.1 # Version from explicit list
-  - fqdn=1.5.1 # Version from explicit list
-  - frozenlist=1.5.0 # Version from explicit list
-  - fsspec=2024.12.0 # Version from explicit list
-  - gflags=2.2.2 # Version from explicit list
-  - glog=0.7.1 # Version from explicit list
-  - google-ai-generativelanguage=0.6.15 # Version from explicit list
-  - google-api-client=2.160.0 # Version from explicit list
-  - google-api-core=2.24.1 # Version from explicit list
-  - google-auth-httplib2=0.2.0 # Version from explicit list
-  - google-auth=2.38.0 # Version from explicit list
-  - google-generativeai=0.8.4 # Version from explicit list
-  - googleapis-common-protos=1.66.0 # Version from explicit list
-  - h11=0.14.0 # Version from explicit list
-  - h2=4.1.0 # Version from explicit list
-  - hdbscan=0.8.39 # Version from explicit list
-  - hpack=4.1.0 # Version from explicit list
-  - httpcore=1.0.7 # Version from explicit list
-  - httplib2=0.22.0 # Version from explicit list
-  - httpx=0.28.1 # Version from explicit list
-  - html2text=2024.2.26 # Version from explicit list
-  - hyperframe=6.1.0 # Version from explicit list
-  - huggingface_hub=0.24.6 # Version from explicit list
-  - idna=3.10 # Version from explicit list
-  - importlib-metadata=8.5.0 # Version from explicit list
-  - importlib_resources=6.5.2 # Version from explicit list
-  - iniconfig=2.0.0 # Version from explicit list
-  - ipykernel=6.29.5 # Version from explicit list
-  - ipython=8.29.0 # Version from explicit list
-  - ipywidgets=8.1.5 # Version from explicit list
-  - isoduration=20.11.0 # Version from explicit list
-  - itsdangerous=2.2.0 # Version from explicit list
-  - jedi=0.19.2 # Version from explicit list
-  - jinja2=3.1.5 # Version from explicit list
-  - joblib=1.4.2 # Version from explicit list
-  - json5=0.10.0 # Version from explicit list
-  - jsonpointer=3.0.0 # Version from explicit list
-  - jsonschema-specifications=2024.10.1 # Version from explicit list
-  - jsonschema-4.23.0 # Version from explicit list
-  - jsonschema-with-format-nongpl=4.23.0 # Version from explicit list
-  - jupyter-client=8.6.3 # Version from explicit list
-  - jupyter-events=0.11.0 # Version from explicit list
-  - jupyter-lsp=2.2.5 # Version from explicit list
-  - jupyter-server-terminals=0.5.3 # Version from explicit list
-  - jupyter-server=2.15.0 # Version from explicit list
-  - jupyterlab-widgets=3.0.13 # Version from explicit list
-  - jupyterlab-server=2.27.3 # Version from explicit list
-  - jupyterlab=4.3.5 # Version from explicit list
-  - krb5=1.21.3 # Version from explicit list
-  - libabseil=20240722.0 # Version from explicit list
-  - libarrow-acero=19.0.0 # Version from explicit list
-  - libarrow-dataset=19.0.0 # Version from explicit list
-  - libarrow-substrait=19.0.0 # Version from explicit list
-  - libarrow=19.0.0 # Version from explicit list
-  - libblas=3.9.0 # Version from explicit list
-  - libbrotlicommon=1.1.0 # Version from explicit list
-  - libbrotlidec=1.1.0 # Version from explicit list
-  - libbrotlienc=1.1.0 # Version from explicit list
-  - libcblas=3.9.0 # Version from explicit list
-  - libcrc32c=1.1.2 # Version from explicit list
-  - libcurl=8.11.1 # Version from explicit list
-  - libedit=3.1.20191231 # Version from explicit list
-  - libev=4.33 # Version from explicit list
-  - libexpat=2.6.4 # Version from explicit list
-  - libffi=3.4.4 # Version from explicit list
-  - libgfortran5=13.2.0 # Version from explicit list
-  - libgfortran=5.0.0 # Version from explicit list
-  - libgoogle-cloud-storage=2.34.0 # Version from explicit list
-  - libgoogle-cloud=2.34.0 # Version from explicit list
-  - libgomp=11.2.0 # Version from base install, assuming compatibility
-  - libgrpc=1.67.1 # Version from explicit list
-  - libiconv=1.17 # Version from explicit list
-  - liblapack=3.9.0 # Version from explicit list
-  - libnghttp2=1.64.0 # Version from explicit list
-  - libopentelemetry-cpp-headers=1.18.0 # Version from explicit list
-  - libopentelemetry-cpp=1.18.0 # Version from explicit list
-  - libparquet=19.0.0 # Version from explicit list
-  - libprotobuf=5.28.3 # Version from explicit list
-  - libre2=11 # Version from explicit list
-  - libssh2=1.11.1 # Version from explicit list
-  - libsqlite=3.45.2 # Version from explicit list
-  - libstdcxx-ng=11.2.0 # Version from base install, assuming compatibility
-  - libthrift=0.21.0 # Version from explicit list
-  - libuuid=1.41.5 # Version from base install, assuming compatibility
-  - libutf8proc=2.10.0 # Version from explicit list
-  - libxml2=2.13.5 # Version from explicit list
-  - libzlib=1.3.1 # Version from explicit list
-  - lz4-c=1.10.0 # Version from explicit list
-  - markupsafe=3.0.2 # Version from explicit list
-  - matplotlib-inline=0.1.7 # Version from explicit list
-  - mistune=3.1.1 # Version from explicit list
-  - multidict=6.1.0 # Version from explicit list
-  - ncurses=6.4 # Version from base install, assuming compatibility
-  - nbclient=0.10.2 # Version from explicit list
-  - nbconvert-core=7.16.6 # Version from explicit list
-  - nbformat=5.10.4 # Version from explicit list
-  - notebook-shim=0.2.4 # Version from explicit list
-  - notebook=7.3.2 # Version from explicit list
-  - nlohmann_json=3.11.3 # Version from explicit list
-  - nest-asyncio=1.6.0 # Version from explicit list
-  - numpy=2.2.2 # Version from explicit list
-  - openssl=3.4.0 # Version from explicit list
-  - orc=2.0.3 # Version from explicit list
-  - overrides=7.7.0 # Version from explicit list
-  - packaging=24.2 # Version from explicit list
-  - pandocfilters=1.5.0 # Version from explicit list
-  - parso=0.8.4 # Version from explicit list
-  - pexpect=4.9.0 # Version from explicit list
-  - pickleshare=0.7.5 # Version from explicit list
-  - pkgutil-resolve-name=1.3.10 # Version from explicit list
-  - platformdirs=4.3.6 # Version from explicit list
-  - pluggy=1.5.0 # Version from explicit list
-  - prometheus-cpp=1.3.0 # Version from explicit list
-  - prometheus_client=0.21.1 # Version from explicit list
-  - prompt-toolkit=3.0.48 # Version from explicit list
-  - propcache=0.2.1 # Version from explicit list
-  - proto-plus=1.26.0 # Version from explicit list
-  - protobuf=5.28.3 # Version from explicit list
-  - psutil=5.9.0 # Version from explicit list
-  - ptyprocess=0.7.0 # Version from explicit list
-  - pure_eval=0.2.3 # Version from explicit list
-  - pyarrow-core=19.0.0 # Version from explicit list
-  - pyarrow=19.0.0 # Version from explicit list
-  - pyasn1-modules=0.4.1 # Version from explicit list
-  - pyasn1=0.6.1 # Version from explicit list
-  - pycparser=2.22 # Version from explicit list
-  - pygments=2.18.0 # Version from explicit list
-  - pyobjc-core=11.0 # Version from explicit list (macOS specific, might be optional on Linux)
-  - pyobjc-framework-cocoa=11.0 # Version from explicit list (macOS specific, might be optional on Linux)
-  - pyopenssl=25.0.0 # Version from explicit list
-  - pyparsing=3.2.1 # Version from explicit list
-  - pytest=8.3.4 # Version from explicit list
-  - python-dateutil=2.9.0.post0 # Version from explicit list
-  - python-dotenv=1.0.1 # Version from explicit list
-  - python-fastjsonschema=2.21.1 # Version from explicit list
-  - python-json-logger=2.0.7 # Version from explicit list
-  - python-dateutil=2.9.0.post0 # duplicated in explicit list, already added above
-  - python-fastjsonschema=2.21.1 # duplicated in explicit list, already added above
-  - python-json-logger=2.0.7 # duplicated in explicit list, already added above
-  - python_abi=3.11 # Version from explicit list
-  - pytz=2025.1 # Version from explicit list
-  - pyu2f=0.1.5 # Version from explicit list
-  - pyyaml=6.0.2 # Version from explicit list
-  - pyzmq=25.1.2 # Version from explicit list
-  - re2=2024.07.02 # Version from explicit list
-  - referencing=0.36.2 # Version from explicit list
-  - requests-cache=1.2.1 # Version from explicit list
-  - requests-mock=1.12.1 # Version from explicit list
-  - requests=2.32.3 # Version from explicit list
-  - responses=0.25.6 # Version from explicit list
-  - rfc3339-validator=0.1.4 # Version from explicit list
-  - rfc3986-validator=0.1.1 # Version from explicit list
-  - rpds-py=0.22.3 # Version from explicit list
-  - rsa=4.9 # Version from explicit list
-  - scikit-learn=1.6.1 # Version from explicit list
-  - scipy=1.15.1 # Version from explicit list
-  - send2trash=1.8.3 # Version from explicit list
-  - setuptools=75.1.0 # Version from explicit list (using newer version from explicit list, 75.8.0 also listed)
-  - six=1.16.0 # Version from explicit list
-  - snappy=1.2.1 # Version from explicit list
-  - sniffio=1.3.1 # Version from explicit list
-  - soupsieve=2.5 # Version from explicit list
-  - sqlite=3.45.2 # Version from explicit list (using newer version from explicit list, 3.45.3 also listed)
-  - stack_data=0.6.2 # Version from explicit list
-  - terminado=0.18.1 # Version from explicit list
-  - threadpoolctl=3.5.0 # Version from explicit list
-  - tinycss2=1.4.0 # Version from explicit list
-  - tk=8.6.13 # Version from explicit list (using newer version from explicit list, 8.6.14 also listed)
-  - tomli=2.2.1 # Version from explicit list
-  - tornado=6.4.1 # Version from explicit list
-  - tqdm=4.67.1 # Version from explicit list
-  - traitlets=5.14.3 # Version from explicit list
-  - types-python-dateutil=2.9.0.20241206 # Version from explicit list
-  - types-pyyaml=6.0.12.20241230 # Version from explicit list
-  - typing-extensions=4.12.2 # Version from explicit list (both typing-extensions entries have same version)
-  - typing_extensions=4.12.2 # duplicated in explicit list, already added above
-  - typing_utils=0.1.0 # Version from explicit list
-  - ujson=5.10.0 # Version from explicit list
-  - uri-template=1.3.0 # Version from explicit list
-  - urllib3=2.3.0 # Version from explicit list
-  - uritemplate=4.1.1 # Version from explicit list
-  - wcwidth=0.2.13 # Version from explicit list
-  - webcolors=24.11.1 # Version from explicit list
-  - webencodings=0.5.1 # Version from explicit list
-  - websocket-client=1.8.0 # Version from explicit list
-  - wheel=0.44.0 # Version from explicit list (using newer version from explicit list, 0.45.1 also listed)
-  - widgetsnbextension=4.0.13 # Version from explicit list
-  - xz=5.4.6 # Version from explicit list
-  - yaml=0.2.5 # Version from explicit list
-  - yarl=1.18.3 # Version from explicit list
-  - zeromq=4.3.5 # Version from explicit list
-  - zipp=3.21.0 # Version from explicit list
-  - zlib=1.3.1 # Version from explicit list (both zlib entries have same version)
-  - zlib=1.3.1 # duplicated in explicit list, already added above
-  - zstandard=0.23.0 # Version from explicit list
-  - zstd=1.5.6 # Version from explicit list
+  - python=3.11.8
+  - cryptography        # remove strict version pin
+  - zstd                # remove strict version pin; conda will pick a compatible build
+  - zlib                # maybe leave the default build or pin to a version if needed
+  - sqlite              # remove the explicit version so that conda picks one
+  - numpy=2.2.2         # keep if needed, or consider unpinning
+  - hdbscan
+  - protobuf
+  - pyarrow
+  - aiohappyeyeballs
+  - aiosignal
+  - anyio
+  - appnope            # macOS-specific; you might remove on Linux if not needed
+  - argon2-cffi-bindings=21.2.0
+  - argon2-cffi
+  - arrow=1.3.0
+  - async-lru
+  - asttokens
+  - attrs=25.1.0
+  # ... include additional core packages here ...
+  - pytest=8.3.4
+  - python-dotenv=1.0.1
+  - pyyaml=6.0.2
+  # Remove/adjust packages that are reported as “does not exist”
+  # For example, remove:
+  #   - cline
+  #   - pyobjc-core
+  #   - pyobjc-framework-cocoa
+  #   - google-api-client  (use google-api-python-client if needed)
+  #   - jupyter-client, jupyter-events, jupyter-server-terminals, jupyter-server, jupyterlab-server, jupyterlab-widgets (verify names)
