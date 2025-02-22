@@ -11,9 +11,20 @@
     "customizations": {
       "vscode": {
         "extensions": [
-          "ms-python.python",
-          "ms-python.vscode-pylance",
-          "ms-toolsai.jupyter"
+          "ms-python.python",          // Python language support
+          "ms-python.vscode-pylance", // Pylance language server
+          "ms-python.python-debugger", // Python Debugger
+          "ms-toolsai.jupyter",        // Jupyter notebook support
+          "redhat.vscode-yaml",        // YAML support
+          "mechatroner.rainbow-csv",   // Rainbow CSV (optional, if you use CSVs)
+          "ms-azuretools.vscode-docker", // Docker extension
+          "ms-vscode.data-wrangler",     // Data Wrangler
+          "doppler.doppler",          // Doppler (optional, if you use Doppler for secrets)
+          "github.copilot",           // GitHub Copilot (optional, see notes above)
+          "github.copilot-chat",      // GitHub Copilot Chat (optional, see notes above)
+          "ban.jupyter-notebook-renderers", // Jupyter Notebook Renderers (optional, if needed)
+          "ms-jupyter.jupyter-cell-tags",   // Jupyter Cell Tags (optional, if needed)
+          "ms-jupyter.jupyter-keymap"      // Jupyter Keymap (optional, if needed)
         ]
       }
     },
