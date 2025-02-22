@@ -26,5 +26,5 @@
     }
   },
   "forwardPorts": [],
-  "postCreateCommand": "source /root/.bashrc && conda env create --file /tmp/environment.yaml && conda activate tsi"
+  "postCreateCommand": "bash -c 'source /opt/conda/etc/profile.d/conda.sh && conda env create --file /tmp/environment.yaml && conda activate tsi'"
 }
