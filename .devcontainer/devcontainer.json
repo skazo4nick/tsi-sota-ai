@@ -1,33 +1,30 @@
 {
-    "name": "TSI-SOTA-AI Dev Container",
-    "build": {
-      "dockerfile": "Dockerfile"
-    },
-    "features": {
-      "ghcr.io/devcontainers/features/python": {
-        "version": "3.11"
-      }
-    },
-    "customizations": {
-      "vscode": {
-        "extensions": [
-          "ms-python.python",          // Python language support
-          "ms-python.vscode-pylance", // Pylance language server
-          "ms-python.python-debugger", // Python Debugger
-          "ms-toolsai.jupyter",        // Jupyter notebook support
-          "redhat.vscode-yaml",        // YAML support
-          "mechatroner.rainbow-csv",   // Rainbow CSV (optional, if you use CSVs)
-          "ms-azuretools.vscode-docker", // Docker extension
-          "ms-vscode.data-wrangler",     // Data Wrangler
-          "doppler.doppler",          // Doppler (optional, if you use Doppler for secrets)
-          "github.copilot",           // GitHub Copilot (optional, see notes above)
-          "github.copilot-chat",      // GitHub Copilot Chat (optional, see notes above)
-          "ban.jupyter-notebook-renderers", // Jupyter Notebook Renderers (optional, if needed)
-          "ms-jupyter.jupyter-cell-tags",   // Jupyter Cell Tags (optional, if needed)
-          "ms-jupyter.jupyter-keymap"      // Jupyter Keymap (optional, if needed)
-        ]
-      }
-    },
-    "forwardPorts": [],
-    "postCreateCommand": "conda create --name base --file /tmp/environment.txt && conda activate base"
-  }
+  "name": "TSI SOTA AI",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.autopep8",
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "ms-python.python-debugger",
+        "ms-toolsai.jupyter",
+        "redhat.vscode-yaml",
+        "mechatroner.rainbow-csv",
+        "ms-azuretools.vscode-docker",
+        "ms-vscode.data-wrangler",
+        "doppler.doppler",
+        "github.copilot",
+        "github.copilot-chat",
+        "ban.jupyter-notebook-renderers",
+        "ms-jupyter.jupyter-cell-tags",
+        "ms-jupyter.jupyter-keymap",
+        "saoudrizwan.claude-dev" // Cline extension added here!
+      ]
+    }
+  },
+  "forwardPorts": [],
+  "postCreateCommand": "conda env create --name tsi --file /tmp/environment.txt && conda activate tsi"
+}
