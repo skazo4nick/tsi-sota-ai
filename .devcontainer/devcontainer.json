@@ -1,0 +1,22 @@
+{
+    "name": "TSI-SOTA-AI Dev Container",
+    "build": {
+      "dockerfile": "Dockerfile"
+    },
+    "features": {
+      "ghcr.io/devcontainers/features/python": {
+        "version": "3.11"
+      }
+    },
+    "customizations": {
+      "vscode": {
+        "extensions": [
+          "ms-python.python",
+          "ms-python.vscode-pylance",
+          "ms-toolsai.jupyter"
+        ]
+      }
+    },
+    "forwardPorts": [],
+    "postCreateCommand": "conda env create -f environment.txt && conda activate base"
+  }
