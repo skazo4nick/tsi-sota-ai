@@ -26,5 +26,5 @@
     }
   },
   "forwardPorts": [],
-  "postCreateCommand": "conda env create --name tsi --file /tmp/environment.txt && conda activate tsi"
+  "postCreateCommand": "conda env create --file /tmp/environment.yaml && conda activate tsi"
 }
