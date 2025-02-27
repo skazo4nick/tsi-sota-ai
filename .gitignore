@@ -132,7 +132,7 @@ cython_debug/
 *.log
 *.sqlite
 config.yaml
-data/pdfs/ # or consider just data/ to ignore the whole data directory
+data/ # ignore the whole data directory
 my_cache_dir/
 scraper.log
 my_cache.sqlite
