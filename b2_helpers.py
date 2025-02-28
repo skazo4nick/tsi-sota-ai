@@ -1,8 +1,14 @@
 import os
 import logging
 from dotenv import load_dotenv
-from b2sdk.v2 import B2Api, InMemoryAccountInfo, Synchronizer, SyncOptions
-from b2sdk.transfer.parallel import ParallelDownloader, ParallelUploader
+from b2sdk.v2 import B2Api, InMemoryAccountInfo, Synchronizer
+try:
+    from b2sdk.v2 import SyncOptions
+except ImportError:
+    class SyncOptions:
+        def __init__(self):
+            pass
+from b2sdk._internal.transfer.inbound.downloader.parallel import ParallelDownloader, ParallelUploader
 
 # Configure logging
 logging.basicConfig(

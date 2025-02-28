@@ -1,8 +1,14 @@
+import os
+import sys
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+sys.path.append('/opt/conda/envs/tsi/lib/python3.11/site-packages')  # ADD B2SDK PATH
 import pytest
+import b2sdk.transfer  # TEST IMPORT
 from unittest.mock import Mock, patch
 import logging
 import os
-from b2sdk.v2 import B2Api, InMemoryAccountInfo, Synchronizer, SyncOptions
+from b2sdk.v2 import B2Api, InMemoryAccountInfo, Synchronizer
+from b2_helpers import SyncOptions
 from b2sdk.transfer.parallel import ParallelDownloader, ParallelUploader
 from b2_helpers import (
     connect_to_b2,
