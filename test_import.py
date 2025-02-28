@@ -1,4 +1,4 @@
 import b2sdk
-import b2sdk.transfer
+from b2sdk.v2 import transfer
 
 print("b2sdk and b2sdk.transfer imported successfully!")

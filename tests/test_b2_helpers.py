@@ -3,7 +3,7 @@ import sys
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 sys.path.append('/opt/conda/envs/tsi/lib/python3.11/site-packages')  # ADD B2SDK PATH
 import pytest
-import b2sdk.transfer  # TEST IMPORT
+from b2sdk.v2 import transfer  # TEST IMPORT
 from unittest.mock import Mock, patch
 import logging
 import os
