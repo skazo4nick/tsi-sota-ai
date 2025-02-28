@@ -2,8 +2,7 @@ import pytest
 from unittest.mock import Mock, patch
 import logging
 import os
-from b2sdk.v2 import B2Api, InMemoryAccountInfo
-from b2sdk.sync import Synchronizer, SyncOptions
+from b2sdk.v2 import B2Api, InMemoryAccountInfo, Synchronizer, SyncOptions
 from b2sdk.transfer.parallel import ParallelDownloader, ParallelUploader
 from b2_helpers import (
     connect_to_b2,

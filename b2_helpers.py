@@ -1,8 +1,7 @@
 import os
 import logging
 from dotenv import load_dotenv
-from b2sdk.v2 import B2Api, InMemoryAccountInfo
-from b2sdk.sync import Synchronizer, SyncOptions
+from b2sdk.v2 import B2Api, InMemoryAccountInfo, Synchronizer, SyncOptions
 from b2sdk.transfer.parallel import ParallelDownloader, ParallelUploader
 
 # Configure logging
