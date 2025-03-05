@@ -80,8 +80,8 @@ def download_xml_full_text(doi):
         query = f"doi:{doi}"
         response = openaccess_client.search(q=query)
         time.sleep(REQUEST_DELAY_SECONDS) # Rate limiting delay after API call
-        if response and response.records:
-            article_metadata = response.records[0]
+        if response and response.get("records"): # Changed to use get method for dictionary access
+            article_metadata = response["records"][0] # Changed to use dictionary-style access
             xml_url = article_metadata.get('fullTextUrl') # Assuming 'fullTextUrl' points to XML - verify
             if xml_url:
                 print(f"XML URL found: {xml_url}")
@@ -161,7 +161,7 @@ def is_article_downloaded(doi):
 
 if __name__ == '__main__':
     # Example usage (for testing purposes)
-    test_doi = "10.1007/s10796-022-10313-1" # Example DOI - replace with a real DOI for testing
+    test_doi = "10.1186/s40537-020-00329-2" # Error DOI - replace with a real DOI for testing
     if check_article_existence(test_doi):
         xml_filepath = download_xml_full_text(test_doi)
         if xml_filepath:

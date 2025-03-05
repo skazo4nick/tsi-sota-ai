@@ -66,5 +66,15 @@ def main():
     print(f"\nTotal articles found in Springer Nature Open Access: {count}")
     save_found_articles(found_articles)
 
+    # Proceed with full text download for found articles
+    for article in found_articles:
+        doi = article.get("doi")
+        print(f"\nDownloading full text for DOI: {doi}")
+        xml_filepath = sn_xml_downloader.download_xml_full_text(doi)
+        if xml_filepath:
+            print(f"Full text XML downloaded successfully to: {xml_filepath}")
+        else:
+            print(f"Full text download skipped or failed for DOI: {doi}")
+
 if __name__ == '__main__':
     main()
