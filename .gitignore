@@ -136,4 +136,4 @@ data/ # ignore the whole data directory
 my_cache_dir/
 scraper.log
 my_cache.sqlite
-app/data/pdfs
+app/data/
