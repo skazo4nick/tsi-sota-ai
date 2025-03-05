@@ -1,0 +1,778 @@
+[
+    {
+      "title": "Defining human-AI teaming the human-centered way: a scoping review and network analysis",
+      "year": 2023,
+      "journal": "Front. Artif. Intell.",
+      "authors": "Sophie Berretta",
+      "doi": "10.3389/frai.2023.1250725",
+      "relevance_score": 3
+    },
+    {
+      "title": "Configurations of human-centered AI at work: seven actor-structure engagements in organizations",
+      "year": 2023,
+      "journal": "Front. Artif. Intell.",
+      "authors": "Uta Wilkens",
+      "doi": "10.3389/frai.2023.1272159",
+      "relevance_score": 2
+    },
+    {
+      "title": "Three levels at which the user's cognition can be represented in artificial intelligence",
+      "year": 2023,
+      "journal": "Front. Artif. Intell.",
+      "authors": "Baptist Liefooghe,Leendert van Maanen",
+      "doi": "10.3389/frai.2022.1092053",
+      "relevance_score": 1
+    },
+    {
+      "title": "Model-agnostic explainable artificial intelligence tools for severity prediction and symptom analysis on Indian COVID-19 data",
+      "year": 2023,
+      "journal": "Front. Artif. Intell.",
+      "authors": "Athira Nambiar",
+      "doi": "10.3389/frai.2023.1272506",
+      "relevance_score": 0
+    },
+    {
+      "title": "The Relationship Between Performance and Trust in AI in E-Finance",
+      "year": 2022,
+      "journal": "Front. Artif. Intell.",
+      "authors": "Torsten Maier,Jessica Menold,Christopher McComb",
+      "doi": "10.3389/frai.2022.891529",
+      "relevance_score": 0
+    },
+    {
+      "title": "Human-centricity in AI governance: A systemic approach",
+      "year": 2023,
+      "journal": "Front. Artif. Intell.",
+      "authors": "Anton Sigfrids,Jaana Leikas,Henrikki Salo-Pöntinen,Emmi Koskimies",
+      "doi": "10.3389/frai.2023.976887",
+      "relevance_score": 0
+    },
+    {
+      "title": "Socially Responsible AI Algorithms: Issues, Purposes, and Challenges",
+      "year": 2021,
+      "journal": "jair",
+      "authors": "Lu Cheng,Kush R. Varshney,Huan Liu",
+      "doi": "10.1613/jair.1.12814",
+      "relevance_score": 0
+    },
+    {
+      "title": "Guiding principles and proposed classification system for the responsible adoption of artificial intelligence in scientific writing in medicine",
+      "year": 2023,
+      "journal": "Front. Artif. Intell.",
+      "authors": "Brett N. Hryciw",
+      "doi": "10.3389/frai.2023.1283353",
+      "relevance_score": 0
+    },
+    {
+      "title": "Does artificial intelligence kill employment growth: the missing link of corporate AI posture",
+      "year": 2023,
+      "journal": "Front. Artif. Intell.",
+      "authors": "Jacques Bughin",
+      "doi": "10.3389/frai.2023.1239466",
+      "relevance_score": 0
+    },
+    {
+      "title": "Artificial Intelligence and Employment: New Cross-Country Evidence",
+      "year": 2022,
+      "journal": "Front. Artif. Intell.",
+      "authors": "Alexandre Georgieff,Raphaela Hyee",
+      "doi": "10.3389/frai.2022.832736",
+      "relevance_score": 0
+    },
+    {
+      "title": "Forecasting the future of artificial intelligence with machine learning-based link prediction in an exponentially growing knowledge network",
+      "year": 2023,
+      "journal": "Nat Mach Intell",
+      "authors": "Mario Krenn",
+      "doi": "10.1038/s42256-023-00735-0",
+      "relevance_score": 0
+    },
+    {
+      "title": "Participatory design of teacher dashboards: navigating the tension between teacher input and theories on teacher professional vision",
+      "year": 2023,
+      "journal": "Front. Artif. Intell.",
+      "authors": "Anouschka van Leeuwen,Sebastian Strauß,Nikol Rummel",
+      "doi": "10.3389/frai.2023.1039739",
+      "relevance_score": 0
+    },
+    {
+      "title": "Generative Adversarial Networks–Enabled Human–Artificial Intelligence Collaborative Applications for Creative and Design Industries: A Systematic Review of Current Approaches and Trends",
+      "year": 2021,
+      "journal": "Front. Artif. Intell.",
+      "authors": "Rowan T. Hughes,Liming Zhu,Tomasz Bednarz",
+      "doi": "10.3389/frai.2021.604234",
+      "relevance_score": 4
+    },
+    {
+      "title": "Three levels at which the user's cognition can be represented in artificial intelligence",
+      "year": 2023,
+      "journal": "Front. Artif. Intell.",
+      "authors": "Baptist Liefooghe,Leendert van Maanen",
+      "doi": "10.3389/frai.2022.1092053",
+      "relevance_score": 1
+    },
+    {
+      "title": "Painting the Black Box White: Experimental Findings from Applying XAI to an ECG Reading Setting",
+      "year": 2023,
+      "journal": "MAKE",
+      "authors": "Federico Cabitza,Andrea Campagner,Chiara Natali,Enea Parimbelli,Luca Ronzio,Matteo Cameli",
+      "doi": "10.3390/make5010017",
+      "relevance_score": 0
+    },
+    {
+      "title": "Benchmarking saliency methods for chest X-ray interpretation",
+      "year": 2022,
+      "journal": "Nat Mach Intell",
+      "authors": "Adriel Saporta,Xiaotong Gui,Akshay Agrawal,Anuj Pareek,Steven Q. H. Truong,Chanh D. Tr. Nguyen,Van-Doan Ngo,Jayne Seekins,Francis G. Blankenberg,Andrew Y. Ng,Matthew P. Lungren,Pranav Rajpurkar",
+      "doi": "10.1038/s42256-022-00536-x",
+      "relevance_score": 0
+    },
+    {
+      "title": "First impressions of a financial AI assistant: differences between high trust and low trust users",
+      "year": 2023,
+      "journal": "Front. Artif. Intell.",
+      "authors": "Simon Schreibelmayr",
+      "doi": "10.3389/frai.2023.1241290",
+      "relevance_score": 0
+    },
+    {
+      "title": "Artificial Intelligence Capabilities for Demand Planning Process",
+      "year": 2024,
+      "journal": "Logistics",
+      "authors": "Claudia Aparecida de Mattos",
+      "doi": "10.3390/logistics8020053",
+      "relevance_score": 5
+    },
+    {
+      "title": "Explainability as the key ingredient for AI adoption in Industry 5.0 settings",
+      "year": 2023,
+      "journal": "Front. Artif. Intell.",
+      "authors": "Carlos Agostinho",
+      "doi": "10.3389/frai.2023.1264372",
+      "relevance_score": 3
+    },
+    {
+      "title": "A Systematic Literature Review on the Application of Automation in Logistics",
+      "year": 2023,
+      "journal": "Logistics",
+      "authors": "Bárbara Ferreira",
+      "doi": "10.3390/logistics7040080",
+      "relevance_score": 5
+    },
+    {
+      "title": "Defining human-AI teaming the human-centered way: a scoping review and network analysis",
+      "year": 2023,
+      "journal": "Front. Artif. Intell.",
+      "authors": "Sophie Berretta",
+      "doi": "10.3389/frai.2023.1250725",
+      "relevance_score": 3
+    },
+    {
+      "title": "Human-AI teams—Challenges for a team-centered AI at work",
+      "year": 2023,
+      "journal": "Front. Artif. Intell.",
+      "authors": "Vera Hagemann",
+      "doi": "10.3389/frai.2023.1252897",
+      "relevance_score": 3
+    },
+    {
+      "title": "A hybrid computational approach to anticipate individuals in sequential problem solving",
+      "year": 2023,
+      "journal": "Front. Artif. Intell.",
+      "authors": "Giacomo Zamprogno",
+      "doi": "10.3389/frai.2023.1223251",
+      "relevance_score": 0
+    },
+    {
+      "title": "Business process improvement by means of Big Data based Decision Support Systems: a case study on Call Centers",
+      "year": 2022,
+      "journal": "IJISPM",
+      "authors": "Alejandro Vera-Baquero,Ricardo Colomo‐Palacios,Owen Molloy,Mahmoud Elbattah",
+      "doi": "10.12821/ijispm030101",
+      "relevance_score": 2
+    },
+    {
+      "title": "Toward a Modern Last-Mile Delivery: Consequences and Obstacles of Intelligent Technology",
+      "year": 2022,
+      "journal": "ASI",
+      "authors": "Shahryar Sorooshian,Shila Khademi Sharifabad,Mehrdad Parsaee,Ali Reza Afshari",
+      "doi": "10.3390/asi5040082",
+      "relevance_score": 5
+    },
+    {
+      "title": "Predictive big data analytics for supply chain demand forecasting: methods, applications, and research opportunities",
+      "year": 2020,
+      "journal": "J Big Data",
+      "authors": "Seyedeh Mahya Seyedan,Fereshteh Mafakheri",
+      "doi": "10.1186/s40537-020-00329-2",
+      "relevance_score": 7
+    },
+    {
+      "title": "Digital Supply Chain Twins—Conceptual Clarification, Use Cases and Benefits",
+      "year": 2021,
+      "journal": "Logistics",
+      "authors": "Benno Gerlach,Simon Zarnitz,Benjamin Nitsche,Frank Sträube",
+      "doi": "10.3390/logistics5040086",
+      "relevance_score": 5
+    },
+    {
+      "title": "Adoption and Influence of Robotic Process Automation in Beef Supply Chains",
+      "year": 2022,
+      "journal": "Logistics",
+      "authors": "Khushboo E-Fatima,Rasoul Khandan,Amin Hosseinian-Far,Dilshad Sarwar,Hareer Fatima Ahmed",
+      "doi": "10.3390/logistics6030048",
+      "relevance_score": 5
+    },
+    {
+      "title": "Quantifying the Benefits of Digital Supply Chain Twins—A Simulation Study in Organic Food Supply Chains",
+      "year": 2022,
+      "journal": "Logistics",
+      "authors": "Tom Binsfeld,Benno Gerlach",
+      "doi": "10.3390/logistics6030046",
+      "relevance_score": 5
+    },
+    {
+      "title": "Towards a framework for developing visual analytics in supply chain environments",
+      "year": 2023,
+      "journal": "IJISPM",
+      "authors": "Alireza Khakpour,Ricardo Colomo‐Palacios,Antonio Martini",
+      "doi": "10.12821/ijispm110103",
+      "relevance_score": 3
+    },
+    {
+      "title": "Employees’ perception of value-added activity increase of Robotic Process Automation with time and cost efficiency: a case study",
+      "year": 2023,
+      "journal": "IJISPM",
+      "authors": "Arafat Salih Aydiner,Selman Ortaköy,Zehra Özsürünç",
+      "doi": "10.12821/ijispm110102",
+      "relevance_score": 2
+    },
+    {
+      "title": "Artificial Intelligence Capabilities for Demand Planning Process",
+      "year": 2024,
+      "journal": "Logistics",
+      "authors": "Claudia Aparecida de Mattos",
+      "doi": "10.3390/logistics8020053",
+      "relevance_score": 5
+    },
+    {
+      "title": "Smart match: revolutionizing organ allocation through artificial intelligence",
+      "year": 2024,
+      "journal": "Front. Artif. Intell.",
+      "authors": "Rajkiran Deshpande",
+      "doi": "10.3389/frai.2024.1364149",
+      "relevance_score": 0
+    },
+    {
+      "title": "Supporting Cognition With Modern Technology: Distributed Cognition Today and in an AI-Enhanced Future",
+      "year": 2022,
+      "journal": "Front. Artif. Intell.",
+      "authors": "Sandra Grinschgl,Aljoscha C. Neubauer",
+      "doi": "10.3389/frai.2022.908261",
+      "relevance_score": 1
+    },
+    {
+      "title": "Balancing Performance and Human Autonomy With Implicit Guidance Agent",
+      "year": 2021,
+      "journal": "Front. Artif. Intell.",
+      "authors": "Ryo Nakahashi,Seiji Yamada",
+      "doi": "10.3389/frai.2021.736321",
+      "relevance_score": 1
+    },
+    {
+      "title": "Differences between remote and analog design thinking through the lens of distributed cognition",
+      "year": 2022,
+      "journal": "Front. Artif. Intell.",
+      "authors": "Daniel Wolferts,Elisabeth Stein,Ann-Kathrin Bernards,René Reiners",
+      "doi": "10.3389/frai.2022.915922",
+      "relevance_score": 0
+    },
+    {
+      "title": "A hybrid computational approach to anticipate individuals in sequential problem solving",
+      "year": 2023,
+      "journal": "Front. Artif. Intell.",
+      "authors": "Giacomo Zamprogno",
+      "doi": "10.3389/frai.2023.1223251",
+      "relevance_score": 0
+    },
+    {
+      "title": "Human-AI teams—Challenges for a team-centered AI at work",
+      "year": 2023,
+      "journal": "Front. Artif. Intell.",
+      "authors": "Vera Hagemann",
+      "doi": "10.3389/frai.2023.1252897",
+      "relevance_score": 3
+    },
+    {
+      "title": "Digital learning, big data analytics and mechanisms for stabilizing and improving supply chain performance",
+      "year": 2024,
+      "journal": "IJISPM",
+      "authors": "Aziz Barhmi",
+      "doi": "10.12821/ijispm120202",
+      "relevance_score": 3
+    },
+    {
+      "title": "Defining human-AI teaming the human-centered way: a scoping review and network analysis",
+      "year": 2023,
+      "journal": "Front. Artif. Intell.",
+      "authors": "Sophie Berretta",
+      "doi": "10.3389/frai.2023.1250725",
+      "relevance_score": 3
+    },
+    {
+      "title": "Transformative Procurement Trends: Integrating Industry 4.0 Technologies for Enhanced Procurement Processes",
+      "year": 2023,
+      "journal": "Logistics",
+      "authors": "Areej Althabatah",
+      "doi": "10.3390/logistics7030063",
+      "relevance_score": 6
+    },
+    {
+      "title": "Toward a Modern Last-Mile Delivery: Consequences and Obstacles of Intelligent Technology",
+      "year": 2022,
+      "journal": "ASI",
+      "authors": "Shahryar Sorooshian,Shila Khademi Sharifabad,Mehrdad Parsaee,Ali Reza Afshari",
+      "doi": "10.3390/asi5040082",
+      "relevance_score": 5
+    },
+    {
+      "title": "First impressions of a financial AI assistant: differences between high trust and low trust users",
+      "year": 2023,
+      "journal": "Front. Artif. Intell.",
+      "authors": "Simon Schreibelmayr",
+      "doi": "10.3389/frai.2023.1241290",
+      "relevance_score": 0
+    },
+    {
+      "title": "Supporting Cognition With Modern Technology: Distributed Cognition Today and in an AI-Enhanced Future",
+      "year": 2022,
+      "journal": "Front. Artif. Intell.",
+      "authors": "Sandra Grinschgl,Aljoscha C. Neubauer",
+      "doi": "10.3389/frai.2022.908261",
+      "relevance_score": 1
+    },
+    {
+      "title": "A Systematic Literature Review on the Application of Automation in Logistics",
+      "year": 2023,
+      "journal": "Logistics",
+      "authors": "Bárbara Ferreira",
+      "doi": "10.3390/logistics7040080",
+      "relevance_score": 5
+    },
+    {
+      "title": "The global landscape of AI ethics guidelines",
+      "year": 2019,
+      "journal": "Nat Mach Intell",
+      "authors": "Anna Jobin,Marcello Ienca",
+      "doi": "10.1038/s42256-019-0088-2",
+      "relevance_score": 0
+    },
+    {
+      "title": "Data, AI and governance in MaaS – Leading to sustainable mobility?",
+      "year": 2023,
+      "journal": "Transportation Research Interdisciplinary Perspectives",
+      "authors": "Eriketti Servou,Frauke Behrendt,Maja Horst",
+      "doi": "10.1016/j.trip.2023.100806",
+      "relevance_score": 0
+    },
+    {
+      "title": "Adoption and Influence of Robotic Process Automation in Beef Supply Chains",
+      "year": 2022,
+      "journal": "Logistics",
+      "authors": "Khushboo E-Fatima,Rasoul Khandan,Amin Hosseinian-Far,Dilshad Sarwar,Hareer Fatima Ahmed",
+      "doi": "10.3390/logistics6030048",
+      "relevance_score": 5
+    },
+    {
+      "title": "Sustainable Innovations in the Food Industry through Artificial Intelligence and Big Data Analytics",
+      "year": 2021,
+      "journal": "Logistics",
+      "authors": "Saurabh Sharma,Vijay Kumar Gahlawat,Kumar Rahul,Rahul S. Mor,Mohit Malik",
+      "doi": "10.3390/logistics5040066",
+      "relevance_score": 6
+    },
+    {
+      "title": "Transformative Procurement Trends: Integrating Industry 4.0 Technologies for Enhanced Procurement Processes",
+      "year": 2023,
+      "journal": "Logistics",
+      "authors": "Areej Althabatah",
+      "doi": "10.3390/logistics7030063",
+      "relevance_score": 6
+    },
+    {
+      "title": "Predictive big data analytics for supply chain demand forecasting: methods, applications, and research opportunities",
+      "year": 2020,
+      "journal": "J Big Data",
+      "authors": "Seyedeh Mahya Seyedan,Fereshteh Mafakheri",
+      "doi": "10.1186/s40537-020-00329-2",
+      "relevance_score": 7
+    },
+    {
+      "title": "Disorders, Vulnerabilities and Resilience in the Supply Chain in Pandemic Times",
+      "year": 2021,
+      "journal": "Logistics",
+      "authors": "Catarina Ferreira,Catarina Cardoso,Mariana Travassos,Mariana Ferreira de S. M. Paiva,M.L. Pestana,João M. Lopes,Márcio Oliveira",
+      "doi": "10.3390/logistics5030048",
+      "relevance_score": 3
+    },
+    {
+      "title": "Financial Risk Management and Explainable, Trustworthy, Responsible AI",
+      "year": 2022,
+      "journal": "Front. Artif. Intell.",
+      "authors": "Sebastian Fritz-Morgenthal,Bernhard Hein,Jochen Papenbrock",
+      "doi": "10.3389/frai.2022.779799",
+      "relevance_score": 0
+    },
+    {
+      "title": "Using IoT in Supply Chain Risk Management, to Enable Collaboration between Business, Community, and Government",
+      "year": 2021,
+      "journal": "Smart Cities",
+      "authors": "Менг Ли",
+      "doi": "10.3390/smartcities4030052",
+      "relevance_score": 4
+    },
+    {
+      "title": "Responding to COVID-19 Supply Chain Risks—Insights from Supply Chain Change Management, Total Cost of Ownership and Supplier Segmentation Theory",
+      "year": 2020,
+      "journal": "Logistics",
+      "authors": "Remko van Hoek",
+      "doi": "10.3390/logistics4040023",
+      "relevance_score": 3
+    },
+    {
+      "title": "Analyzing the European institutional response to ethical and regulatory challenges of artificial intelligence in addressing discriminatory bias",
+      "year": 2024,
+      "journal": "Front. Artif. Intell.",
+      "authors": "Pablo Cerezo-Martínez",
+      "doi": "10.3389/frai.2024.1393259",
+      "relevance_score": 0
+    },
+    {
+      "title": "Supply Chain Complexity and Its Impact on Knowledge Transfer: Incorporating Sustainable Supply Chain Practices in Food Supply Chain Networks",
+      "year": 2024,
+      "journal": "Logistics",
+      "authors": "Hareer Fatima Ahmed",
+      "doi": "10.3390/logistics8010005",
+      "relevance_score": 3
+    },
+    {
+      "title": "Transformative Procurement Trends: Integrating Industry 4.0 Technologies for Enhanced Procurement Processes",
+      "year": 2023,
+      "journal": "Logistics",
+      "authors": "Areej Althabatah",
+      "doi": "10.3390/logistics7030063",
+      "relevance_score": 6
+    },
+    {
+      "title": "Knowledge Sharing in the Supply Chain Networks: A Perspective of Supply Chain Complexity Drivers",
+      "year": 2022,
+      "journal": "Logistics",
+      "authors": "Hareer Fatima Ahmed,Amin Hosseinian-Far,Rasoul Khandan,Dilshad Sarwar,Khushboo E-Fatima",
+      "doi": "10.3390/logistics6030066",
+      "relevance_score": 3
+    },
+    {
+      "title": "Recommendations for ethical and responsible use of artificial intelligence in digital agriculture",
+      "year": 2022,
+      "journal": "Front. Artif. Intell.",
+      "authors": "Rozita Dara,Seyed Mehdi Hazrati Fard,Jasmin Kaur",
+      "doi": "10.3389/frai.2022.884192",
+      "relevance_score": 0
+    },
+    {
+      "title": "Three levels at which the user's cognition can be represented in artificial intelligence",
+      "year": 2023,
+      "journal": "Front. Artif. Intell.",
+      "authors": "Baptist Liefooghe,Leendert van Maanen",
+      "doi": "10.3389/frai.2022.1092053",
+      "relevance_score": 1
+    },
+    {
+      "title": "Painting the Black Box White: Experimental Findings from Applying XAI to an ECG Reading Setting",
+      "year": 2023,
+      "journal": "MAKE",
+      "authors": "Federico Cabitza,Andrea Campagner,Chiara Natali,Enea Parimbelli,Luca Ronzio,Matteo Cameli",
+      "doi": "10.3390/make5010017",
+      "relevance_score": 0
+    },
+    {
+      "title": "An Approach Based on Recurrent Neural Networks and Interactive Visualization to Improve Explainability in AI Systems",
+      "year": 2023,
+      "journal": "BDCC",
+      "authors": "William Villegas-Ch",
+      "doi": "10.3390/bdcc7030136",
+      "relevance_score": 0
+    },
+    {
+      "title": "Explainable Artificial Intelligence for Human Decision Support System in the Medical Domain",
+      "year": 2021,
+      "journal": "MAKE",
+      "authors": "Samanta Knapič,Avleen Malhi,Rohit Saluja,Kary Främling",
+      "doi": "10.3390/make3030037",
+      "relevance_score": 0
+    },
+    {
+      "title": "Explainability as the key ingredient for AI adoption in Industry 5.0 settings",
+      "year": 2023,
+      "journal": "Front. Artif. Intell.",
+      "authors": "Carlos Agostinho",
+      "doi": "10.3389/frai.2023.1264372",
+      "relevance_score": 3
+    },
+    {
+      "title": "Transparency of AI in Healthcare as a Multilayered System of Accountabilities: Between Legal Requirements and Technical Limitations",
+      "year": 2022,
+      "journal": "Front. Artif. Intell.",
+      "authors": "Anastasiya Kiseleva,Dimitris Kotzinos,Paul De Hert",
+      "doi": "10.3389/frai.2022.879603",
+      "relevance_score": 0
+    },
+    {
+      "title": "The Next Generation of Medical Decision Support: A Roadmap Toward Transparent Expert Companions",
+      "year": 2020,
+      "journal": "Front. Artif. Intell.",
+      "authors": "Sebastian Bruckert,Bettina Finzel,Ute Schmid",
+      "doi": "10.3389/frai.2020.507973",
+      "relevance_score": 0
+    },
+    {
+      "title": "First impressions of a financial AI assistant: differences between high trust and low trust users",
+      "year": 2023,
+      "journal": "Front. Artif. Intell.",
+      "authors": "Simon Schreibelmayr",
+      "doi": "10.3389/frai.2023.1241290",
+      "relevance_score": 0
+    },
+    {
+      "title": "Artificial Intelligence, Big Data, and mHealth: The Frontiers of the Prevention of Violence Against Children",
+      "year": 2020,
+      "journal": "Front. Artif. Intell.",
+      "authors": "Xanthe Hunt,Mark Tomlinson,Siham Sikander,Sarah Skeen,Marguerite Marlow,Stefani Du Toit,Manuel Eisner",
+      "doi": "10.3389/frai.2020.543305",
+      "relevance_score": 0
+    },
+    {
+      "title": "Supporting Cognition With Modern Technology: Distributed Cognition Today and in an AI-Enhanced Future",
+      "year": 2022,
+      "journal": "Front. Artif. Intell.",
+      "authors": "Sandra Grinschgl,Aljoscha C. Neubauer",
+      "doi": "10.3389/frai.2022.908261",
+      "relevance_score": 1
+    },
+    {
+      "title": "Human-centricity in AI governance: A systemic approach",
+      "year": 2023,
+      "journal": "Front. Artif. Intell.",
+      "authors": "Anton Sigfrids,Jaana Leikas,Henrikki Salo-Pöntinen,Emmi Koskimies",
+      "doi": "10.3389/frai.2023.976887",
+      "relevance_score": 0
+    },
+    {
+      "title": "Artificial Intelligence Ethics and Challenges in Healthcare Applications: A Comprehensive Review in the Context of the European GDPR Mandate",
+      "year": 2023,
+      "journal": "MAKE",
+      "authors": "Mohammad Mohammad Amini",
+      "doi": "10.3390/make5030053",
+      "relevance_score": 0
+    },
+    {
+      "title": "Human-AI teams—Challenges for a team-centered AI at work",
+      "year": 2023,
+      "journal": "Front. Artif. Intell.",
+      "authors": "Vera Hagemann",
+      "doi": "10.3389/frai.2023.1252897",
+      "relevance_score": 3
+    },
+    {
+      "title": "Balancing Performance and Human Autonomy With Implicit Guidance Agent",
+      "year": 2021,
+      "journal": "Front. Artif. Intell.",
+      "authors": "Ryo Nakahashi,Seiji Yamada",
+      "doi": "10.3389/frai.2021.736321",
+      "relevance_score": 1
+    },
+    {
+      "title": "Human autonomy in the age of artificial intelligence",
+      "year": 2022,
+      "journal": "Nat Mach Intell",
+      "authors": "Carina Prunkl",
+      "doi": "10.1038/s42256-022-00449-9",
+      "relevance_score": 0
+    },
+    {
+      "title": "Prediction of mental effort derived from an automated vocal biomarker using machine learning in a large-scale remote sample",
+      "year": 2023,
+      "journal": "Front. Artif. Intell.",
+      "authors": "Nick Taptiklis,Merina Su,Jennifer H. Barnett,Caroline Skirrow,Jasmin Kroll,Francesca K. Cormack",
+      "doi": "10.3389/frai.2023.1171652",
+      "relevance_score": 0
+    },
+    {
+      "title": "Supporting Cognition With Modern Technology: Distributed Cognition Today and in an AI-Enhanced Future",
+      "year": 2022,
+      "journal": "Front. Artif. Intell.",
+      "authors": "Sandra Grinschgl,Aljoscha C. Neubauer",
+      "doi": "10.3389/frai.2022.908261",
+      "relevance_score": 1
+    },
+    {
+      "title": "Human-AI teams—Challenges for a team-centered AI at work",
+      "year": 2023,
+      "journal": "Front. Artif. Intell.",
+      "authors": "Vera Hagemann",
+      "doi": "10.3389/frai.2023.1252897",
+      "relevance_score": 3
+    },
+    {
+      "title": "Painting the Black Box White: Experimental Findings from Applying XAI to an ECG Reading Setting",
+      "year": 2023,
+      "journal": "MAKE",
+      "authors": "Federico Cabitza,Andrea Campagner,Chiara Natali,Enea Parimbelli,Luca Ronzio,Matteo Cameli",
+      "doi": "10.3390/make5010017",
+      "relevance_score": 0
+    },
+    {
+      "title": "Governing Ethical AI Transformation: A Case Study of AuroraAI",
+      "year": 2022,
+      "journal": "Front. Artif. Intell.",
+      "authors": "Jaana Leikas,Aditya Johri,Marko Latvanen,Nina Wessberg,Antti Hahto",
+      "doi": "10.3389/frai.2022.836557",
+      "relevance_score": 0
+    },
+    {
+      "title": "What Makes Artificial Intelligence Exceptional in Health Technology Assessment?",
+      "year": 2021,
+      "journal": "Front. Artif. Intell.",
+      "authors": "Jean-Christophe Bélisle-Pipon,Vincent Couture,Marie-Christine Roy,Isabelle Ganache,Mireille Goetghebeur,I. Glenn Cohen",
+      "doi": "10.3389/frai.2021.736697",
+      "relevance_score": 0
+    },
+    {
+      "title": "Human-AI teams—Challenges for a team-centered AI at work",
+      "year": 2023,
+      "journal": "Front. Artif. Intell.",
+      "authors": "Vera Hagemann",
+      "doi": "10.3389/frai.2023.1252897",
+      "relevance_score": 3
+    },
+    {
+      "title": "Measuring the Occupational Impact of AI: Tasks, Cognitive Abilities and AI Benchmarks",
+      "year": 2021,
+      "journal": "jair",
+      "authors": "Songül Tolan,Annarosa Pesole,Fernando Martínez-Plumed,Enrique Fernández‐Macías,José Hernández-Orallo",
+      "doi": "10.1613/jair.1.12647",
+      "relevance_score": 0
+    },
+    {
+      "title": "Socially Responsible AI Algorithms: Issues, Purposes, and Challenges",
+      "year": 2021,
+      "journal": "jair",
+      "authors": "Lu Cheng,Kush R. Varshney,Huan Liu",
+      "doi": "10.1613/jair.1.12814",
+      "relevance_score": 0
+    },
+    {
+      "title": "Information systems project management practice in Portugal - looking at the past to perspective the future",
+      "year": 2023,
+      "journal": "IJISPM",
+      "authors": "Nilton Takagi",
+      "doi": "10.12821/ijispm110404",
+      "relevance_score": 0
+    },
+    {
+      "title": "Barriers, Drivers, and Social Considerations for AI Adoption in Supply Chain Management: A Tertiary Study",
+      "year": 2022,
+      "journal": "Logistics",
+      "authors": "Johannes Hangl,Viktoria Joy Behrens,Simon Krause",
+      "doi": "10.3390/logistics6030063",
+      "relevance_score": 7
+    },
+    {
+      "title": "First impressions of a financial AI assistant: differences between high trust and low trust users",
+      "year": 2023,
+      "journal": "Front. Artif. Intell.",
+      "authors": "Simon Schreibelmayr",
+      "doi": "10.3389/frai.2023.1241290",
+      "relevance_score": 0
+    },
+    {
+      "title": "The Relationship Between Performance and Trust in AI in E-Finance",
+      "year": 2022,
+      "journal": "Front. Artif. Intell.",
+      "authors": "Torsten Maier,Jessica Menold,Christopher McComb",
+      "doi": "10.3389/frai.2022.891529",
+      "relevance_score": 0
+    },
+    {
+      "title": "Integrating intention-based systems in human-robot interaction: a scoping review of sensors, algorithms, and trust",
+      "year": 2023,
+      "journal": "Front. Robot. AI",
+      "authors": "Yifei Zhang",
+      "doi": "10.3389/frobt.2023.1233328",
+      "relevance_score": 0
+    },
+    {
+      "title": "Three levels at which the user's cognition can be represented in artificial intelligence",
+      "year": 2023,
+      "journal": "Front. Artif. Intell.",
+      "authors": "Baptist Liefooghe,Leendert van Maanen",
+      "doi": "10.3389/frai.2022.1092053",
+      "relevance_score": 1
+    },
+    {
+      "title": "Enterprise collaboration systems: addressing adoption challenges and the shaping of sociotechnical systems",
+      "year": 2022,
+      "journal": "IJISPM",
+      "authors": "Clara Greeven,Susan P. Williams",
+      "doi": "10.12821/ijispm050101",
+      "relevance_score": 1
+    },
+    {
+      "title": "Moving enterprise resource planning (ERP) systems to the cloud: the challenge of infrastructural embeddedness",
+      "year": 2021,
+      "journal": "IJISPM",
+      "authors": "Eli Hustad,Vegard Uri Sørheller,Emeli Høvik Jørgensen,Polyxeni Vassilakopoulou",
+      "doi": "10.12821/ijispm080101",
+      "relevance_score": 0
+    },
+    {
+      "title": "Process Innovation and Improvement Using Business Object-Oriented Process Modelling (BOOPM) Framework",
+      "year": 2019,
+      "journal": "ASI",
+      "authors": "Sitalakshmi Venkatraman,Ramanathan Venkatraman",
+      "doi": "10.3390/asi2030023",
+      "relevance_score": 1
+    },
+    {
+      "title": "Configurations of human-centered AI at work: seven actor-structure engagements in organizations",
+      "year": 2023,
+      "journal": "Front. Artif. Intell.",
+      "authors": "Uta Wilkens",
+      "doi": "10.3389/frai.2023.1272159",
+      "relevance_score": 2
+    },
+    {
+      "title": "Combining Sociocultural Intelligence with Artificial Intelligence to Increase Organizational Cyber Security Provision through Enhanced Resilience",
+      "year": 2022,
+      "journal": "BDCC",
+      "authors": "Peter R.J. Trim,Yang‐Im Lee",
+      "doi": "10.3390/bdcc6040110",
+      "relevance_score": 0
+    },
+    {
+      "title": "Psychological assessment of AI-based decision support systems: tool development and expected benefits",
+      "year": 2023,
+      "journal": "Front. Artif. Intell.",
+      "authors": "Katharina Buschmeyer",
+      "doi": "10.3389/frai.2023.1249322",
+      "relevance_score": 0
+    },
+    {
+      "title": "Transformative Procurement Trends: Integrating Industry 4.0 Technologies for Enhanced Procurement Processes",
+      "year": 2023,
+      "journal": "Logistics",
+      "authors": "Areej Althabatah",
+      "doi": "10.3390/logistics7030063",
+      "relevance_score": 6
+    }
+  ]
