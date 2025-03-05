@@ -1,0 +1,266 @@
+[
+    {
+        "doi": "10.1186/s40537-020-00329-2",
+        "title": "Predictive big data analytics for supply chain demand forecasting: methods, applications, and research opportunities",
+        "found_metadata": {
+            "contentType": "Article",
+            "identifier": "doi:10.1186/s40537-020-00329-2",
+            "language": "en",
+            "url": [
+                {
+                    "format": "",
+                    "platform": "",
+                    "value": "http://dx.doi.org/10.1186/s40537-020-00329-2"
+                }
+            ],
+            "title": "Predictive big data analytics for supply chain demand forecasting: methods, applications, and research opportunities",
+            "creators": [
+                {
+                    "creator": "Seyedan, Mahya"
+                },
+                {
+                    "ORCID": "0000-0002-7991-4635",
+                    "creator": "Mafakheri, Fereshteh"
+                }
+            ],
+            "publicationName": "Journal of Big Data",
+            "doi": "10.1186/s40537-020-00329-2",
+            "publisher": "Springer",
+            "publisherName": "Springer International Publishing",
+            "publicationDate": "2020-07-25",
+            "publicationType": "Journal",
+            "issn": "",
+            "eIssn": "2196-1115",
+            "volume": "7",
+            "number": "1",
+            "issueType": "Regular",
+            "topicalCollection": "",
+            "genre": [
+                "OriginalPaper",
+                "Survey Paper"
+            ],
+            "startingPage": "1",
+            "endingPage": "22",
+            "journalId": "40537",
+            "openAccess": "true",
+            "onlineDate": "2020-07-25",
+            "coverDate": "2020-12",
+            "copyright": "\u00a92020 The Author(s)",
+            "abstract": {
+                "h1": "Abstract",
+                "p": "Big data analytics (BDA) in supply chain management (SCM) is receiving a growing attention. This is due to the fact that BDA has a wide range of applications in SCM, including customer behavior analysis, trend analysis, and demand prediction. In this survey, we investigate the predictive BDA applications in supply chain demand forecasting to propose a classification of these applications, identify the gaps, and provide insights for future research. We classify these algorithms and their applications in supply chain management into time-series forecasting, clustering, K-nearest-neighbors, neural networks, regression analysis, support vector machines, and support vector regression. This survey also points to the fact that the literature is particularly lacking on the applications of BDA for demand forecasting in the case of closed-loop supply chains (CLSCs) and accordingly highlights avenues for future research."
+            },
+            "subjects": [
+                "Computer Science",
+                "Database Management",
+                "Information Storage and Retrieval",
+                "Data Mining and Knowledge Discovery",
+                "Computational Science and Engineering",
+                "Mathematical Applications in Computer Science",
+                "Communications Engineering, Networks"
+            ],
+            "disciplines": [
+                {
+                    "id": "7402",
+                    "term": "Database Management"
+                },
+                {
+                    "id": "5864",
+                    "term": "Information Storage and Retrieval"
+                },
+                {
+                    "id": "3820",
+                    "term": "Data Mining and Knowledge Discovery"
+                },
+                {
+                    "id": "4149",
+                    "term": "Computational Science and Engineering"
+                },
+                {
+                    "id": "4364",
+                    "term": "Mathematical Applications in Computer Science"
+                },
+                {
+                    "id": "4404",
+                    "term": "Communications Engineering, Networks"
+                }
+            ]
+        }
+    },
+    {
+        "doi": "10.1186/s40537-020-00329-2",
+        "title": "Predictive big data analytics for supply chain demand forecasting: methods, applications, and research opportunities",
+        "found_metadata": {
+            "contentType": "Article",
+            "identifier": "doi:10.1186/s40537-020-00329-2",
+            "language": "en",
+            "url": [
+                {
+                    "format": "",
+                    "platform": "",
+                    "value": "http://dx.doi.org/10.1186/s40537-020-00329-2"
+                }
+            ],
+            "title": "Predictive big data analytics for supply chain demand forecasting: methods, applications, and research opportunities",
+            "creators": [
+                {
+                    "creator": "Seyedan, Mahya"
+                },
+                {
+                    "ORCID": "0000-0002-7991-4635",
+                    "creator": "Mafakheri, Fereshteh"
+                }
+            ],
+            "publicationName": "Journal of Big Data",
+            "doi": "10.1186/s40537-020-00329-2",
+            "publisher": "Springer",
+            "publisherName": "Springer International Publishing",
+            "publicationDate": "2020-07-25",
+            "publicationType": "Journal",
+            "issn": "",
+            "eIssn": "2196-1115",
+            "volume": "7",
+            "number": "1",
+            "issueType": "Regular",
+            "topicalCollection": "",
+            "genre": [
+                "OriginalPaper",
+                "Survey Paper"
+            ],
+            "startingPage": "1",
+            "endingPage": "22",
+            "journalId": "40537",
+            "openAccess": "true",
+            "onlineDate": "2020-07-25",
+            "coverDate": "2020-12",
+            "copyright": "\u00a92020 The Author(s)",
+            "abstract": {
+                "h1": "Abstract",
+                "p": "Big data analytics (BDA) in supply chain management (SCM) is receiving a growing attention. This is due to the fact that BDA has a wide range of applications in SCM, including customer behavior analysis, trend analysis, and demand prediction. In this survey, we investigate the predictive BDA applications in supply chain demand forecasting to propose a classification of these applications, identify the gaps, and provide insights for future research. We classify these algorithms and their applications in supply chain management into time-series forecasting, clustering, K-nearest-neighbors, neural networks, regression analysis, support vector machines, and support vector regression. This survey also points to the fact that the literature is particularly lacking on the applications of BDA for demand forecasting in the case of closed-loop supply chains (CLSCs) and accordingly highlights avenues for future research."
+            },
+            "subjects": [
+                "Computer Science",
+                "Database Management",
+                "Information Storage and Retrieval",
+                "Data Mining and Knowledge Discovery",
+                "Computational Science and Engineering",
+                "Mathematical Applications in Computer Science",
+                "Communications Engineering, Networks"
+            ],
+            "disciplines": [
+                {
+                    "id": "7402",
+                    "term": "Database Management"
+                },
+                {
+                    "id": "5864",
+                    "term": "Information Storage and Retrieval"
+                },
+                {
+                    "id": "3820",
+                    "term": "Data Mining and Knowledge Discovery"
+                },
+                {
+                    "id": "4149",
+                    "term": "Computational Science and Engineering"
+                },
+                {
+                    "id": "4364",
+                    "term": "Mathematical Applications in Computer Science"
+                },
+                {
+                    "id": "4404",
+                    "term": "Communications Engineering, Networks"
+                }
+            ]
+        }
+    },
+    {
+        "doi": "10.1186/s40537-020-00329-2",
+        "title": "Predictive big data analytics for supply chain demand forecasting: methods, applications, and research opportunities",
+        "found_metadata": {
+            "contentType": "Article",
+            "identifier": "doi:10.1186/s40537-020-00329-2",
+            "language": "en",
+            "url": [
+                {
+                    "format": "",
+                    "platform": "",
+                    "value": "http://dx.doi.org/10.1186/s40537-020-00329-2"
+                }
+            ],
+            "title": "Predictive big data analytics for supply chain demand forecasting: methods, applications, and research opportunities",
+            "creators": [
+                {
+                    "creator": "Seyedan, Mahya"
+                },
+                {
+                    "ORCID": "0000-0002-7991-4635",
+                    "creator": "Mafakheri, Fereshteh"
+                }
+            ],
+            "publicationName": "Journal of Big Data",
+            "doi": "10.1186/s40537-020-00329-2",
+            "publisher": "Springer",
+            "publisherName": "Springer International Publishing",
+            "publicationDate": "2020-07-25",
+            "publicationType": "Journal",
+            "issn": "",
+            "eIssn": "2196-1115",
+            "volume": "7",
+            "number": "1",
+            "issueType": "Regular",
+            "topicalCollection": "",
+            "genre": [
+                "OriginalPaper",
+                "Survey Paper"
+            ],
+            "startingPage": "1",
+            "endingPage": "22",
+            "journalId": "40537",
+            "openAccess": "true",
+            "onlineDate": "2020-07-25",
+            "coverDate": "2020-12",
+            "copyright": "\u00a92020 The Author(s)",
+            "abstract": {
+                "h1": "Abstract",
+                "p": "Big data analytics (BDA) in supply chain management (SCM) is receiving a growing attention. This is due to the fact that BDA has a wide range of applications in SCM, including customer behavior analysis, trend analysis, and demand prediction. In this survey, we investigate the predictive BDA applications in supply chain demand forecasting to propose a classification of these applications, identify the gaps, and provide insights for future research. We classify these algorithms and their applications in supply chain management into time-series forecasting, clustering, K-nearest-neighbors, neural networks, regression analysis, support vector machines, and support vector regression. This survey also points to the fact that the literature is particularly lacking on the applications of BDA for demand forecasting in the case of closed-loop supply chains (CLSCs) and accordingly highlights avenues for future research."
+            },
+            "subjects": [
+                "Computer Science",
+                "Database Management",
+                "Information Storage and Retrieval",
+                "Data Mining and Knowledge Discovery",
+                "Computational Science and Engineering",
+                "Mathematical Applications in Computer Science",
+                "Communications Engineering, Networks"
+            ],
+            "disciplines": [
+                {
+                    "id": "7402",
+                    "term": "Database Management"
+                },
+                {
+                    "id": "5864",
+                    "term": "Information Storage and Retrieval"
+                },
+                {
+                    "id": "3820",
+                    "term": "Data Mining and Knowledge Discovery"
+                },
+                {
+                    "id": "4149",
+                    "term": "Computational Science and Engineering"
+                },
+                {
+                    "id": "4364",
+                    "term": "Mathematical Applications in Computer Science"
+                },
+                {
+                    "id": "4404",
+                    "term": "Communications Engineering, Networks"
+                }
+            ]
+        }
+    }
+]
