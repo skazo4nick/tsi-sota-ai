@@ -1,11 +1,13 @@
 import os
+from dotenv import load_dotenv
+load_dotenv()
 from app.pdf_ocr import PDFOCRProcessor
 
 def main():
     try:
         processor = PDFOCRProcessor()
         # Test the uploaded PDF workflow using the provided file path
-        pdf_path = "/Users/max/Data/Logistics/Ports/Port of Rotterdam. (2020). Inland Container Shipping Guidelines..pdf"
+        pdf_path = "/workspaces/tsi-sota-ai/app/data/pdfs/Port-Rotterdam-Inland-Container-Shipping-Guidelines..pdf"
         markdown_output = processor.process_uploaded_pdf(pdf_path)
         print("Markdown Output from Uploaded PDF:")
         print(markdown_output)

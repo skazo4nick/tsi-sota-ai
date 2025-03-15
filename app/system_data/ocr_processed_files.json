@@ -10,5 +10,45 @@
         },
         "status": "error",
         "error_details": "[Errno 2] No such file or directory: '/Users/max/Data/Logistics/Ports/Port of Rotterdam. (2020). Inland Container Shipping Guidelines..pdf'"
+    },
+    {
+        "source_file_path": "/Users/max/Data/Logistics/Ports/Port of Rotterdam. (2020). Inland Container Shipping Guidelines..pdf",
+        "mistral_file_id": null,
+        "signed_url": null,
+        "target_file_path": null,
+        "timestamps": {
+            "start_upload": "2025-03-15T18:27:25.826894",
+            "end_processing": "2025-03-15T18:27:25.826993"
+        },
+        "status": "error",
+        "error_details": "[Errno 2] No such file or directory: '/Users/max/Data/Logistics/Ports/Port of Rotterdam. (2020). Inland Container Shipping Guidelines..pdf'"
+    },
+    {
+        "source_file_path": "/workspaces/tsi-sota-ai/app/data/pdfs/Port-Rotterdam-Inland-Container-Shipping-Guidelines..pdf",
+        "mistral_file_id": "8bd1f89d-d80c-44ab-9901-ce642f9d8c85",
+        "signed_url": "https://mistralaifilesapiprodswe.blob.core.windows.net/fine-tune/29ba7b92-ef65-4295-9d4b-19f45cb2b089/8bd1f89dd80c44ab9901ce642f9d8c85.pdf?se=2025-03-16T18%3A29%3A53Z&sp=r&sv=2025-01-05&sr=b&sig=BzdP1WuKiR6m9/A3DbJavXwHaDEWS/PEI20DXh1Cvik%3D",
+        "target_file_path": "app/data/md/Port-Rotterdam-Inland-Container-Shipping-Guidelines.-mistral.md",
+        "timestamps": {
+            "start_upload": "2025-03-15T18:29:52.711792",
+            "upload_complete": "2025-03-15T18:29:57.803254",
+            "start_processing": "2025-03-15T18:29:57.803260",
+            "end_processing": "2025-03-15T18:29:57.803261"
+        },
+        "status": "success",
+        "download_status": "success",
+        "download_timestamp": "2025-03-15T18:43:47.428963"
+    },
+    {
+        "source_file_path": "/workspaces/tsi-sota-ai/app/data/pdfs/UNCTAD-Training-Manual-Operational-Aspects-Multimodal-Transport.pdf",
+        "mistral_file_id": "4a41f239-26bb-4541-bf16-4296130dbf98",
+        "signed_url": "https://mistralaifilesapiprodswe.blob.core.windows.net/fine-tune/29ba7b92-ef65-4295-9d4b-19f45cb2b089/4a41f23926bb4541bf164296130dbf98.pdf?se=2025-03-16T18%3A47%3A27Z&sp=r&sv=2025-01-05&sr=b&sig=LSraQjc%2B/J%2BSg6//D/WwJubQjqdZbaMnEy4%2B9sEQY70%3D",
+        "target_file_path": null,
+        "timestamps": {
+            "start_upload": "2025-03-15T18:47:22.567135",
+            "upload_complete": "2025-03-15T18:47:39.832425",
+            "start_processing": "2025-03-15T18:47:39.832438",
+            "end_processing": "2025-03-15T18:47:39.832440"
+        },
+        "status": "success"
     }
 ]

@@ -137,3 +137,4 @@ my_cache_dir/
 scraper.log
 my_cache.sqlite
 app/data/
+.DS_Store
