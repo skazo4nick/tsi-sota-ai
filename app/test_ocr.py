@@ -4,15 +4,13 @@ from app.pdf_ocr import PDFOCRProcessor
 def main():
     try:
         processor = PDFOCRProcessor()
-        pdf_url = "https://arxiv.org/pdf/2201.04234.pdf"  # Example PDF URL
-        markdown_output = processor.process_pdf_url(pdf_url)
-        print("Markdown Output from URL:")
+        # Test the uploaded PDF workflow using the provided file path
+        pdf_path = "/Users/max/Data/Logistics/Ports/Port of Rotterdam. (2020). Inland Container Shipping Guidelines..pdf"
+        markdown_output = processor.process_uploaded_pdf(pdf_path)
+        print("Markdown Output from Uploaded PDF:")
         print(markdown_output)
 
-        # For testing uploaded PDF, you would need a local PDF file
-        # For now, let's just test URL processing
-
-        print("\\nLog file content after processing:")
+        print("\nLog file content after processing:")
         with open(processor.log_file_path, 'r') as log_file:
             print(log_file.read())
 

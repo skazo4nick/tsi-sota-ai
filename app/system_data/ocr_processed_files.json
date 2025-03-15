@@ -1,1 +1,14 @@
-[]
+[
+    {
+        "source_file_path": "/Users/max/Data/Logistics/Ports/Port of Rotterdam. (2020). Inland Container Shipping Guidelines..pdf",
+        "mistral_file_id": null,
+        "signed_url": null,
+        "target_file_path": null,
+        "timestamps": {
+            "start_upload": "2025-03-15T17:32:56.192695",
+            "end_processing": "2025-03-15T17:32:56.192806"
+        },
+        "status": "error",
+        "error_details": "[Errno 2] No such file or directory: '/Users/max/Data/Logistics/Ports/Port of Rotterdam. (2020). Inland Container Shipping Guidelines..pdf'"
+    }
+]

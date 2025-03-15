@@ -17,3 +17,11 @@
 - Data variability: plan for multiple formats and error handling.  
 - Scalability: design with modularity and future extensions in mind.  
 - Reproducibility: ensure environments and dependencies are clearly documented.
+
+## Dev Container Setup
+
+When running the application in the development container, always define the PYTHONPATH properly to ensure modules are found. For example, add the following to your shell configuration:
+
+    export PYTHONPATH=/workspaces/tsi-sota-ai
+
+This ensures the application uses the correct module paths in the dev container environment.
