@@ -1,0 +1,37 @@
+plugins {
+    // Applying the base plugin for basic tasks (clean, etc.)
+    id 'base'
+}
+
+task clean(type: Delete) {
+    delete 'build'
+    delete 'dist'
+}
+
+task test(type: Exec) {
+    // Running the test suite using pytest
+    commandLine 'pytest'
+}
+
+task buildApp(type: Exec) {
+    // Building the package using PEP 517 build system
+    commandLine 'python', '-m', 'build'
+}
+
+task publishApp(type: Exec) {
+    // Publishing the built package using twine
+    commandLine 'twine', 'upload', 'dist/*'
+}
+
+task githubRelease(type: Exec) {
+    // Creating a GitHub release using the GitHub CLI (gh)
+    // Adjust the tag (v1.0.0) and release notes as necessary
+    commandLine 'gh', 'release', 'create', 'v1.0.0', '--generate-notes'
+}
+
+// Define task dependencies - ensure tests run before building, build before publishing, and publishing before creating a GitHub release
+buildApp.dependsOn test
+publishApp.dependsOn buildApp
+githubRelease.dependsOn publishApp
+
+defaultTasks 'clean', 'test', 'buildApp', 'publishApp', 'githubRelease'

@@ -17,7 +17,7 @@ import os
 import json
 import time
 from datetime import date
-from dotenv import load_dotenv
+# from dotenv import load_dotenv
 import requests # Import requests for downloading XML
 
 load_dotenv()
