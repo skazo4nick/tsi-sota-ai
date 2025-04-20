@@ -1,0 +1,16 @@
+Lessons Learned from the Backblaze B2SDK Integration Experience:
+
+1. Early Validation of Library Structure:
+   Always verify the directory structure and public API of a library (especially for SDKs) before deep integration. Using internal modules or assuming standard paths may lead to compatibility issues and unexpected changes in subsequent releases.
+
+2. Time Management on Integration Challenges:
+   If a third-party library causes multiple hurdles and debugging consumes excessive time, it might be more efficient to evaluate alternative solutions early on. In this case, considering another storage provider may prevent further delays.
+
+3. Avoiding Reliance on Internal APIs:
+   Favor stable, public APIs over internal modules. Internal paths (e.g., those under `_internal`) may not be guaranteed and can break between versions, leading to maintenance issues.
+
+4. Documentation and Community Resources:
+   When encountering persistent import or compatibility issues, double-check the official documentation, GitHub repository, and community forums for guidance or updates.
+
+5. Recording Reflections for Improvement:
+   Save these insights in the memory bank (e.g., in a “b2_helpers_reflections.txt” file) so that future projects can benefit from a more cautious and informed approach when choosing storage integrations.

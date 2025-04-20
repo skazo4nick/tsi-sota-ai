@@ -1,0 +1,754 @@
+[
+    {
+      "title": "Transformative Procurement Trends: Integrating Industry 4.0 Technologies for Enhanced Procurement Processes",
+      "year": 2023,
+      "journal": "Logistics",
+      "authors": "Areej Althabatah",
+      "doi": "10.3390/logistics7030063",
+      "relevance_score": 6
+    },
+    {
+      "title": "Exploring Progress with Supply Chain Risk Management during the First Year of the COVID-19 Pandemic",
+      "year": 2021,
+      "journal": "Logistics",
+      "authors": "Remko van Hoek",
+      "doi": "10.3390/logistics5040070",
+      "relevance_score": 3
+    },
+    {
+      "title": "Exploring Applications and Practical Examples by Streamlining Material Requirements Planning (MRP) with Python",
+      "year": 2023,
+      "journal": "Logistics",
+      "authors": "João Reis",
+      "doi": "10.3390/logistics7040091",
+      "relevance_score": 5
+    },
+    {
+      "title": "Sustainable Innovations in the Food Industry through Artificial Intelligence and Big Data Analytics",
+      "year": 2021,
+      "journal": "Logistics",
+      "authors": "Saurabh Sharma,Vijay Kumar Gahlawat,Kumar Rahul,Rahul S. Mor,Mohit Malik",
+      "doi": "10.3390/logistics5040066",
+      "relevance_score": 6
+    },
+    {
+      "title": "Artificial Intelligence (AI): Multidisciplinary perspectives on emerging challenges, opportunities, and agenda for research, practice and policy",
+      "year": 2021,
+      "journal": "International Journal of Information Management",
+      "authors": "Yogesh K. Dwivedi,Laurie Hughes,Elvira Ismagilova,Gert Aarts,Crispin Coombs,Tom Crick,Yanqing Duan,Rohita Dwivedi,John S. Edwards,Aled Eirug,Vassilis Galanos,P. Vigneswara Ilavarasan,Marijn Janssen,Paul Jones,Arpan Kumar Kar,Hatice Kizgin,Bianca Kronemann,Banita Lal,Biagio Lucini,Rony Medaglia,Kenneth Le Meunier‐FitzHugh,Leslie Caroline Le Meunier-FitzHugh,Santosh K. Misra,Emmanuel Mogaji,Sujeet Kumar Sharma,Jang Bahadur Singh,Vishnupriya Raghavan,Ramakrishnan Raman,Nripendra P. Rana,Spyridon Samothrakis,Jak Spencer,Kuttimani Tamilmani,Annie Tubadji,Paul Walton,Michael D. Williams",
+      "doi": "10.1016/j.ijinfomgt.2019.08.002",
+      "relevance_score": 4
+    },
+    {
+      "title": "A Systematic Investigation of the Integration of Machine Learning into Supply Chain Risk Management",
+      "year": 2021,
+      "journal": "Logistics",
+      "authors": "Meike Schroeder,Sebastian Lodemann",
+      "doi": "10.3390/logistics5030062",
+      "relevance_score": 7
+    },
+    {
+      "title": "Ec-Funded Projects’ Lessons Learned In Earth Friendly Freight Transportation",
+      "year": 2022,
+      "journal": "Transport and Telecommunication Journal",
+      "authors": "Irina Yatskiv,T. Brauner,Aleksejs Vesjolijs,Vladimir Petrovs",
+      "doi": "10.2478/ttj-2022-0029",
+      "relevance_score": 6
+    },
+    {
+      "title": "Business alignment in the procurement domain: a study of antecedents and determinants of supply chain performance",
+      "year": 2022,
+      "journal": "IJISPM",
+      "authors": "Patrick Mikalef,Adamantia G. Pateli,Ronald Batenburg,Rogier van de Wetering",
+      "doi": "10.12821/ijispm020103",
+      "relevance_score": 3
+    },
+    {
+      "title": "Sustainable Supply Chain Management in the Route for a Circular Economy: An Integrative Literature Review",
+      "year": 2021,
+      "journal": "Logistics",
+      "authors": "Jorge Alfredo Cerqueira Streit,Gustavo Yuho Endo,Patrícia Guarnieri,Luciano Batista",
+      "doi": "10.3390/logistics5040081",
+      "relevance_score": 4
+    },
+    {
+      "title": "Overcoming Barriers in Supply Chain Analytics—Investigating Measures in LSCM Organizations",
+      "year": 2020,
+      "journal": "Logistics",
+      "authors": "Tino T. Herden,Benjamin Nitsche,Benno Gerlach",
+      "doi": "10.3390/logistics4010005",
+      "relevance_score": 5
+    },
+    {
+      "title": "Adoption and Influence of Robotic Process Automation in Beef Supply Chains",
+      "year": 2022,
+      "journal": "Logistics",
+      "authors": "Khushboo E-Fatima,Rasoul Khandan,Amin Hosseinian-Far,Dilshad Sarwar,Hareer Fatima Ahmed",
+      "doi": "10.3390/logistics6030048",
+      "relevance_score": 5
+    },
+    {
+      "title": "Optimizing Algerian Company’s Delivery Fleet with Agent_Based Model in Anylogic",
+      "year": 2023,
+      "journal": "Transport and Telecommunication Journal",
+      "authors": "Nassima Bounadi",
+      "doi": "10.2478/ttj-2023-0034",
+      "relevance_score": 8
+    },
+    {
+      "title": "Innovation Potentials and Pathways Merging AI, CPS, and IoT",
+      "year": 2018,
+      "journal": "ASI",
+      "authors": "Matthias Klumpp",
+      "doi": "10.3390/asi1010005",
+      "relevance_score": 6
+    },
+    {
+      "title": "Blockchain Technologies in Logistics and Supply Chain Management: A Bibliometric Review",
+      "year": 2021,
+      "journal": "Logistics",
+      "authors": "Abderahman Rejeb,Karim Rejeb,Steve Simske,Horst Treiblmaier",
+      "doi": "10.3390/logistics5040072",
+      "relevance_score": 3
+    },
+    {
+      "title": "Supplier Selection Risk: A New Computer-Based Decision-Making System with Fuzzy Extended AHP",
+      "year": 2021,
+      "journal": "Logistics",
+      "authors": "Marcus Vinicius Carvalho Fagundes,Bernd Hellingrath,Francisco Gaudêncio Mendonça Freires",
+      "doi": "10.3390/logistics5010013",
+      "relevance_score": 3
+    },
+    {
+      "title": "A Predictive Maintenance System for Reverse Supply Chain Operations",
+      "year": 2022,
+      "journal": "Logistics",
+      "authors": "Sotiris P. Gayialis,Evripidis P. Kechagias,Grigorios D. Konstantakopoulos,Georgios A. Papadopoulos",
+      "doi": "10.3390/logistics6010004",
+      "relevance_score": 5
+    },
+    {
+      "title": "A Bi-Objective Mixed-Integer Linear Programming Model for a Sustainable Agro-Food Supply Chain with Product Perishability and Environmental Considerations",
+      "year": 2023,
+      "journal": "Logistics",
+      "authors": "Rana Azab",
+      "doi": "10.3390/logistics7030046",
+      "relevance_score": 4
+    },
+    {
+      "title": "Influence of Blockchain Technology in Manufacturing Supply Chain and Logistics",
+      "year": 2022,
+      "journal": "Logistics",
+      "authors": "Abirami Raja Santhi,Padmakumar Muthuswamy",
+      "doi": "10.3390/logistics6010015",
+      "relevance_score": 3
+    },
+    {
+      "title": "A Dynamic Multi-Period, Mixed-Integer Linear Programming Model for Cost Minimization of a Three-Echelon, Multi-Site and Multi-Product Construction Supply Chain",
+      "year": 2020,
+      "journal": "Logistics",
+      "authors": "Aspasia Koutsokosta,Stefanos Katsavounis",
+      "doi": "10.3390/logistics4030019",
+      "relevance_score": 2
+    },
+    {
+      "title": "Impact of Internet of Things (IoT) on Inventory Management: A Literature Survey",
+      "year": 2022,
+      "journal": "Logistics",
+      "authors": "Yasaman Mashayekhy,Amir Babaei,Xue-Ming Yuan,Anrong Xue",
+      "doi": "10.3390/logistics6020033",
+      "relevance_score": 5
+    },
+    {
+      "title": "COVID-19 impact on sustainable production and operations management",
+      "year": 2020,
+      "journal": "Sustainable Operations and Computers",
+      "authors": "Aalok Kumar,Sunil Luthra,Sachin Kumar Mangla,Yiğit Kazançoğlu",
+      "doi": "10.1016/j.susoc.2020.06.001",
+      "relevance_score": 2
+    },
+    {
+      "title": "Logistics Services Sector and Economic Recession in Greece: Challenges and Opportunities",
+      "year": 2018,
+      "journal": "Logistics",
+      "authors": "Dimitris Folinas,Naoum Tsolakis,Dimitrios Aidonis",
+      "doi": "10.3390/logistics2030016",
+      "relevance_score": 1
+    },
+    {
+      "title": "Guidelines for Renewal and Securitization of a Critical Infrastructure Based on IoT Networks",
+      "year": 2023,
+      "journal": "Smart Cities",
+      "authors": "Cristina Villar Miguelez,Víctor Monzón Baeza,Raùl Parada,Carlos Monzo",
+      "doi": "10.3390/smartcities6020035",
+      "relevance_score": 3
+    },
+    {
+      "title": "Network Trust and Trust Behaviors Among Executives in Supply Chain Interactions",
+      "year": 2020,
+      "journal": "Management Science",
+      "authors": "Emily W. Choi,Özalp Özer,Yanchong Zheng",
+      "doi": "10.1287/mnsc.2019.3499",
+      "relevance_score": 2
+    },
+    {
+      "title": "Systematic Literature Review in Reshoring Strategies 4.0",
+      "year": 2023,
+      "journal": "Logistics",
+      "authors": "Daniel Masini Espíndola,Márcio Lopes Pimenta,Cláudio Heleno Pinto da Silva,Ingridi Vargas Bortolaso",
+      "doi": "10.3390/logistics7030042",
+      "relevance_score": 3
+    },
+    {
+      "title": "Transformative Procurement Trends: Integrating Industry 4.0 Technologies for Enhanced Procurement Processes",
+      "year": 2023,
+      "journal": "Logistics",
+      "authors": "Areej Althabatah",
+      "doi": "10.3390/logistics7030063",
+      "relevance_score": 6
+    },
+    {
+      "title": "Challenges to Promoting Resilience in Supply Chains Observed during the COVID-19 Pandemic: An Exploratory Study of the Amazon Region Using the TOPSIS Technique",
+      "year": 2022,
+      "journal": "Logistics",
+      "authors": "Dhiordan Cunha Tadaiesky,Joaquim Lima das Neves Neto,André Cristiano Silva Melo,Rosley Anholon,Eliane de Castro Coutinho,Vitor William Batista Martins",
+      "doi": "10.3390/logistics6040078",
+      "relevance_score": 3
+    },
+    {
+      "title": "Disorders, Vulnerabilities and Resilience in the Supply Chain in Pandemic Times",
+      "year": 2021,
+      "journal": "Logistics",
+      "authors": "Catarina Ferreira,Catarina Cardoso,Mariana Travassos,Mariana Ferreira de S. M. Paiva,M.L. Pestana,João M. Lopes,Márcio Oliveira",
+      "doi": "10.3390/logistics5030048",
+      "relevance_score": 3
+    },
+    {
+      "title": "COVID-19 impact on sustainable production and operations management",
+      "year": 2020,
+      "journal": "Sustainable Operations and Computers",
+      "authors": "Aalok Kumar,Sunil Luthra,Sachin Kumar Mangla,Yiğit Kazançoğlu",
+      "doi": "10.1016/j.susoc.2020.06.001",
+      "relevance_score": 2
+    },
+    {
+      "title": "Optimizing Algerian Company’s Delivery Fleet with Agent_Based Model in Anylogic",
+      "year": 2023,
+      "journal": "Transport and Telecommunication Journal",
+      "authors": "Nassima Bounadi",
+      "doi": "10.2478/ttj-2023-0034",
+      "relevance_score": 8
+    },
+    {
+      "title": "Information systems project management practice in Portugal - looking at the past to perspective the future",
+      "year": 2023,
+      "journal": "IJISPM",
+      "authors": "Nilton Takagi",
+      "doi": "10.12821/ijispm110404",
+      "relevance_score": 0
+    },
+    {
+      "title": "A System View to the Risks of COVID-19 Vaccination Projects",
+      "year": 2022,
+      "journal": "ASI",
+      "authors": "Shahryar Sorooshian,Afshin Abbaspour,Ali Jahan",
+      "doi": "10.3390/asi5010020",
+      "relevance_score": 2
+    },
+    {
+      "title": "The Impact of Digital Technologies and Sustainable Practices on Circular Supply Chain Management",
+      "year": 2023,
+      "journal": "Logistics",
+      "authors": "Sara Romagnoli,Claudia Tarabu',Behzad Maleki Vishkaei,Pietro De Giovanni",
+      "doi": "10.3390/logistics7010001",
+      "relevance_score": 5
+    },
+    {
+      "title": "Logistics Services Sector and Economic Recession in Greece: Challenges and Opportunities",
+      "year": 2018,
+      "journal": "Logistics",
+      "authors": "Dimitris Folinas,Naoum Tsolakis,Dimitrios Aidonis",
+      "doi": "10.3390/logistics2030016",
+      "relevance_score": 1
+    },
+    {
+      "title": "Maritime Energy Contracting for Clean Shipping",
+      "year": 2018,
+      "journal": "Transport and Telecommunication Journal",
+      "authors": "Eunice Omolola Olaniyi,Sina Atari,Gunnar Prause",
+      "doi": "10.2478/ttj-2018-0004",
+      "relevance_score": 0
+    },
+    {
+      "title": "The Role of Supply Chain Resilience on SMEs’ Performance: The Case of an Emerging Economy",
+      "year": 2022,
+      "journal": "Logistics",
+      "authors": "Mohammed Awad Alshahrani,Mohammad Asif Salam",
+      "doi": "10.3390/logistics6030047",
+      "relevance_score": 3
+    },
+    {
+      "title": "Developing Knowledge of Supply Chain Resilience in Less-Developed Countries in the Pandemic Age",
+      "year": 2022,
+      "journal": "Logistics",
+      "authors": "João M. Lopes,Sofia Gomes,Lassana Mané",
+      "doi": "10.3390/logistics6010003",
+      "relevance_score": 3
+    },
+    {
+      "title": "Blockchain Technologies in Logistics and Supply Chain Management: A Bibliometric Review",
+      "year": 2021,
+      "journal": "Logistics",
+      "authors": "Abderahman Rejeb,Karim Rejeb,Steve Simske,Horst Treiblmaier",
+      "doi": "10.3390/logistics5040072",
+      "relevance_score": 3
+    },
+    {
+      "title": "Big Data Analytics in Supply Chain Management: A Systematic Literature Review and Research Directions",
+      "year": 2022,
+      "journal": "BDCC",
+      "authors": "In Lee,George Mangalaraj",
+      "doi": "10.3390/bdcc6010017",
+      "relevance_score": 6
+    },
+    {
+      "title": "Transformative Procurement Trends: Integrating Industry 4.0 Technologies for Enhanced Procurement Processes",
+      "year": 2023,
+      "journal": "Logistics",
+      "authors": "Areej Althabatah",
+      "doi": "10.3390/logistics7030063",
+      "relevance_score": 6
+    },
+    {
+      "title": "Inter-organizational systems use and supply chain performance: Mediating role of supply chain management capabilities",
+      "year": 2021,
+      "journal": "International Journal of Information Management",
+      "authors": "David Asamoah,Benjamin Agyei-Owusu,Francis Kofi Andoh‐Baidoo,Emmanuel Ayaburi",
+      "doi": "10.1016/j.ijinfomgt.2020.102195",
+      "relevance_score": 3
+    },
+    {
+      "title": "Global Supply Chains Made Visible through Logistics Security Management",
+      "year": 2024,
+      "journal": "Logistics",
+      "authors": "Pablo Emilio Mora Lozano",
+      "doi": "10.3390/logistics8010006",
+      "relevance_score": 2
+    },
+    {
+      "title": "Modelling a Logistics and Financial Supply Chain Network during the COVID-19 Era",
+      "year": 2024,
+      "journal": "Logistics",
+      "authors": "Sina Abbasi",
+      "doi": "10.3390/logistics8010032",
+      "relevance_score": 2
+    },
+    {
+      "title": "A Bi-Objective Mixed-Integer Linear Programming Model for a Sustainable Agro-Food Supply Chain with Product Perishability and Environmental Considerations",
+      "year": 2023,
+      "journal": "Logistics",
+      "authors": "Rana Azab",
+      "doi": "10.3390/logistics7030046",
+      "relevance_score": 4
+    },
+    {
+      "title": "Influence of Blockchain Technology in Manufacturing Supply Chain and Logistics",
+      "year": 2022,
+      "journal": "Logistics",
+      "authors": "Abirami Raja Santhi,Padmakumar Muthuswamy",
+      "doi": "10.3390/logistics6010015",
+      "relevance_score": 3
+    },
+    {
+      "title": "The Impact of Digital Technologies and Sustainable Practices on Circular Supply Chain Management",
+      "year": 2023,
+      "journal": "Logistics",
+      "authors": "Sara Romagnoli,Claudia Tarabu',Behzad Maleki Vishkaei,Pietro De Giovanni",
+      "doi": "10.3390/logistics7010001",
+      "relevance_score": 5
+    },
+    {
+      "title": "Optimizing Algerian Company’s Delivery Fleet with Agent_Based Model in Anylogic",
+      "year": 2023,
+      "journal": "Transport and Telecommunication Journal",
+      "authors": "Nassima Bounadi",
+      "doi": "10.2478/ttj-2023-0034",
+      "relevance_score": 8
+    },
+    {
+      "title": "A Systematic Investigation of the Integration of Machine Learning into Supply Chain Risk Management",
+      "year": 2021,
+      "journal": "Logistics",
+      "authors": "Meike Schroeder,Sebastian Lodemann",
+      "doi": "10.3390/logistics5030062",
+      "relevance_score": 7
+    },
+    {
+      "title": "Business alignment in the procurement domain: a study of antecedents and determinants of supply chain performance",
+      "year": 2022,
+      "journal": "IJISPM",
+      "authors": "Patrick Mikalef,Adamantia G. Pateli,Ronald Batenburg,Rogier van de Wetering",
+      "doi": "10.12821/ijispm020103",
+      "relevance_score": 3
+    },
+    {
+      "title": "Sustainable Supply Chain Management in the Route for a Circular Economy: An Integrative Literature Review",
+      "year": 2021,
+      "journal": "Logistics",
+      "authors": "Jorge Alfredo Cerqueira Streit,Gustavo Yuho Endo,Patrícia Guarnieri,Luciano Batista",
+      "doi": "10.3390/logistics5040081",
+      "relevance_score": 4
+    },
+    {
+      "title": "A Predictive Maintenance System for Reverse Supply Chain Operations",
+      "year": 2022,
+      "journal": "Logistics",
+      "authors": "Sotiris P. Gayialis,Evripidis P. Kechagias,Grigorios D. Konstantakopoulos,Georgios A. Papadopoulos",
+      "doi": "10.3390/logistics6010004",
+      "relevance_score": 5
+    },
+    {
+      "title": "Supply Chain Competition: A Market Game Approach",
+      "year": 2020,
+      "journal": "Management Science",
+      "authors": "C. Gizem Korpeoglu,Ersin Körpeoğlu,Soo Haeng Cho",
+      "doi": "10.1287/mnsc.2019.3511",
+      "relevance_score": 2
+    },
+    {
+      "title": "Developing Knowledge of Supply Chain Resilience in Less-Developed Countries in the Pandemic Age",
+      "year": 2022,
+      "journal": "Logistics",
+      "authors": "João M. Lopes,Sofia Gomes,Lassana Mané",
+      "doi": "10.3390/logistics6010003",
+      "relevance_score": 3
+    },
+    {
+      "title": "Blockchain Technologies in Logistics and Supply Chain Management: A Bibliometric Review",
+      "year": 2021,
+      "journal": "Logistics",
+      "authors": "Abderahman Rejeb,Karim Rejeb,Steve Simske,Horst Treiblmaier",
+      "doi": "10.3390/logistics5040072",
+      "relevance_score": 3
+    },
+    {
+      "title": "AI applications of data sharing in agriculture 4.0: A framework for role-based data access control",
+      "year": 2021,
+      "journal": "International Journal of Information Management",
+      "authors": "Konstantina Spanaki,Erisa Karafili,Stella Despoudi",
+      "doi": "10.1016/j.ijinfomgt.2021.102350",
+      "relevance_score": 4
+    },
+    {
+      "title": "Logistics Services Sector and Economic Recession in Greece: Challenges and Opportunities",
+      "year": 2018,
+      "journal": "Logistics",
+      "authors": "Dimitris Folinas,Naoum Tsolakis,Dimitrios Aidonis",
+      "doi": "10.3390/logistics2030016",
+      "relevance_score": 1
+    },
+    {
+      "title": "The Role of Supply Chain Resilience on SMEs’ Performance: The Case of an Emerging Economy",
+      "year": 2022,
+      "journal": "Logistics",
+      "authors": "Mohammed Awad Alshahrani,Mohammad Asif Salam",
+      "doi": "10.3390/logistics6030047",
+      "relevance_score": 3
+    },
+    {
+      "title": "Adoption and Influence of Robotic Process Automation in Beef Supply Chains",
+      "year": 2022,
+      "journal": "Logistics",
+      "authors": "Khushboo E-Fatima,Rasoul Khandan,Amin Hosseinian-Far,Dilshad Sarwar,Hareer Fatima Ahmed",
+      "doi": "10.3390/logistics6030048",
+      "relevance_score": 5
+    },
+    {
+      "title": "The Impact of Digital Technologies and Sustainable Practices on Circular Supply Chain Management",
+      "year": 2023,
+      "journal": "Logistics",
+      "authors": "Sara Romagnoli,Claudia Tarabu',Behzad Maleki Vishkaei,Pietro De Giovanni",
+      "doi": "10.3390/logistics7010001",
+      "relevance_score": 5
+    },
+    {
+      "title": "Responding to COVID-19 Supply Chain Risks—Insights from Supply Chain Change Management, Total Cost of Ownership and Supplier Segmentation Theory",
+      "year": 2020,
+      "journal": "Logistics",
+      "authors": "Remko van Hoek",
+      "doi": "10.3390/logistics4040023",
+      "relevance_score": 3
+    },
+    {
+      "title": "Twenty‐year retrospection on green manufacturing: A bibliometric perspective",
+      "year": 2021,
+      "journal": "IET Collab Intel Manufact",
+      "authors": "Zhi Pei,Tianzong Yu,Wenchao Yi,Yingde Li",
+      "doi": "10.1049/cim2.12038",
+      "relevance_score": 2
+    },
+    {
+      "title": "COVID-19 Disruption Strategy for Redesigning Global Supply Chain Network across TPP Countries",
+      "year": 2021,
+      "journal": "Logistics",
+      "authors": "Takaki Nagao,Hiromasa Ijuin,Tetsuo Yamada,Keisuke Nagasawa,Lei Zhou",
+      "doi": "10.3390/logistics6010002",
+      "relevance_score": 2
+    },
+    {
+      "title": "A Bi-Objective Mixed-Integer Linear Programming Model for a Sustainable Agro-Food Supply Chain with Product Perishability and Environmental Considerations",
+      "year": 2023,
+      "journal": "Logistics",
+      "authors": "Rana Azab",
+      "doi": "10.3390/logistics7030046",
+      "relevance_score": 4
+    },
+    {
+      "title": "Blockchain Technology and Sustainability in Supply Chains and a Closer Look at Different Industries: A Mixed Method Approach",
+      "year": 2022,
+      "journal": "Logistics",
+      "authors": "Büşra Ayan,Elif Güner,Semen Son-Turan",
+      "doi": "10.3390/logistics6040085",
+      "relevance_score": 3
+    },
+    {
+      "title": "Developing Knowledge of Supply Chain Resilience in Less-Developed Countries in the Pandemic Age",
+      "year": 2022,
+      "journal": "Logistics",
+      "authors": "João M. Lopes,Sofia Gomes,Lassana Mané",
+      "doi": "10.3390/logistics6010003",
+      "relevance_score": 3
+    },
+    {
+      "title": "Business alignment in the procurement domain: a study of antecedents and determinants of supply chain performance",
+      "year": 2022,
+      "journal": "IJISPM",
+      "authors": "Patrick Mikalef,Adamantia G. Pateli,Ronald Batenburg,Rogier van de Wetering",
+      "doi": "10.12821/ijispm020103",
+      "relevance_score": 3
+    },
+    {
+      "title": "Optimization of the Residual Biomass Supply Chain: Process Characterization and Cost Analysis",
+      "year": 2023,
+      "journal": "Logistics",
+      "authors": "Leonel J. R. Nunes,Sandra Silva",
+      "doi": "10.3390/logistics7030048",
+      "relevance_score": 2
+    },
+    {
+      "title": "Utilization of Free Trade Agreements to Minimize Costs and Carbon Emissions in the Global Supply Chain for Sustainable Logistics",
+      "year": 2023,
+      "journal": "Logistics",
+      "authors": "Yuki Kinoshita,Takaki Nagao,Hiromasa Ijuin,Keisuke Nagasawa,Tetsuo Yamada,Surendra M. Gupta",
+      "doi": "10.3390/logistics7020032",
+      "relevance_score": 2
+    },
+    {
+      "title": "A New Model of the Personnel Function Delivery in the Logistics of Polish Firms",
+      "year": 2020,
+      "journal": "Logistics",
+      "authors": "Elżbieta Gołembska,Marcin Gołembski",
+      "doi": "10.3390/logistics4030015",
+      "relevance_score": 0
+    },
+    {
+      "title": "Digital Technologies for Improving Logistics Performance of Countries",
+      "year": 2021,
+      "journal": "Transport and Telecommunication Journal",
+      "authors": "Aisulu Moldabekova,Robert Philipp,Hans-Eggert Reimers,Bauyrzhan Alikozhayev",
+      "doi": "10.2478/ttj-2021-0016",
+      "relevance_score": 4
+    },
+    {
+      "title": "Applications of Industry 4.0 Technologies in Warehouse Management: A Systematic Literature Review",
+      "year": 2023,
+      "journal": "Logistics",
+      "authors": "Lihle N. Tikwayo,Tebello Mathaba",
+      "doi": "10.3390/logistics7020024",
+      "relevance_score": 5
+    },
+    {
+      "title": "MIDST: an enhanced development environment that improves the maintainability of a data science analysis",
+      "year": 2021,
+      "journal": "IJISPM",
+      "authors": "Jeffrey S. Saltz,Kevin Crowston,Robert Heckman,Yatish Hegde",
+      "doi": "10.12821/ijispm080301",
+      "relevance_score": 0
+    },
+    {
+      "title": "Innovative Scheme for Efficient Freight Movement and Sustainable Emissions Management",
+      "year": 2019,
+      "journal": "Transport and Telecommunication Journal",
+      "authors": "Afroditi Anagnostopoulou,Evangelia Papargyri,Maria Boile",
+      "doi": "10.2478/ttj-2019-0020",
+      "relevance_score": 2
+    },
+    {
+      "title": "Measuring the Total Logistics Costs at the Macro Level: A Study of Indonesia",
+      "year": 2021,
+      "journal": "Logistics",
+      "authors": "Sugeng Santoso,R. Nurhidayat,Gustofan Mahmud,Abdul Mujib Arijuddin",
+      "doi": "10.3390/logistics5040068",
+      "relevance_score": 1
+    },
+    {
+      "title": "Proactive and reactive engagement of artificial intelligence methods for education: a review",
+      "year": 2023,
+      "journal": "Front. Artif. Intell.",
+      "authors": "Sruti Mallik,Ahana Gangopadhyay",
+      "doi": "10.3389/frai.2023.1151391",
+      "relevance_score": 0
+    },
+    {
+      "title": "Routing Optimization with Vehicle–Customer Coordination",
+      "year": 2023,
+      "journal": "Management Science",
+      "authors": "Wei Zhang,Alexandre Jacquillat,Kai Wang,Shuaian Wang",
+      "doi": "10.1287/mnsc.2023.4739",
+      "relevance_score": 3
+    },
+    {
+      "title": "Logistics Education and Behavioral Training Decisions, Time Distortion, and the Prae Ante View",
+      "year": 2018,
+      "journal": "Logistics",
+      "authors": "Thomas Neukirchen,Matthias Klumpp",
+      "doi": "10.3390/logistics2040024",
+      "relevance_score": 0
+    },
+    {
+      "title": "Exploring Applications and Practical Examples by Streamlining Material Requirements Planning (MRP) with Python",
+      "year": 2023,
+      "journal": "Logistics",
+      "authors": "João Reis",
+      "doi": "10.3390/logistics7040091",
+      "relevance_score": 5
+    },
+    {
+      "title": "Sustainable Supply Chain Management in the Route for a Circular Economy: An Integrative Literature Review",
+      "year": 2021,
+      "journal": "Logistics",
+      "authors": "Jorge Alfredo Cerqueira Streit,Gustavo Yuho Endo,Patrícia Guarnieri,Luciano Batista",
+      "doi": "10.3390/logistics5040081",
+      "relevance_score": 4
+    },
+    {
+      "title": "Transformative Procurement Trends: Integrating Industry 4.0 Technologies for Enhanced Procurement Processes",
+      "year": 2023,
+      "journal": "Logistics",
+      "authors": "Areej Althabatah",
+      "doi": "10.3390/logistics7030063",
+      "relevance_score": 6
+    },
+    {
+      "title": "Skills of junior project management professionals and project success achieved by them",
+      "year": 2021,
+      "journal": "IJISPM",
+      "authors": "William E. Hefley,Mário Bottion",
+      "doi": "10.12821/ijispm090103",
+      "relevance_score": 0
+    },
+    {
+      "title": "Blockchain Technologies in Logistics and Supply Chain Management: A Bibliometric Review",
+      "year": 2021,
+      "journal": "Logistics",
+      "authors": "Abderahman Rejeb,Karim Rejeb,Steve Simske,Horst Treiblmaier",
+      "doi": "10.3390/logistics5040072",
+      "relevance_score": 3
+    },
+    {
+      "title": "Responding to COVID-19 Supply Chain Risks—Insights from Supply Chain Change Management, Total Cost of Ownership and Supplier Segmentation Theory",
+      "year": 2020,
+      "journal": "Logistics",
+      "authors": "Remko van Hoek",
+      "doi": "10.3390/logistics4040023",
+      "relevance_score": 3
+    },
+    {
+      "title": "Combining Blockchain Technology and the Physical Internet to Achieve Triple Bottom Line Sustainability: A Comprehensive Research Agenda for Modern Logistics and Supply Chain Management",
+      "year": 2019,
+      "journal": "Logistics",
+      "authors": "Horst Treiblmaier",
+      "doi": "10.3390/logistics3010010",
+      "relevance_score": 3
+    },
+    {
+      "title": "Unravelling the Complexity of Supply Chain Volatility Management",
+      "year": 2018,
+      "journal": "Logistics",
+      "authors": "Benjamin Nitsche",
+      "doi": "10.3390/logistics2030014",
+      "relevance_score": 2
+    },
+    {
+      "title": "MARLIN Method: Enhancing Warehouse Resilience in Response to Disruptions",
+      "year": 2023,
+      "journal": "Logistics",
+      "authors": "Silvia Colabianchi",
+      "doi": "10.3390/logistics7040095",
+      "relevance_score": 3
+    },
+    {
+      "title": "Green Supply Chain Management: The Effect of Procurement Sustainability on Reverse Logistics",
+      "year": 2023,
+      "journal": "Logistics",
+      "authors": "Nataliia Letunovska",
+      "doi": "10.3390/logistics7030047",
+      "relevance_score": 3
+    },
+    {
+      "title": "Forecasting and Evaluating Multiple Interventions for COVID-19 Worldwide",
+      "year": 2020,
+      "journal": "Front. Artif. Intell.",
+      "authors": "Zixin Hu,Qiyang Ge,Shudi Li,Eric Boerwinkle,Li Jin,Momiao Xiong",
+      "doi": "10.3389/frai.2020.00041",
+      "relevance_score": 0
+    },
+    {
+      "title": "Human-centricity in AI governance: A systemic approach",
+      "year": 2023,
+      "journal": "Front. Artif. Intell.",
+      "authors": "Anton Sigfrids,Jaana Leikas,Henrikki Salo-Pöntinen,Emmi Koskimies",
+      "doi": "10.3389/frai.2023.976887",
+      "relevance_score": 0
+    },
+    {
+      "title": "Declining cost of renewables and climate change curb the need for African hydropower expansion",
+      "year": 2023,
+      "journal": "Science",
+      "authors": "Angelo Carlino,Matthias Wildemeersch,Celray James Chawanda,Matteo Giuliani,Sebastian Sterl,Wim Thiery,Ann van Griensven,Andrea Castelletti",
+      "doi": "10.1126/science.adf5848",
+      "relevance_score": 0
+    },
+    {
+      "title": "Educators' Views on Using Humanoid Robots With Autistic Learners in Special Education Settings in England",
+      "year": 2019,
+      "journal": "Front. Robot. AI",
+      "authors": "Alyssa M. Alcorn,Eloise Ainger,Vicky Charisi,Stefania Mantinioti,Suncica Petrovic,Bob R. Schadenberg,Teresa Tavassoli,Liz Pellicano",
+      "doi": "10.3389/frobt.2019.00107",
+      "relevance_score": 1
+    },
+    {
+      "title": "Artificial Intelligence, Big Data, and mHealth: The Frontiers of the Prevention of Violence Against Children",
+      "year": 2020,
+      "journal": "Front. Artif. Intell.",
+      "authors": "Xanthe Hunt,Mark Tomlinson,Siham Sikander,Sarah Skeen,Marguerite Marlow,Stefani Du Toit,Manuel Eisner",
+      "doi": "10.3389/frai.2020.543305",
+      "relevance_score": 0
+    },
+    {
+      "title": "Which Strategies and Corresponding Competences Are Needed to Improve Supply Chain Resilience: A COVID-19 Based Review",
+      "year": 2022,
+      "journal": "Logistics",
+      "authors": "Jethro Kiers,Jaap Seinhorst,Mirthe Zwanenburg,Klaas Stek",
+      "doi": "10.3390/logistics6010012",
+      "relevance_score": 3
+    },
+    {
+      "title": "Exploring the Lean Implementation Barriers in Small and Medium-Sized Enterprises Using Interpretive Structure Modeling and Interpretive Ranking Process",
+      "year": 2022,
+      "journal": "ASI",
+      "authors": "Karishma M. Qureshi,Bhavesh G. Mewada,Saleh Alghamdi,Naif Almakayeel,Mohamed Mansour,M.N. Qureshi",
+      "doi": "10.3390/asi5040084",
+      "relevance_score": 0
+    }
+  ]

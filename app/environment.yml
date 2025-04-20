@@ -22,3 +22,4 @@ dependencies:
   - responses
   - ipykernel # To run IPython Notebooks in this environment
   - notebook   # To run Jupyter Notebook
+  - b2sdk==2.8.0

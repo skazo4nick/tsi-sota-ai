@@ -1,0 +1,58 @@
+### Design and Architecture
+
+**System Overview:**  
+The project is built on a modular design with clearly defined boundaries between data ingestion, processing, analysis, and deployment. The architecture facilitates scalability, maintainability, and reproducibility across all stages of development.
+
+**Architecture Components:**
+
+1. **Data Acquisition & Ingestion:**  
+   - **Modules:**  
+     - *Article Downloader:* Retrieves article content from various sources.  
+     - *PDF Downloader:* Handles downloading and basic processing of PDF files.
+   - **Key Considerations:**  
+     - Robust error handling for varying data formats.  
+     - Logging and validation of downloaded content.
+
+2. **Data Parsing & Processing:**  
+   - **Modules:**  
+     - *HTML Parser:* Extracts structured data from HTML content.  
+     - *Utility Functions:* Shared routines for data cleaning and transformation.
+   - **Key Considerations:**  
+     - Consistent data formatting to enable downstream processing.  
+     - Decoupling of parsing logic for flexibility in handling diverse sources.
+
+3. **Data Analysis & Clustering:**  
+   - **Components:**  
+     - *Interactive Notebooks:* Jupyter Notebooks in the notebooks/ directory facilitate exploratory analysis.  
+     - *Clustering & Embedding Generation:* Tools and scripts to analyze relationships and generate clusters from processed data.
+   - **Key Considerations:**  
+     - Clear separation between raw data and processed outputs.  
+     - Ability to reproduce analysis through versioned notebooks.
+
+4. **Inter-module Communication:**  
+   - **APIs & Interfaces:**  
+     - Defined contracts between modules to ensure smooth data flow.  
+     - Use of shared data formats (e.g., JSON, CSV) to encapsulate intermediate results.
+   - **Key Considerations:**  
+     - Modular design enables individual components to be tested and updated independently.  
+     - Clear interface definitions reduce coupling between modules.
+
+5. **Support for Deployment and Operation:**  
+   - **Components:**  
+     - Environment configuration files (`requirements.txt`, `environment.yml`) to manage dependencies.  
+     - Scripts and documentation to guide deployment, monitoring, and maintenance.
+   - **Key Considerations:**  
+     - Ensuring that the runtime environment remains consistent across development, testing, and production.  
+     - Automating repetitive tasks such as environment setup with CI/CD pipelines.
+
+**Design Artifacts:**  
+- **Architecture Diagrams:** Visual representations (such as flowcharts or UML diagrams) detailing system components and interactions.  
+- **Module Specifications:** Documentation outlining individual module responsibilities, data inputs/outputs, and API contracts.  
+- **Data Schemas:** Definitions for the structure of data used at various stages, including inputs, intermediate formats, and final outputs.
+
+**Rationale for the Design:**  
+- **Modularity:** Allows easier maintenance, testing, and scalability.  
+- **Clarity in Data Flow:** Supports reproducible analysis and smooth transitions between project phases.  
+- **Scalability & Flexibility:** Enables integration of new data sources and analytic techniques without major overhauls.
+
+This document serves as a technical reference throughout development and will be updated as the project evolves.
