@@ -25,3 +25,7 @@ The project is organized into several key components:
 - **Clustering and Visualization**: Clustering of publications based on abstracts using embedding models, with visual representations of clusters.
 - **RAG-Based Streamlit App**: An interactive application allowing users to query a database of publications and receive context-aware responses powered by LLMs.
 - **Bibliometric Analysis**: Statistical analysis of publication trends, citation counts, and co-authorship networks.
+
+## Dashboard Feature
+
+A new dashboard has been added to the project. It is built using Flask and provides a visual interface for real-time insights into the project's data. See the [dashboard documentation](dashboard/README.md) for details.

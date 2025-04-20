@@ -1,0 +1,18 @@
+Existing Lessons Learned:
+--------------------------------
+[Previous lessons learned are preserved here.]
+
+-- Restored Lessons Learned from b2 Library --
+- In earlier work with the b2 library, it was discovered that proper configuration of API keys and credentials is crucial for establishing successful connections.
+- It was also noted that the b2 library requires robust error handling, as connection and API errors need to be caught and logged for effective troubleshooting.
+-- End of Restored Lessons Learned from b2 Library --
+
+--- New Lessons Learned on 2025-03-05 ---
+- Verified that basic print statements function correctly (using tests/test_print.py).
+- Identified import and PYTHONPATH issues in the dev container; resolved by modifying the test run command to: 
+  PYTHONPATH=/workspaces/tsi-sota-ai python -m tests.test_full_download_cycle
+- Confirmed that the full download cycle script processes DOIs and correctly handles cases where the Springer Nature API does not return an XML full text.
+- Enhanced debugging and error handling by adding delays (time.sleep), flush=True in print statements, and wrapping API calls in try/except blocks.
+- Always append new lessons learned; do not erase previous lessons.
+--------------------------------
+End of Lessons Learned.

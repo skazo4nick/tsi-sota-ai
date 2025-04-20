@@ -16,3 +16,4 @@ requests-mock
 responses
 ipykernel
 notebook
+b2sdk

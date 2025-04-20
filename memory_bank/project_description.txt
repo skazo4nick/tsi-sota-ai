@@ -1,0 +1,86 @@
+### 1. Project Overview
+- **Objective:**  
+  The project is designed to download articles, parse HTML content, process PDFs, extract meaningful data, and perform analytical tasks using various modules and notebooks.
+  
+- **Core Functionalities:**  
+  • Downloading and processing articles and PDFs  
+  • HTML parsing and data extraction  
+  • Data organization, clustering, and analysis  
+  • Support for reproducible computational analysis via notebooks
+
+---
+
+### 2. Architecture and Directory Structure
+- **High-Level Structure:**  
+  - **app/**: Contains main application scripts and Jupyter Notebooks for data processing.  
+  - **data/**: Storage for raw and processed data such as PDFs, CSV files, JSON outputs, and embeddings.  
+  - **memory_bank/**: Repository for long-term project context and documentation (e.g., project description).  
+  - **notebooks/**: Interactive Jupyter Notebooks for exploration and analysis.  
+  - **src/**: Contains additional source code modules that support the main application.
+  
+- **Purpose:**  
+  This layout separates core functionalities into distinct areas to enhance maintainability, scalability, and ease of navigation.
+
+---
+
+### 3. Module Details
+- **Key Modules in app/:**  
+  - **article_downloader.ipynb:** Notebook/script to manage article downloads.  
+  - **html_parser.py:** Module dedicated to extracting and parsing HTML content.  
+  - **pdf_downloader.py:** Handles downloading and processing of PDF files.  
+  - **utils.py:** Contains utility functions shared across the project.
+
+- **Why:**  
+  Isolating responsibilities into dedicated modules simplifies debugging, testing, and potential reuse of code across different parts of the project.
+
+---
+
+### 4. Data Management
+- **Data Ingestion and Storage:**  
+  - Raw PDFs and reference materials are stored in `app/data/cluster_None/` and `data/references/`.  
+  - Processed data (e.g., clusters, embeddings, analyzed CSV/JSON files) is saved in the `data/` folder.
+  
+- **Data Flow:**  
+  Data is downloaded, parsed, and then structured for further analysis; notebooks serve as interfaces for exploring cluster analyses and reference associations.
+
+---
+
+### 5. Environment and Dependencies
+- **Configuration Files:**  
+  - `requirements.txt` and `app/requirements.txt` list Python dependencies.  
+  - `app/environment.yml` covers environment configuration, ensuring reproducibility.
+  
+- **Setup Instructions:**  
+  New users should install dependencies via pip or conda using the provided configuration files to ensure consistency across environments.
+
+---
+
+### 6. Workflow and Usage
+- **Developer Workflow:**  
+  1. **Download Phase:** Use the article and PDF downloader modules to fetch and store raw data.  
+  2. **Parsing Phase:** Process and extract valuable information via HTML parsing and utility scripts.  
+  3. **Analysis Phase:** Leverage Jupyter Notebooks in the `notebooks/` folder to visualize clusters and analyze processed data.
+  
+- **User Guides:**  
+  Documentation in the memory bank and README files provide step-by-step instructions for executing each phase.
+
+---
+
+### 7. Future Enhancements / Known Limitations
+- **Future Enhancements:**  
+  - Optimizing data clustering and embedding techniques  
+  - Expanding the HTML parsing module for more complex content  
+  - Integrating additional data sources and more advanced analytic tools
+  
+- **Known Limitations:**  
+  Current modules may require manual adjustments for different data formats; scalability improvements might be necessary for larger datasets.
+
+---
+
+### Current Project Status
+Updated on: 2025-04-09 17:55 (Europe/Riga, UTC+3)
+- All core functionalities are implemented and integrated.
+- Automated testing, including end-to-end workflows, is operational.
+- The project is structured into distinct modules for data ingestion, processing, and analysis.
+- CI/CD pipelines are configured using Gradle with integration into GitHub Actions and Streamlit deployment.
+- Ongoing efforts focus on addressing scalability issues and refining data parsing and clustering techniques.

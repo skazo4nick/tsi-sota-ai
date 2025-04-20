@@ -1,0 +1,43 @@
+# Publications API Sources Integration Plan
+
+This document outlines the plan for integrating various API sources to enhance scholarly publication retrieval capabilities in our project.
+
+## Springer Nature API Integration
+
+**Objective:** Integrate the Springer Nature Open Access API to retrieve XML full text of publications.
+
+**Python Module:** `sn_xml_downloader.py` (dedicated module in the `app` directory)
+
+**Key Components:**
+
+1.  **API Client:** Utilize the `springernature-api-client` Python library.
+2.  **API Key:** Load API key from the `.env` file using the `SPRINGERNATURE_API` environment variable.
+3.  **Functionality:**
+    *   **Article Existence Check:** Function to verify if an article (by DOI) is available in the Springer Nature Open Access API (using metadata endpoint).
+    *   **XML Download:** Function to download full text in XML format (using JATS endpoint or equivalent).
+    *   **Rate Limiting:** Implement 1-second delay between requests and a daily limit of 495 requests. Track daily request count and date.
+    *   **Storage:** Save XML files to `app/data/xml` directory.
+    *   **Tracking Downloaded Articles:** Maintain a JSON file (`downloaded_articles.json` in `app/data`) to track downloaded articles (DOI and format "xml").
+
+**Workflow:**
+
+1.  Check `downloaded_articles.json` to avoid re-downloading.
+2.  For new DOIs, check article availability via Springer Nature API.
+3.  If available, download XML full text.
+4.  Store XML in `app/data/xml`.
+5.  Update `downloaded_articles.json`.
+
+**Error Handling:** Implement robust error handling for API calls, rate limits, and file operations.
+
+**Module Documentation:** Document the purpose, functions, and usage of `sn_xml_downloader.py` within the module itself.
+
+**Next Steps:**
+
+1.  Create `sn_xml_downloader.py` module.
+2.  Implement API key loading, existence check, XML download, rate limiting, storage, and tracking functionalities.
+3.  Test the module with sample DOIs.
+4.  Integrate the module into the main application workflow.
+
+## Future API Sources
+
+*(To be expanded as we integrate more API sources)*

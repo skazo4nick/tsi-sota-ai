@@ -136,3 +136,4 @@ data/pdfs/
 my_cache_dir/
 scraper.log
 my_cache.sqlite
+app/data/
