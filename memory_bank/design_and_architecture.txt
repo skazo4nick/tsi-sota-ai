@@ -1,52 +1,81 @@
 ### Design and Architecture
 
 **System Overview:**  
-The project is built on a modular design with clearly defined boundaries between data ingestion, processing, analysis, and deployment. The architecture facilitates scalability, maintainability, and reproducibility across all stages of development.
+The Knowledge Retrieval Agentic System is built on a modular design with clearly defined boundaries between API integration, storage, knowledge representation, context management, and workflow orchestration. The architecture facilitates scalability, maintainability, and extensibility across all stages of development.
 
 **Architecture Components:**
 
-1. **Data Acquisition & Ingestion:**  
+1. **API Integration Layer:**  
    - **Modules:**  
-     - *Article Downloader:* Retrieves article content from various sources.  
-     - *PDF Downloader:* Handles downloading and basic processing of PDF files.
+     - *BaseAPIClient:* Abstract base class for API clients.  
+     - *SpringerAPIClient:* Implementation for SpringerNature API.  
+     - *CoreAPIClient:* Implementation for CORE API.
    - **Key Considerations:**  
-     - Robust error handling for varying data formats.  
-     - Logging and validation of downloaded content.
+     - Standardized interface for content retrieval.  
+     - Extensibility for future API integrations.
 
-2. **Data Parsing & Processing:**  
+2. **Storage Layer:**  
    - **Modules:**  
-     - *HTML Parser:* Extracts structured data from HTML content.  
-     - *Utility Functions:* Shared routines for data cleaning and transformation.
+     - *B2Storage:* Integration with Backblaze B2 for object storage.  
+     - *QdrantStorage:* Integration with Qdrant for vector storage.  
+     - *MeilisearchStorage:* Integration with Meilisearch for markdown content.
    - **Key Considerations:**  
-     - Consistent data formatting to enable downstream processing.  
-     - Decoupling of parsing logic for flexibility in handling diverse sources.
+     - Efficient data storage and retrieval mechanisms.  
+     - Decoupling of storage logic for flexibility in handling diverse content types.
 
-3. **Data Analysis & Clustering:**  
+3. **Knowledge Graph (Neo4j):**  
    - **Components:**  
-     - *Interactive Notebooks:* Jupyter Notebooks in the notebooks/ directory facilitate exploratory analysis.  
-     - *Clustering & Embedding Generation:* Tools and scripts to analyze relationships and generate clusters from processed data.
+     - *Entity Management:* Creation and management of entities.  
+     - *Relationship Management:* Creation and management of relationships.  
+     - *Query Interface:* Interface for complex graph queries.
    - **Key Considerations:**  
-     - Clear separation between raw data and processed outputs.  
-     - Ability to reproduce analysis through versioned notebooks.
+     - Efficient graph traversal for complex queries.  
+     - Scalability for large knowledge graphs.
 
-4. **Inter-module Communication:**  
-   - **APIs & Interfaces:**  
-     - Defined contracts between modules to ensure smooth data flow.  
-     - Use of shared data formats (e.g., JSON, CSV) to encapsulate intermediate results.
-   - **Key Considerations:**  
-     - Modular design enables individual components to be tested and updated independently.  
-     - Clear interface definitions reduce coupling between modules.
-
-5. **Support for Deployment and Operation:**  
+4. **Context Management:**  
    - **Components:**  
-     - Environment configuration files (`requirements.txt`, `environment.yml`) to manage dependencies.  
-     - Scripts and documentation to guide deployment, monitoring, and maintenance.
+     - *Context Hierarchy:* Hierarchical structure for contexts.  
+     - *Context Merging:* Capability to merge contexts.  
+     - *Context Chain Tracking:* Tracking of context chains.
    - **Key Considerations:**  
-     - Ensuring that the runtime environment remains consistent across development, testing, and production.  
-     - Automating repetitive tasks such as environment setup with CI/CD pipelines.
+     - Efficient context retrieval and management.  
+     - Flexibility in context representation.
+
+5. **Workflow Orchestration:**  
+   - **Components:**  
+     - *Agent Framework:* Based on smolagents.  
+     - *Workflow Definitions:* Definitions of workflows.  
+     - *Agent Communication:* Communication between agents.
+   - **Key Considerations:**  
+     - Modular agent design.  
+     - Flexible workflow definitions.
+
+6. **Retrieval Interface:**  
+   - **Components:**  
+     - *Semantic Search:* Vector-based retrieval using Qdrant.  
+     - *Context-Aware Retrieval:* Retrieval with context consideration.  
+     - *Knowledge Graph Navigation:* Navigation through the knowledge graph.
+   - **Key Considerations:**  
+     - Efficient retrieval mechanisms.  
+     - User-friendly interface.
+
+**Integration Architecture:**
+```mermaid
+graph TD
+    A[API Layer] -->|Content| B[Storage Layer]
+    B -->|Raw Content| C[B2 Storage]
+    B -->|Vectors| D[Qdrant]
+    B -->|Markdown| E[Meilisearch]
+    C --> F[Knowledge Graph]
+    D --> F
+    E --> F
+    F --> G[Retrieval Interface]
+    H[Workflow Orchestration] -->|Controls| A
+    H -->|Manages| F
+```
 
 **Design Artifacts:**  
-- **Architecture Diagrams:** Visual representations (such as flowcharts or UML diagrams) detailing system components and interactions.  
+- **Architecture Diagrams:** Visual representations detailing system components and interactions.  
 - **Module Specifications:** Documentation outlining individual module responsibilities, data inputs/outputs, and API contracts.  
 - **Data Schemas:** Definitions for the structure of data used at various stages, including inputs, intermediate formats, and final outputs.
 
