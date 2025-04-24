@@ -53,6 +53,39 @@ For detailed information about the system architecture, implementation details, 
 - [Design and Architecture](memory_bank/design_and_architecture.txt)
 - [Project Description](memory_bank/project_description.txt)
 
+## Checking Development Status
+
+To stay informed about the current development status of the project, developers should regularly check the following resources:
+
+1. **Development Status Report**
+   - Location: `memory_bank/reports/development_status_report.md`
+   - Contains: Current sprint information, completed components, in-progress work, pending tasks, technical debt, and quality metrics
+   - Updated: Regularly (check the "Last Updated" date in the report)
+
+2. **Documentation Changelog**
+   - Location: `memory_bank/development/changelog/documentation_changelog.md`
+   - Contains: Recent documentation changes and updates
+   - Updated: With each significant documentation change
+
+3. **Git History**
+   - Command: `git log --since="1 day ago" --pretty=format:"%h - %s (%ad)" --date=short`
+   - Shows: Recent commits and changes
+   - Updated: With each commit
+
+4. **Documentation Standards**
+   - Location: `memory_bank/development/documentation_standards.md`
+   - Contains: Guidelines for maintaining and updating documentation
+   - Updated: As standards evolve
+
+Key information to track:
+- Current sprint and timeline
+- Completed components
+- In-progress development
+- Technical debt and risks
+- Quality metrics
+- Resource allocation
+- Dependencies and blockers
+
 ## Contributing
 
 Contributions are welcome! Please read our contributing guidelines before submitting pull requests.
