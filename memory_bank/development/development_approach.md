@@ -35,6 +35,26 @@ This approach allows us to:
 - Identify integration challenges early
 - Maintain flexibility as requirements evolve
 
+## Project Management
+
+### Sprint Structure
+- Bi-weekly sprints (14 days)
+- Sprint planning at the beginning of each sprint
+- Daily progress updates
+- Sprint review at the end of each sprint
+
+### Backlog Management
+- Backlog maintained in `memory_bank/project_management/backlog.md`
+- Tasks broken down into manageable units
+- Clear acceptance criteria for each task
+- Priority-based task ordering
+
+### Progress Tracking
+- Daily status updates
+- Weekly progress reports
+- Sprint velocity tracking
+- Documentation updates
+
 ## Key Development Steps
 
 ### Phase 1: Foundation (2-3 weeks)

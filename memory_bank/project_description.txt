@@ -10,6 +10,12 @@
   • Agent-based workflows for orchestrated research and analysis  
   • Interactive dashboard for system insights and data exploration
 
+- **Project Management:**  
+  • Sprint-based development with bi-weekly iterations  
+  • Comprehensive backlog tracking in `memory_bank/project_management/backlog.md`  
+  • Publication selection mechanism with quality assessment criteria  
+  • Regular progress tracking and documentation updates
+
 ---
 
 ### 2. Architecture and Directory Structure
@@ -20,6 +26,7 @@
   - **notebooks/**: Interactive Jupyter Notebooks for exploration and analysis.  
   - **springernature_api_client/**: Implementation for SpringerNature API.  
   - **dashboard/**: Visual interface for system insights and data exploration.
+  - **project_management/**: Contains backlog, sprint planning, and progress tracking.
   
 - **Purpose:**  
   This layout separates core functionalities into distinct areas to enhance maintainability, scalability, and ease of navigation.

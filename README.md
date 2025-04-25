@@ -52,15 +52,15 @@ For detailed information about the system architecture, implementation details, 
 - [Knowledge Retrieval System Architecture](memory_bank/2024-04-20_knowledge_retrieval_system_architecture.md)
 - [Design and Architecture](memory_bank/design_and_architecture.txt)
 - [Project Description](memory_bank/project_description.txt)
+- [Project Backlog and Publication Selection](memory_bank/project_management/backlog.md)
 
 ## Checking Development Status
 
 To stay informed about the current development status of the project, developers should regularly check the following resources:
 
 1. **Development Status Report**
-   - Location: `memory_bank/reports/development_status_report.md`
-   - Contains: Current sprint information, completed components, in-progress work, pending tasks, technical debt, and quality metrics
-   - Updated: Regularly (check the "Last Updated" date in the report)
+   - Located in `memory_bank/reports/`
+   - Updated bi-weekly with sprint progress
 
 2. **Documentation Changelog**
    - Location: `memory_bank/development/changelog/documentation_changelog.md`
