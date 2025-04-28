@@ -17,6 +17,7 @@ The Research Assistant employs a multi-agent system with specialized agents for 
 ### 2. Workflow Orchestration
 The system uses LangGraph and CrewAI for workflow orchestration. For implementation details and best practices, see:
 - [Workflow Orchestration](workflow_orchestration.md)
+- [LangGraph and CrewAI Integration](langgraph_crewai_integration.md)
 
 ### 3. State Management
 The system maintains complex state across different components. For state management architecture and implementation details, see:
@@ -30,11 +31,15 @@ The system implements a sophisticated memory system with different types and man
 The system uses multiple LLMs with different configurations and strategies. For implementation details, see:
 - [Multi-LLM Architecture](multi_llm_architecture.md)
 
-### 6. Request Processing
+### 6. Security and Guardrails
+The system implements comprehensive security measures and safety guardrails. For detailed information, see:
+- [Security Guidelines and Guardrails](security_guidelines.md)
+
+### 7. Request Processing
 The system includes intelligent request analysis and routing. For implementation details, see:
 - [Request Processing System](request_processing.md)
 
-### 7. Storage Architecture
+### 8. Storage Architecture
 The system implements a hybrid cloud architecture for data storage. For implementation details, see:
 - [Storage Architecture](storage_architecture.md)
 
