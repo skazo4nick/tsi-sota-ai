@@ -1,20 +1,11 @@
 ### Design and Architecture
 
 **System Overview:**  
-The Knowledge Retrieval Agentic System is built on a modular design with clearly defined boundaries between API integration, storage, knowledge representation, context management, and workflow orchestration. The architecture facilitates scalability, maintainability, and extensibility across all stages of development.
+The Research Assistant system is a multi-agent application built on LangGraph and CrewAI, designed to process and analyze scientific publications from various sources.
 
-**Architecture Components:**
+**Core Components:**
 
-1. **API Integration Layer:**  
-   - **Modules:**  
-     - *BaseAPIClient:* Abstract base class for API clients.  
-     - *SpringerAPIClient:* Implementation for SpringerNature API.  
-     - *CoreAPIClient:* Implementation for CORE API.
-   - **Key Considerations:**  
-     - Standardized interface for content retrieval.  
-     - Extensibility for future API integrations.
-
-2. **Storage Layer:**  
+1. **Storage Layers:**  
    - **Modules:**  
      - *B2Storage:* Integration with Backblaze B2 for object storage.  
      - *QdrantStorage:* Integration with Qdrant for vector storage.  
@@ -23,41 +14,47 @@ The Knowledge Retrieval Agentic System is built on a modular design with clearly
      - Efficient data storage and retrieval mechanisms.  
      - Decoupling of storage logic for flexibility in handling diverse content types.
 
-3. **Knowledge Graph (Neo4j):**  
-   - **Components:**  
-     - *Entity Management:* Creation and management of entities.  
-     - *Relationship Management:* Creation and management of relationships.  
-     - *Query Interface:* Interface for complex graph queries.
+2. **Data Sources:**  
+   - **Modules:**  
+     - *ArxivAPIClient:* Implementation for Arxiv API.  
+     - *SemanticScholarAPIClient:* Implementation for Semantic Scholar API.  
+     - *CoreAPIClient:* Implementation for CORE API.  
+     - *OpenAlexAPIClient:* Implementation for Open Alex API.
    - **Key Considerations:**  
-     - Efficient graph traversal for complex queries.  
-     - Scalability for large knowledge graphs.
+     - Standardized interface for content retrieval.  
+     - Extensibility for future API integrations.
 
-4. **Context Management:**  
-   - **Components:**  
-     - *Context Hierarchy:* Hierarchical structure for contexts.  
-     - *Context Merging:* Capability to merge contexts.  
-     - *Context Chain Tracking:* Tracking of context chains.
-   - **Key Considerations:**  
-     - Efficient context retrieval and management.  
-     - Flexibility in context representation.
+**Agent Architecture:**
 
-5. **Workflow Orchestration:**  
-   - **Components:**  
-     - *Agent Framework:* Based on smolagents.  
-     - *Workflow Definitions:* Definitions of workflows.  
-     - *Agent Communication:* Communication between agents.
-   - **Key Considerations:**  
-     - Modular agent design.  
-     - Flexible workflow definitions.
+1. **Research Agents:**  
+   - **Publication Retrieval Agent:** Handles API interactions, manages rate limits, and normalizes data formats.  
+   - **Content Analysis Agent:** Processes text content, extracts key information, and identifies relationships.  
+   - **Image Analysis Agent:** Uses Gemini 2.5 Flash for image recognition, processes scientific visualizations, extracts information from graphs and diagrams, and is implemented in [Image and Table Analysis ADR](2024_04_29_adr_image_table_analysis.md).  
+   - **Table Analysis Agent:** Uses Mistral Structured OCR, processes tabular data, implements pandas for data analysis, and is implemented in [Image and Table Analysis ADR](2024_04_29_adr_image_table_analysis.md).
 
-6. **Retrieval Interface:**  
-   - **Components:**  
-     - *Semantic Search:* Vector-based retrieval using Qdrant.  
-     - *Context-Aware Retrieval:* Retrieval with context consideration.  
-     - *Knowledge Graph Navigation:* Navigation through the knowledge graph.
-   - **Key Considerations:**  
-     - Efficient retrieval mechanisms.  
-     - User-friendly interface.
+2. **Communication Layer:** Text-based communication between agents, shared memory implementation, and state management through LangGraph.
+
+**Processing Pipeline:**
+
+1. **Initial Processing:** PDF extraction, content classification, metadata extraction.
+2. **Content Analysis:** Text processing, image analysis (via Image Analysis Agent), table processing (via Table Analysis Agent).
+3. **Information Integration:** Data normalization, relationship mapping, knowledge graph updates.
+
+**Integration Points:**
+
+1. **External Services:**  
+   - **Cloud Services:** Qdrant Cloud for vector storage, Meilisearch for full-text search, object storage for documents.  
+   - **AI Services:** Multiple LLM providers, Gemini 2.5 Flash for image analysis, Mistral OCR for table extraction.
+
+**Monitoring and Maintenance:**
+
+1. **Performance Metrics:** Processing times, API usage, storage efficiency, agent performance.
+2. **Quality Metrics:** Content extraction accuracy, relationship identification, data consistency, processing completeness.
+
+**References:**
+1. [Research Agent Architecture ADR](2024_04_23_adr_research_agent_architecture.md)
+2. [Image and Table Analysis ADR](2024_04_29_adr_image_table_analysis.md)
+3. [Knowledge Retrieval System Architecture](2024_04_20_knowledge_retrieval_system_architecture.md)
 
 **Integration Architecture:**
 ```mermaid
@@ -72,6 +69,8 @@ graph TD
     F --> G[Retrieval Interface]
     H[Workflow Orchestration] -->|Controls| A
     H -->|Manages| F
+    I[Context Management] -->|Enriches| F
+    I -->|Provides Context| G
 ```
 
 **Design Artifacts:**  
@@ -83,5 +82,7 @@ graph TD
 - **Modularity:** Allows easier maintenance, testing, and scalability.  
 - **Clarity in Data Flow:** Supports reproducible analysis and smooth transitions between project phases.  
 - **Scalability & Flexibility:** Enables integration of new data sources and analytic techniques without major overhauls.
+- **Context Awareness:** Ensures accurate and relevant information retrieval through comprehensive context management.
+- **Workflow Efficiency:** Optimizes agent interactions and task execution through robust orchestration.
 
 This document serves as a technical reference throughout development and will be updated as the project evolves.
