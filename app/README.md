@@ -10,7 +10,7 @@ This application is designed to automate the process of downloading research art
 
 ## Description of the App
 
-The Article Downloader and Thematic Organizer is an IPython Notebook application built to streamline the collection and organization of scientific research publications. It takes a CSV file as input, containing a list of articles with metadata like titles, DOIs, and abstracts.
+The Article Downloader and Thematic Organizer, primarily orchestrated by the `../notebooks/article_downloader.ipynb` Jupyter Notebook, is designed to streamline the collection and organization of scientific research publications. It takes a CSV file as input, containing a list of articles with metadata like titles, DOIs, and abstracts.
 
 **Key Features:**
 
@@ -32,7 +32,7 @@ The Article Downloader and Thematic Organizer is an IPython Notebook application
 
 **Workflow:**
 
-1.  **Input Data:** Takes a CSV file (`articles.csv` by default) as input, listing articles with metadata (DOI, title, abstract, etc.).
+1.  **Input Data:** Takes a CSV file (e.g., `data/references/your_articles.csv`) as input. The specific path and filename should be configured within the `../notebooks/article_downloader.ipynb` notebook.
 2.  **Content Retrieval:** For each article in the input CSV:
     *   Resolves the article's journal page URL using the DOI.
     *   Attempts to download the full text in Markdown format by parsing the HTML of the journal page.
@@ -41,7 +41,7 @@ The Article Downloader and Thematic Organizer is an IPython Notebook application
     *   Generates embeddings for article abstracts (placeholder for future implementation).
     *   Clusters articles based on these embeddings using K-Means clustering.
     *   Assigns a cluster ID to each article.
-4.  **PDF Organization (Optional):** If clustering is enabled, organizes downloaded PDFs into folders named after their cluster IDs (e.g., `data/pdfs/cluster_0/`, `data/pdfs/cluster_1/`).
+4.  **PDF Organization (Optional):** If clustering is enabled, organizes downloaded PDFs into folders as configured in `config.yaml` (e.g., `data/pdfs/cluster_0/` by default, relative to the project root).
 5.  **Data Storage:** Creates a pandas DataFrame containing:
     *   Original article metadata from the input CSV.
     *   Full-text Markdown content (if retrieved).
@@ -49,21 +49,11 @@ The Article Downloader and Thematic Organizer is an IPython Notebook application
     *   Retrieval method used.
     *   Download success status.
     *   Cluster ID (if clustering is enabled).
-    *   Saves the DataFrame to a JSON file (`processed_articles_fulltext.json` by default).
+    *   Saves the DataFrame to a JSON file (e.g., `data/processed_articles_fulltext.json`, path configurable in the notebook, relative to project root).
 
 ## Project Structure
-article_downloader_project/  
-article_downloader.ipynb # Main IPython Notebook - User interface and main workflow  
-config.yaml # Configuration file in YAML format - Application settings  
-.env # Environment variables - Sensitive configuration (API keys)  
-requirements.txt # Python dependencies - List of required Python packages  
-.gitignore # Git ignore file - Specifies intentionally untracked files that Git should ignore  
-environment.yml # Conda environment definition (optional) - For creating a reproducible Conda environment  
-utils.py # Utility functions and Config class - Configuration loading, logging setup, helper functions  
-pdf_downloader.py # PDF downloading related functions - Logic for resolving PDF URLs and downloading PDFs  
-html_parser.py # HTML parsing related functions - Functions for parsing HTML content to Markdown  
-data/ # Data directory - Storage for output data  
-pdfs/ # Subdirectory for downloaded PDFs - Organized by cluster ID
+
+The components of this application module (`core_api_downloader.py`, `html_parser.py`, etc.) are located within the `app/` directory. Configuration is managed by `app/config.yaml` and `/.env` (at the project root).
 
 
 ## Third-Party Services Used
@@ -97,13 +87,13 @@ Before running the Article Downloader and Thematic Organizer, you need to comple
 1.  **Install Python:** Ensure you have Python 3.7 or higher installed on your system. It's recommended to use Python 3.11 as specified in `environment.yml`.
 2.  **Install Conda (Recommended):** It is highly recommended to use Conda to manage your Python environment and dependencies. If you don't have Conda installed, follow the instructions on the [Anaconda website](https://www.anaconda.com/products/distribution).
 3.  **Create Conda Environment (Optional but Recommended):**
-    *   Navigate to the project directory in your terminal: `cd article_downloader_project`
-    *   Create the Conda environment from the `environment.yml` file: `conda env create -f environment.yml`
-    *   Activate the environment: `conda activate article_downloader_env`
+    *   From the project root, run `conda env create -f app/environment.yml`. Alternatively, navigate to the `app/` directory and run `conda env create -f environment.yml`.
+    *   Activate the environment: `conda activate article_downloader_env` (Ensure `article_downloader_env` is the name defined in `app/environment.yml`).
 4.  **Install Python Dependencies (Alternative to Conda):** If you are not using Conda, you can install the required Python packages using pip.
-    *   Navigate to the project directory in your terminal: `cd article_downloader_project`
-    *   Install dependencies from `requirements.txt`: `pip install -r requirements.txt`
-5.  **Prepare Input CSV File:** Create a CSV file named `articles.csv` (or adjust the filename in `article_downloader.ipynb`) in the project directory. This file should contain a list of research articles with at least the following columns: `doi`, `title`, and `abstract`. Example CSV structure (first line is header):
+    *   Navigate to the project root directory (e.g., `/SCS_Module`).
+    *   Install dependencies from `requirements.txt`: `pip install -r requirements.txt`.
+    *   Note: This project primarily uses the root `requirements.txt`. The `app/requirements.txt` file may contain dependencies specific to the app module if run in isolation, but for the integrated project, the root file and `app/environment.yml` are preferred.
+5.  **Prepare Input CSV File:** Prepare your input CSV file (e.g., based on examples in `data/references/`) and update its path in the `../notebooks/article_downloader.ipynb` notebook. The paths in the notebook should be relative to the project root. Example CSV structure (first line is header):
 
     ```csv
     date,title,doi,authors,journal,short_journal,volume,year,publisher,issue,page,abstract
@@ -113,11 +103,11 @@ Before running the Article Downloader and Thematic Organizer, you need to comple
     ```
 
 6.  **Configuration (Optional):**
-    *   **`config.yaml`:**  Review and adjust settings in the `config.yaml` file as needed. This file allows you to configure clustering, rate limiting, choice of HTML parser, and other application parameters.
+    *   **`config.yaml`:**  Review and adjust settings in the `app/config.yaml` file as needed. This file allows you to configure clustering, rate limiting, choice of HTML parser, and other application parameters. Paths within `config.yaml` (like `pdf_dir_root`, `cluster_dir_format`) are relative to the project root directory (e.g., `./data/pdfs` means `<project_root>/data/pdfs`).
     *   **`.env`:**  This file is used to store sensitive configuration information, such as API keys.
         *   **Jina AI API Key (Required if using Jina Reader API):** If you want to use the Jina Reader API for HTML parsing (which may offer improved parsing quality), you need to:
             *   Obtain a free Jina AI API key from [https://jina.ai/?sui=apikey](https://jina.ai/?sui=apikey).
-            *   Create a `.env` file in the `article_downloader_project` directory (if it doesn't exist).
+            *   Create a `.env` file in the project root directory (i.e., `/SCS_Module/.env`) (if it doesn't exist).
             *   Add the following line to your `.env` file, replacing `YOUR_JINA_API_KEY` with your actual API key:
 
                 ```env
@@ -136,9 +126,9 @@ Before running the Article Downloader and Thematic Organizer, you need to comple
 
 The application's behavior can be configured using two files: `config.yaml` and `.env`.
 
-*   **`config.yaml`:** This file contains general application settings in YAML format. You can modify the following parameters:
-    *   `pdf_dir_root`:  Root directory where downloaded PDFs will be stored (default: `./data/pdfs`).
-    *   `cluster_dir_format`: Format string for cluster-specific PDF directories (default: `./data/cluster_{}`).
+*   **`app/config.yaml`:** This file, located in `app/config.yaml`, contains general application settings in YAML format. Paths within this file (e.g., `pdf_dir_root`, `cluster_dir_format`) are relative to the project root directory. You can modify the following parameters:
+    *   `pdf_dir_root`:  Root directory where downloaded PDFs will be stored (default: `data/pdfs`, relative to project root).
+    *   `cluster_dir_format`: Format string for cluster-specific PDF directories (default: `data/cluster_{}`, relative to project root).
     *   `use_clustering_in_pipeline`:  Boolean flag to enable or disable thematic clustering of articles (default: `true`).
     *   `n_clusters`:  Number of clusters to use for K-Means clustering (default: `20`).
     *   `user_agent`:  User-Agent string used for HTTP requests (default: `"MyArticleDownloader/1.0 (Contact: your-email@example.com)"`).
@@ -150,8 +140,8 @@ The application's behavior can be configured using two files: `config.yaml` and 
     *   `openai_api_key`: API key for OpenAI API (optional, for future embedding generation).
     *   `google_api_key`: API key for Google API (optional, for future embedding generation - e.g., Gemini).
 
-*   **`.env`:** This file is used to store sensitive information as environment variables. **It is crucial to keep this file secure and NOT commit it to public version control.** You should add the following API keys to your `.env` file if you intend to use the corresponding features (create the file if it doesn't exist in the `article_downloader_project` directory):
-    *   `JINA_API_KEY`: Your Jina AI Reader API key (required if you set `use_jina_reader_api_config: true` in `config.yaml`). Get it from [https://jina.ai/?sui=apikey](https://jina.ai/?sui=apikey).
+*   **`.env`:** This file is used to store sensitive information as environment variables. **It is crucial to keep this file secure and NOT commit it to public version control.** You should add the following API keys to your `.env` file if you intend to use the corresponding features (create the file if it doesn't exist in the project root directory):
+    *   `JINA_API_KEY`: Your Jina AI Reader API key (required if you set `use_jina_reader_api_config: true` in `app/config.yaml`). Get it from [https://jina.ai/?sui=apikey](https://jina.ai/?sui=apikey).
     *   `OPENAI_API_KEY`: Your OpenAI API key (optional, for future embedding generation). Obtain it from the OpenAI platform.
     *   `GOOGLE_API_KEY`: Your Google API key (optional, for future embedding generation - e.g., Gemini). Obtain it from the Google Cloud Console.
     *   `CORE_API_KEY`: Your CORE API key (optional, for future CORE API integration). Obtain it by registering on the CORE website.
@@ -165,37 +155,26 @@ The application's behavior can be configured using two files: `config.yaml` and 
     # CORE_API_KEY=YOUR_CORE_API_KEY      # Optional, uncomment and add if needed
     ```
 
-    **Important:**  When using the Jina Reader API, ensure that you have set the `JINA_API_KEY` in your `.env` file and set `use_jina_reader_api_config: true` in `config.yaml`. If `use_jina_reader_api_config` is `false` or if the `JINA_API_KEY` is not found in `.env`, the application will default to using BeautifulSoup and html2text for HTML parsing.
+    **Important:**  When using the Jina Reader API, ensure that you have set the `JINA_API_KEY` in your `.env` file and set `use_jina_reader_api_config: true` in `app/config.yaml`. If `use_jina_reader_api_config` is `false` or if the `JINA_API_KEY` is not found in `.env`, the application will default to using BeautifulSoup and html2text for HTML parsing.
 
 ## Usage Instructions
 
-1.  **Activate Conda Environment (if used):** `conda activate article_downloader_env`
-2.  **Navigate to Project Directory:** In your terminal, navigate to the `article_downloader_project` directory. **It is recommended to run the Jupyter Notebook from the root directory of the project (`article_downloader_project/`) for proper module resolution.**
-
-    **Alternative: Running from `/app` Subfolder (Less Recommended):**
-
-    If you prefer to run the notebook from the `/app` subfolder (`article_downloader_project/app/`), you need to ensure that Python can find the `app` package correctly. You can do this in one of two ways:
-
-    *   **Option 1: Add `__init__.py` to `app` Folder:** Create an empty file named `__init__.py` inside the `app` directory (`article_downloader_project/app/__init__.py`). This explicitly tells Python that `app` is a package. You can then run Jupyter Notebook from the `/app` directory.
-
-    *   **Option 2: Move Notebook to Project Root:** Move the `article_downloader.ipynb` file from the `app` directory to the project root (`article_downloader_project/`). Then, navigate to the project root (`article_downloader_project/`) in your terminal and start Jupyter Notebook from there.  This is the cleaner and recommended approach for project structure.
-
-    **Note:** If you choose to run from the project root or use Option 2, you may need to adjust the import statements in `article_downloader.ipynb` to reflect the new location of the notebook relative to the `app` package (see comments in the notebook for potential import adjustments). For example, if notebook is in the root, imports might look like `from app.utils import ...`.
-
-3.  **Start Jupyter Notebook:** Run `jupyter notebook` or `jupyter lab` in your terminal (from the project root or `/app` if using Option 1). This will open the Jupyter Notebook interface in your web browser.
-4.  **Open `article_downloader.ipynb`:**  Open the `article_downloader.ipynb` file in the Jupyter Notebook interface.
+1.  **Activate Conda Environment (if used):** `conda activate article_downloader_env` (Ensure this is the name defined in `app/environment.yml`).
+2.  **Navigate to Project Directory:** In your terminal, navigate to the project root directory (e.g., `/SCS_Module`). **It is recommended to run the Jupyter Notebook (`notebooks/article_downloader.ipynb`) from the project root directory for proper module and path resolution.**
+3.  **Start Jupyter Notebook:** Run `jupyter notebook` or `jupyter lab` in your terminal (from the project root). This will open the Jupyter Notebook interface in your web browser.
+4.  **Open `notebooks/article_downloader.ipynb`:**  Open the `notebooks/article_downloader.ipynb` file in the Jupyter Notebook interface.
 5.  **Run the Notebook Cells:** Execute the notebook cells sequentially by clicking on each cell and pressing `Shift + Enter`.
-6.  **Monitor Progress and Logs:** Observe the output of each cell and check the `scraper.log` file in the project directory for detailed logs, including progress, warnings, and errors.
+6.  **Monitor Progress and Logs:** Observe the output of each cell. Logs (e.g., `scraper.log`, if generated by the notebook) will typically be created in the directory from which the notebook is run (i.e., the project root). Ensure logging paths are configured as needed within the notebook or its imported modules.
 7.  **Output Data:**
-    *   **`processed_articles_fulltext.json`:**  The processed DataFrame containing article metadata, full text, PDF paths, etc., will be saved in the project directory as a JSON file.
-    *   **`data/pdfs/`:** If PDF downloading and cluster-based organization are enabled, downloaded PDF files will be stored in subfolders within the `data/pdfs/` directory, organized by cluster ID.
+    *   **`processed_articles_fulltext.json`:**  The processed DataFrame containing article metadata, full text, PDF paths, etc., will be saved to a path configured in the notebook (e.g., `data/processed_articles_fulltext.json`, relative to project root).
+    *   **`data/pdfs/`:** If PDF downloading ... downloaded PDF files will be stored in subfolders within the directory specified in `app/config.yaml` (e.g. `data/pdfs/` by default, relative to project root)...
 
 ## Optional Features and Customization
 
-*   **Clustering:** You can enable or disable thematic clustering of articles by modifying the `use_clustering_in_pipeline` setting in `config.yaml`. You can also adjust the number of clusters (`n_clusters`).
-*   **HTML Parser:** Currently, the application uses BeautifulSoup and html2text for HTML parsing. Future versions may support switching to Jina-AI WebReader for potentially improved parsing accuracy by modifying the `parse_article_html` function in `html_parser.py`.
-*   **Rate Limiting:** You can adjust rate limiting parameters (minimum and maximum delay between requests) in the `config.yaml` file to control the scraping speed and be more respectful to journal websites.
-*   **API Integration:** Future enhancements will include integration with Unpaywall and CORE APIs to improve PDF retrieval. You will be able to configure API keys in the `.env` file and enable/disable API usage in `config.yaml`. Embedding model integration (OpenAI, Google) for clustering will also be configurable in future versions.
+*   **Clustering:** You can enable or disable thematic clustering of articles by modifying the `use_clustering_in_pipeline` setting in `app/config.yaml`. You can also adjust the number of clusters (`n_clusters`).
+*   **HTML Parser:** Currently, the application uses BeautifulSoup and html2text for HTML parsing. Future versions may support switching to Jina-AI WebReader for potentially improved parsing accuracy by modifying the `parse_article_html` function in `html_parser.py` (located in `app/html_parser.py`).
+*   **Rate Limiting:** You can adjust rate limiting parameters (minimum and maximum delay between requests) in the `app/config.yaml` file to control the scraping speed and be more respectful to journal websites.
+*   **API Integration:** Future enhancements will include integration with Unpaywall and CORE APIs to improve PDF retrieval. You will be able to configure API keys in the `.env` file (at project root) and enable/disable API usage in `app/config.yaml`. Embedding model integration (OpenAI, Google) for clustering will also be configurable in future versions.
 
 ## Ethical Considerations and Disclaimer
 

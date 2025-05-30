@@ -4,22 +4,22 @@ channels:
   - defaults
 dependencies:
   - python=3.11  # Or your preferred Python version
-  - pandas
-  - requests
-  - jinaai # Or jina, if you prefer the original Jina library
-  - beautifulsoup4
-  - html2text
-  - scikit-learn
-  - python-dotenv
-  - tqdm
-  - pydantic-settings
-  - pyyaml
-  - aiohttp
-  - requests-cache
-  - diskcache
-  - pytest
-  - requests-mock
-  - responses
-  - ipykernel # To run IPython Notebooks in this environment
-  - notebook   # To run Jupyter Notebook
+  - pandas==2.2.0
+  - requests==2.31.0
+  - jinaai==0.9.4 # Or jina, if you prefer the original Jina library
+  - beautifulsoup4==4.12.3
+  - html2text==2020.1.16
+  - scikit-learn==1.4.0
+  - python-dotenv==1.0.0
+  - tqdm==4.66.1
+  - pydantic-settings==2.2.1
+  - pyyaml==6.0.1
+  - aiohttp==3.9.3
+  - requests-cache==1.1.1
+  - diskcache==5.6.3
+  - pytest==8.3.4
+  - requests-mock==1.11.0
+  - responses==0.25.0
+  - ipykernel==6.29.3 # To run IPython Notebooks in this environment
+  - notebook==7.1.2   # To run Jupyter Notebook
   - b2sdk==2.8.0
