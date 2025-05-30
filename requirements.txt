@@ -6,7 +6,7 @@ fastapi==0.109.2
 html2text==2020.1.16
 httpx==0.26.0
 ipykernel==6.29.3
-jinaai==0.9.4
+jinaai==0.2.10
 meilisearch==0.35.0
 neo4j==5.14.1
 notebook==7.1.2
