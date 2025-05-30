@@ -58,7 +58,7 @@ This project uses both `requirements.txt` (at the root) and `app/environment.yml
     3.  Create and activate the environment:
         ```bash
         conda env create -f environment.yml
-        conda activate article_downloader_env 
+        conda activate article_downloader_env
         ```
     *(Note: The main `requirements.txt` and `app/environment.yml` should be kept largely consistent. If using Conda, managing dependencies primarily through `app/environment.yml` is advised for the article processing workflow.)*
 
