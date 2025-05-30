@@ -22,12 +22,14 @@ The system is built on a modular architecture with the following key components:
 The project is organized into several key components:
 
 - **data/**: Contains datasets used for knowledge retrieval and analysis
-- **app/**: Includes Python scripts for data retrieval, processing, analysis, and visualization
-- **notebooks/**: Jupyter notebooks demonstrating exploratory data analysis and key findings
-- **memory_bank/**: Documentation and architectural decisions
+- **app/**: Contains Python scripts and modules for data retrieval (e.g., `core_api_downloader.py`, `sn_xml_downloader.py`), processing (`html_parser.py`, `pdf_ocr.py`), and related utilities. Detailed documentation for this component can be found in `app/README.md`.
+- **notebooks/**: Jupyter notebooks for exploratory data analysis, workflow execution (e.g., `article_downloader.ipynb`), and experimental work.
+- **memory_bank/**: Stores key architectural decision records (ADRs), design documents, project planning notes (like `project_description.txt`), and other core guiding documentation for the system's development and evolution.
 - **springernature_api_client/**: Implementation for SpringerNature API
 - **dashboard/**: Visual interface for system insights
 - **requirements.txt**: Lists the required Python packages for the project
+- **app/environment.yml**: Conda environment file for setting up the development environment, primarily for the `app` components. See "Dependency Management" section below.
+- **body_of_knowledge/**: Contains detailed research notes, literature reviews, and explorations of specific concepts relevant to the project.
 
 ## Key Features
 
@@ -43,12 +45,30 @@ The project is organized into several key components:
 1. Clone the repository
 2. Install dependencies: `pip install -r requirements.txt`
 3. Configure API keys and storage credentials
-4. Run the application: `python app/main.py`
+4. The primary application workflow for article downloading and processing is initiated via the Jupyter Notebook: `notebooks/article_downloader.ipynb`. Refer to `app/README.md` for detailed instructions on its usage and configuration. For the dashboard, see `dashboard/README.md`.
+
+## Dependency Management
+
+This project uses both `requirements.txt` (at the root) and `app/environment.yml` (for Conda users) to manage Python dependencies.
+
+*   **`requirements.txt`**: Contains a list of core Python packages required for the entire project. Install using `pip install -r requirements.txt`. This is the recommended way to install dependencies for general use.
+*   **`app/environment.yml`**: Defines a Conda environment specifically tailored for the development and execution of components within the `app/` directory, including the `notebooks/article_downloader.ipynb` workflow. It includes all necessary packages and ensures a consistent environment. To use it:
+    1.  Ensure you have Conda installed.
+    2.  Navigate to the `app/` directory.
+    3.  Create and activate the environment:
+        ```bash
+        conda env create -f environment.yml
+        conda activate article_downloader_env 
+        ```
+    *(Note: The main `requirements.txt` and `app/environment.yml` should be kept largely consistent. If using Conda, managing dependencies primarily through `app/environment.yml` is advised for the article processing workflow.)*
 
 ## Documentation
 
 For detailed information about the system architecture, implementation details, and design decisions, please refer to:
 
+- [Overall Project Structure and Core Concepts](README.md) (this document)
+- [Application Modules and Article Processing (app/)](app/README.md)
+- [Dashboard Functionality (dashboard/)](dashboard/README.md)
 - [Knowledge Retrieval System Architecture](memory_bank/2024-04-20_knowledge_retrieval_system_architecture.md)
 - [Design and Architecture](memory_bank/design_and_architecture.txt)
 - [Project Description](memory_bank/project_description.txt)

@@ -1,19 +1,11 @@
-pandas
-requests
-jinaai # Or jina, if you prefer the original Jina library
-beautifulsoup4
-html2text
-scikit-learn
-python-dotenv
-tqdm
-pydantic-settings
-pyyaml
-aiohttp
-requests-cache
-diskcache
-pytest
-requests-mock
-responses
-ipykernel
-notebook
-b2sdk
+# This project now uses the root requirements.txt for pip-based dependencies
+# and app/environment.yml for Conda environments.
+#
+# Please refer to the main README.md for instructions on setting up your environment.
+#
+# To install dependencies using pip, use the root requirements file:
+# pip install -r ../requirements.txt
+#
+# To set up a Conda environment for the app and notebooks:
+# conda env create -f environment.yml
+# conda activate article_downloader_env
