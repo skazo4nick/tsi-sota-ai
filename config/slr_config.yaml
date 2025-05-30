@@ -1,0 +1,64 @@
+# Configuration for the SLR Analytics Application
+
+# --- Data Paths ---
+# Paths are relative to the project root directory.
+data_paths:
+  raw_data_dir: "data/slr_raw/"          # For raw data from APIs
+  processed_data_dir: "data/slr_processed/" # For cleaned and structured data
+  analysis_output_dir: "data/slr_analysis/" # For keyword lists, embeddings, cluster assignments
+  reports_output_dir: "output/slr_reports/" # For plots and final reports/tables
+  # Add specific filenames if they are constant, otherwise they can be generated dynamically.
+  processed_articles_file: "slr_processed_articles.csv"
+  # Example: embedding_model_path: "models/bge-m3" # If hosting model locally
+
+# --- Default Search Parameters ---
+# These can be overridden by parameters passed to functions or CLI arguments.
+default_search_params:
+  start_year: 2020
+  end_year: 2024 # Update as needed
+  max_results_per_source: 100 # Default for comprehensive runs, can be set lower for testing
+  # Default query - can be general or overridden.
+  # query: "agentic AI in Supply Chain Management OR LLM logistics"
+
+# --- API Client Settings ---
+# API keys should primarily be managed via .env file.
+# These settings are for non-sensitive parameters or if an API needs specific base URLs not hardcoded.
+api_settings:
+  CORE:
+    # base_url: "https://api.core.ac.uk/v3/" # Already in client, but could be here
+    # any_other_core_specific_setting: value
+  arXiv:
+    # base_url: "http://export.arxiv.org/api/" # Already in client
+    # default_sort_by: "submittedDate"
+  OpenAlex:
+    # base_url: "https://api.openalex.org/" # Already in client
+    # polite_pool_email: "your_registered_email@example.com" # Also in .env for api_clients.py, good to keep consistent if specified here too.
+
+# --- NLP & Keyword Analysis Settings ---
+keyword_analysis:
+  # For NLP-based keyword extraction (e.g., TF-IDF, RAKE, YAKE!)
+  # min_df: 2 # Minimum document frequency for TF-IDF
+  # max_df: 0.85 # Maximum document frequency for TF-IDF
+  # ngram_range: [1, 2] # Consider unigrams and bigrams
+  # stop_words: "english" # Or a custom list path
+  # top_n_keywords: 20 # Number of top keywords to extract per document or globally
+
+# --- Semantic Embedding & Clustering Settings ---
+semantic_analysis:
+  # embedding_model_name: "BAAI/bge-m3" # As specified in requirements
+  # embedding_device: "cpu" # or "cuda" if GPU is available
+  # KMeans:
+  #  default_n_clusters: 10 # Example, needs tuning
+  #  random_state: 42
+  # UMAP: # For dimensionality reduction for visualization
+  #  n_neighbors: 15
+  #  min_dist: 0.1
+  #  n_components: 2
+  #  metric: "cosine"
+  #  random_state: 42
+
+# --- Logging Configuration (Basic) ---
+# For more advanced logging, a logging.conf file might be better.
+logging:
+  level: "INFO" # DEBUG, INFO, WARNING, ERROR, CRITICAL
+  # log_file: "logs/slr_app.log" # If file logging is desired
