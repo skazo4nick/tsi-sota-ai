@@ -4,7 +4,7 @@ channels:
   - defaults
 dependencies:
   - python=3.11  # Or your preferred Python version
-  - pandas==2.2.0
+  - pandas==2.2.2
   - requests==2.31.0
   - jinaai==0.2.10 # Or jina, if you prefer the original Jina library
   - beautifulsoup4==4.12.3
