@@ -8,7 +8,7 @@ httpx==0.26.0
 ipykernel==6.29.3
 jinaai==0.2.10
 meilisearch==0.34.1
-neo4j==5.14.1
+neo4j==5.20.0
 notebook==7.1.2
 numpy==1.26.3
 pandas==2.2.0
