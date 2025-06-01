@@ -33,7 +33,7 @@ The project is organized into several key components:
 
 ## Key Features
 
-- **Multi-Source Content Retrieval**: Integration with academic APIs (SpringerNature, CORE) for comprehensive content access
+- **Multi-Source Content Retrieval**: Integration with academic APIs (SpringerNature, CORE) for comprehensive content access. The CORE API integration supports keyword-based search, metadata retrieval by DOI, and full text retrieval by DOI (see `app/README.md` and `core_api_client.py`).
 - **Semantic Search**: Vector-based retrieval using Qdrant for context-aware search
 - **Knowledge Graph**: Neo4j-based graph for relationship discovery and complex querying
 - **Context-Aware Retrieval**: Hierarchical context management for improved search relevance

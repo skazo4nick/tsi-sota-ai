@@ -62,7 +62,11 @@ This application currently utilizes the following third-party services and libra
 
 *   **Jina AI WebReader (or BeautifulSoup + html2text):**  Used for parsing HTML content from journal websites and extracting article text in Markdown format. Jina-AI WebReader is a more advanced option potentially offering better accuracy and handling of complex HTML structures. BeautifulSoup and html2text provide a simpler, widely-used alternative.
 *   **Unpaywall API (Future Enhancement):**  Planned for future integration to enhance PDF retrieval by leveraging Unpaywall's extensive database of open access articles and direct links to PDFs.  Requires a free Unpaywall API key (email registration may be required).
-*   **CORE API (Future Enhancement):** Planned for future integration as an alternative or supplementary source for open access article retrieval, especially for articles in repositories. May require a free CORE API key.
+*   **CORE API:** Integrated as a source for open access article retrieval, especially for articles in repositories. Requires a free CORE API key. The following features are supported:
+    *   **Search by Keywords:** Uses the `/search/works` endpoint to retrieve publications matching a keyword query. Returns metadata including DOI, title, authors, abstract, etc.
+    *   **Retrieve by DOI:** Uses the `/works/{doi}` endpoint to fetch metadata for a specific publication by DOI.
+    *   **Retrieve Full Text by DOI:** Uses the `/discover` endpoint to attempt to retrieve the full text for a publication by DOI (if available).
+    *   See `core_api_client.py` for usage examples and details.
 *   **OpenAI or Google Embedding Models (Future Enhancement):** Placeholder for integrating embedding models from OpenAI (e.g., `text-embedding-3-small`) or Google (e.g., Gemini via `google-generativeai`) to generate embeddings for article abstracts, enabling semantic clustering. Requires API keys for the respective services.
 *   **Python Libraries:**
     *   **pandas:** For data manipulation and storage in DataFrames.
