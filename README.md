@@ -25,7 +25,7 @@ The project is organized into several key components:
 - **app/**: Contains Python scripts and modules for data retrieval (e.g., `core_api_downloader.py`, `sn_xml_downloader.py`), processing (`html_parser.py`, `pdf_ocr.py`), and related utilities. Detailed documentation for this component can be found in `app/README.md`.
 - **notebooks/**: Jupyter notebooks for exploratory data analysis, workflow execution (e.g., `article_downloader.ipynb`), and experimental work.
 - **memory_bank/**: Stores key architectural decision records (ADRs), design documents, project planning notes (like `project_description.txt`), and other core guiding documentation for the system's development and evolution.
-- **springernature_api_client/**: Implementation for SpringerNature API
+- **sn_custom_client/**: Local wrapper for Springer Nature API, now fully integrated with the official `springernature-api-client` PyPI package. Use this for all Springer Nature Open Access operations.
 - **dashboard/**: Visual interface for system insights
 - **requirements.txt**: Lists the required Python packages for the project
 - **app/environment.yml**: Conda environment file for setting up the development environment, primarily for the `app` components. See "Dependency Management" section below.
@@ -33,7 +33,7 @@ The project is organized into several key components:
 
 ## Key Features
 
-- **Multi-Source Content Retrieval**: Integration with academic APIs (SpringerNature, CORE) for comprehensive content access. The CORE API integration supports keyword-based search, metadata retrieval by DOI, and full text retrieval by DOI (see `app/README.md` and `core_api_client.py`).
+- **Multi-Source Content Retrieval**: Integration with academic APIs (Springer Nature via `sn_custom_client`, CORE, OpenAlex) for comprehensive content access. The Springer Nature integration supports advanced querying, robust XML download, rate limiting, and full endpoint coverage (see `app/sn_xml_downloader.py`).
 - **Semantic Search**: Vector-based retrieval using Qdrant for context-aware search
 - **Knowledge Graph**: Neo4j-based graph for relationship discovery and complex querying
 - **Context-Aware Retrieval**: Hierarchical context management for improved search relevance

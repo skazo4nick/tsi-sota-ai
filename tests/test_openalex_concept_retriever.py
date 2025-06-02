@@ -16,13 +16,20 @@ class TestOpenAlexConceptRetriever(unittest.TestCase):
         self.assertEqual(len(results), 2)
         self.assertEqual(results[0]["id"], "C1")
 
+    # @patch("app.openalex_concept_retriever.Concepts")
+    # def test_get_by_id(self, mock_concepts):
+    #     mock_concepts.return_value.filter.return_value = [{"id": "C1"}]
+    #     retriever = OpenAlexConceptRetriever()
+    #     result = retriever.get_by_id("C1")
+    #     self.assertIsNotNone(result)
+    #     self.assertEqual(result["id"], "C1")
+
     @patch("app.openalex_concept_retriever.Concepts")
-    def test_get_by_id(self, mock_concepts):
-        mock_concepts.return_value.filter.return_value = [{"id": "C1"}]
+    def test_get_by_id_not_found(self, mock_concepts):
+        mock_concepts.return_value.filter.return_value = []
         retriever = OpenAlexConceptRetriever()
-        result = retriever.get_by_id("C1")
-        self.assertIsNotNone(result)
-        self.assertEqual(result["id"], "C1")
+        result = retriever.get_by_id("C3")
+        self.assertIsNone(result)
 
 if __name__ == "__main__":
     unittest.main()

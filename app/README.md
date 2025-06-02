@@ -83,6 +83,7 @@ This application currently utilizes the following third-party services and libra
     *   **diskcache:** (Optional, for future caching) For file-based caching.
     *   **matplotlib, seaborn:** (Optional, for future visualization) For data visualization (e.g., cluster plots).
     *   **ipykernel, notebook:** For running and interacting with IPython Notebooks.
+*   **Springer Nature XML Downloading**: The `sn_xml_downloader.py` module provides robust integration with the Springer Nature Open Access API via the `sn_custom_client` wrapper. It supports advanced querying, article existence checks, XML download, rate limiting, and download tracking. See the main project README and `sn_custom_client/README.md` for configuration and usage details.
 
 ## Prerequisites
 

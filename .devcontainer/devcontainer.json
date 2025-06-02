@@ -22,7 +22,13 @@
         "ms-jupyter.jupyter-cell-tags",
         "ms-jupyter.jupyter-keymap",
         "saoudrizwan.claude-dev"
-      ]
+      ],
+      "settings": {
+        "terminal.integrated.env.linux": {
+          "PYTHONPATH": "/workspaces/tsi-sota-ai/app:/workspaces/tsi-sota-ai/springernature_api_client:/workspaces/tsi-sota-ai"
+        },
+        "python.envFile": "${workspaceFolder}/.env"
+      }
     }
   },
   "forwardPorts": [],

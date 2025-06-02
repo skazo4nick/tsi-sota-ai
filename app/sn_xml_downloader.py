@@ -12,13 +12,16 @@ Functionalities include:
     - Storing downloaded XML files and tracking downloaded articles.
 '''
 
-import springernature_api_client.openaccess as openaccess
+from sn_custom_client.sn_openaccess_client import SpringerNatureOpenAccessClient
 import os
 import json
 import time
 from datetime import date
-# from dotenv import load_dotenv
+from dotenv import load_dotenv
 import requests # Import requests for downloading XML
+from typing import Optional, Dict, List
+import logging
+from tqdm import tqdm
 
 load_dotenv()
 
@@ -28,6 +31,9 @@ DOWNLOADED_ARTICLES_JSON = "app/system_data/downloaded_articles.json"
 DAILY_REQUEST_COUNT_FILE = "app/system_data/daily_request_count.json"
 DAILY_REQUEST_LIMIT = 495
 REQUEST_DELAY_SECONDS = 1
+
+# Setup logging
+logging.basicConfig(level=logging.INFO, format='%(asctime)s %(levelname)s %(message)s')
 
 def _load_api_key():
     """Loads the Springer Nature API key from environment variables."""
@@ -41,27 +47,19 @@ def check_article_existence(doi):
     Checks if an article with the given DOI exists in the Springer Nature Open Access API.
     Returns metadata if the article exists, None otherwise.
     """
-    api_key = _load_api_key()
     try:
-        _increment_daily_request_count()  # Increment request count at start
-        query = f"doi:{doi}"
-        api_url = "https://api.springernature.com/openaccess/json"
-        params = {"q": query, "api_key": api_key, "p": 10, "s": 1}
-        print(f"API Request URL: {api_url} with params: {params}")
-        r = requests.get(api_url, params=params)
-        r.raise_for_status()
-        time.sleep(REQUEST_DELAY_SECONDS)  # Rate limiting delay after API call
-        response_json = r.json()
-        print(f"Response from Springer Nature API: {response_json}")
-        if isinstance(response_json, dict) and response_json.get("records") and len(response_json["records"]) > 0:
-            print(f"Article with DOI: {doi} found in Springer Nature Open Access.")
-            return response_json["records"][0]
+        _increment_daily_request_count()
+        client = SpringerNatureOpenAccessClient()
+        exists = client.article_exists(doi)
+        if exists:
+            # Optionally return metadata
+            return True
         else:
-            print(f"Article with DOI: {doi} not found in Springer Nature Open Access.")
             return None
     except Exception as e:
         print(f"Error checking article existence for DOI: {doi}. Error: {e}")
         return None
+
 
 def download_xml_full_text(doi):
     """
@@ -71,50 +69,25 @@ def download_xml_full_text(doi):
     """
     if is_article_downloaded(doi):
         print(f"Article with DOI: {doi} already downloaded. Skipping.")
-        return None # Or filepath if you want to return it
-
-    api_key = _load_api_key()
-    openaccess_client = openaccess.OpenAccessAPI(api_key=api_key)
+        return None
     try:
-        _increment_daily_request_count() # Increment request count at start
-        query = f"doi:{doi}"
-        response = openaccess_client.search(q=query)
-        time.sleep(REQUEST_DELAY_SECONDS) # Rate limiting delay after API call
-        if response and response.get("records"): # Changed to use get method for dictionary access
-            article_metadata = response["records"][0] # Changed to use dictionary-style access
-            xml_url = article_metadata.get('fullTextUrl') # Assuming 'fullTextUrl' points to XML - verify
-            if xml_url:
-                print(f"XML URL found: {xml_url}")
-                print(f"Downloading XML content from URL: {xml_url}")
-                try:
-                    response = requests.get(xml_url)
-                    response.raise_for_status()  # Raise HTTPError for bad responses (4xx or 5xx)
-                    xml_content = response.text
-                    filepath = os.path.join(XML_STORAGE_DIR, f"{doi.replace('/', '_')}.xml")
-                    os.makedirs(XML_STORAGE_DIR, exist_ok=True)
-                    with open(filepath, 'w', encoding='utf-8') as f: # Ensure utf-8 encoding
-                        f.write(xml_content)
-                    _update_downloaded_articles_tracking(doi, "xml")
-                    return filepath
-                except requests.exceptions.RequestException as download_error:
-                    print(f"Error downloading XML content from {xml_url}. Error: {download_error}")
-                    return None
-            else:
-                print(f"No XML fullTextUrl found for DOI: {doi}")
-                return None
+        _increment_daily_request_count()
+        client = SpringerNatureOpenAccessClient()
+        xml_path = client.download_xml(doi, out_dir=XML_STORAGE_DIR)
+        if xml_path:
+            _update_downloaded_articles_tracking(doi, "xml")
+            return xml_path
         else:
-            print(f"Article metadata not found for DOI: {doi}") # Should be already checked in existence check
+            print(f"XML download failed for DOI: {doi}")
             return None
     except Exception as e:
         print(f"Error downloading XML for DOI: {doi}. Error: {e}")
         return None
 
-_DAILY_REQUEST_COUNT_FILE = "app/data/daily_request_count.json"
-
 def _load_daily_request_count():
     """Loads the daily request count from file, initializing if necessary."""
     try:
-        with open(_DAILY_REQUEST_COUNT_FILE, 'r') as f:
+        with open(DAILY_REQUEST_COUNT_FILE, 'r') as f:
             data = json.load(f)
             if data.get('date') == str(date.today()):
                 return data.get('count', 0)
@@ -125,8 +98,8 @@ def _load_daily_request_count():
 def _save_daily_request_count(count):
     """Saves the daily request count to file."""
     data = {'date': str(date.today()), 'count': count}
-    os.makedirs(os.path.dirname(_DAILY_REQUEST_COUNT_FILE), exist_ok=True)
-    with open(_DAILY_REQUEST_COUNT_FILE, 'w') as f:
+    os.makedirs(os.path.dirname(DAILY_REQUEST_COUNT_FILE), exist_ok=True)
+    with open(DAILY_REQUEST_COUNT_FILE, 'w') as f:
         json.dump(data, f)
 
 def _increment_daily_request_count():
@@ -159,9 +132,51 @@ def is_article_downloaded(doi):
     downloaded_articles = _load_downloaded_articles_tracking()
     return doi in downloaded_articles
 
+def advanced_query_download(query: str, filters: Optional[Dict] = None, sort: Optional[str] = None, page_size: int = 20, max_records: int = 100, out_dir: str = XML_STORAGE_DIR, show_progress: bool = True) -> List[Dict]:
+    """
+    Perform an advanced query with boolean logic, filters, and sorting. Downloads XMLs for all matching articles (up to max_records).
+    Args:
+        query (str): Main query string (can include boolean logic, e.g. 'author:Smith AND year:2024').
+        filters (dict, optional): Additional filter parameters (e.g. {"journal": "Nature"}).
+        sort (str, optional): Sort string (e.g. 'date desc').
+        page_size (int): Number of results per page.
+        max_records (int): Maximum number of articles to download.
+        out_dir (str): Directory to save XML files.
+        show_progress (bool): Whether to show a progress bar.
+    Returns:
+        List of dicts with download status and metadata for each article.
+    """
+    client = SpringerNatureOpenAccessClient()
+    results = client.advanced_query(query, filters=filters, sort=sort, page_size=page_size, max_records=max_records)
+    filepaths = []
+    iterator = tqdm(results, desc="Downloading XMLs") if show_progress else results
+    for record in iterator:
+        doi = record.get("doi")
+        if not doi:
+            logging.warning("No DOI found in record, skipping.")
+            continue
+        if is_article_downloaded(doi):
+            logging.info(f"Article with DOI: {doi} already downloaded. Skipping.")
+            continue
+        try:
+            _increment_daily_request_count()
+            xml_path = client.download_xml(doi, out_dir=out_dir)
+            if xml_path:
+                _update_downloaded_articles_tracking(doi, "xml")
+                filepaths.append({"doi": doi, "xml_path": xml_path, "status": "success", "record": record})
+                logging.info(f"Downloaded XML for DOI: {doi} to {xml_path}")
+            else:
+                filepaths.append({"doi": doi, "xml_path": None, "status": "not_found", "record": record})
+                logging.warning(f"XML not found for DOI: {doi}")
+        except Exception as e:
+            filepaths.append({"doi": doi, "xml_path": None, "status": "error", "error": str(e), "record": record})
+            logging.error(f"Error downloading XML for DOI: {doi}: {e}")
+        time.sleep(REQUEST_DELAY_SECONDS)
+    return filepaths
+
 if __name__ == '__main__':
     # Example usage (for testing purposes)
-    test_doi = "10.1186/s40537-020-00329-2" # Error DOI - replace with a real DOI for testing
+    test_doi = "10.1186/s40537-020-00329-2"
     if check_article_existence(test_doi):
         xml_filepath = download_xml_full_text(test_doi)
         if xml_filepath:
