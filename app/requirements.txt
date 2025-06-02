@@ -9,3 +9,5 @@
 # To set up a Conda environment for the app and notebooks:
 # conda env create -f environment.yml
 # conda activate article_downloader_env
+
+pyalex

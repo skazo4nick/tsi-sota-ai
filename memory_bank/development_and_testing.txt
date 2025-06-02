@@ -43,4 +43,18 @@
 - **Bug Tracking & Resolution Logs:** Documentation of identified issues, debugging steps, and resolutions for continuous improvement.
 - **Automated Test Suites:** Collections of unit, integration, and end-to-end tests stored alongside the source code.
 
+## 2025-06-02: OpenAlex/pyalex Integration
+
+- Adopted the pyalex library for all OpenAlex API access, replacing the previous custom client.
+- Designed and implemented modular wrappers for OpenAlex/pyalex:
+  - `openalex_client.py`: Thin wrapper for pyalex config and base access.
+  - `openalex_publication_retriever.py`: Publication (works) search/retrieval.
+  - `openalex_author_retriever.py`: Author search/retrieval.
+  - `openalex_concept_retriever.py`: Concept/field-of-study search.
+  - `openalex_utils.py`: Helpers for normalization, error handling, and conversion.
+  - `openalex_bulk_downloader.py`: Optional batch/bulk download support.
+- Added comprehensive unit tests for each module, covering all major functions and edge cases, using unittest and mock.
+- Updated all dependency files (`environment.yaml`, `requirements.txt`) to include pyalex.
+- All OpenAlex/pyalex modules and tests pass successfully, confirming robust integration.
+
 This document serves as a reference for development and testing practices throughout the project lifecycle, ensuring that new features are developed efficiently and reliably while maintaining high code quality.
