@@ -2,11 +2,11 @@ import json
 import os
 from datetime import datetime
 from typing import Optional, Dict, List, Any # Added Optional, Dict, List, Any
-from .api_clients import CoreAPIClient, ArxivAPIClient, OpenAlexAPIClient # Relative import
+from .api_clients import CoreAPIClient, ArxivAPIClient, OpenAlexAPIClient, SemanticScholarAPIClient # Relative import
 from .config_manager import ConfigManager # Added ConfigManager import
 
 class DataAcquirer:
-    SUPPORTED_SOURCES = ["CORE", "arXiv", "OpenAlex"]
+    SUPPORTED_SOURCES = ["CORE", "arXiv", "OpenAlex", "SemanticScholar"]
 
     def __init__(self, config_manager: Optional[ConfigManager] = None):
         """
@@ -22,14 +22,16 @@ class DataAcquirer:
             self.clients: Dict[str, Any] = { # Added type hint for self.clients
                 "CORE": CoreAPIClient(config_manager=self.config_manager),
                 "arXiv": ArxivAPIClient(config_manager=self.config_manager),
-                "OpenAlex": OpenAlexAPIClient(config_manager=self.config_manager)
+                "OpenAlex": OpenAlexAPIClient(config_manager=self.config_manager),
+                "SemanticScholar": SemanticScholarAPIClient(config_manager=self.config_manager)
             }
         else:
             self.raw_data_dir = "data/slr_raw/" # Default if no config manager
             self.clients: Dict[str, Any] = { # Added type hint for self.clients
                 "CORE": CoreAPIClient(),
                 "arXiv": ArxivAPIClient(),
-                "OpenAlex": OpenAlexAPIClient()
+                "OpenAlex": OpenAlexAPIClient(),
+                "SemanticScholar": SemanticScholarAPIClient()
             }
 
         os.makedirs(self.raw_data_dir, exist_ok=True)

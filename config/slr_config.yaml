@@ -33,6 +33,10 @@ api_settings:
   OpenAlex:
     # base_url: "https://api.openalex.org/" # Already in client
     # polite_pool_email: "your_registered_email@example.com" # Also in .env for api_clients.py, good to keep consistent if specified here too.
+  semantic_scholar:
+    # base_url: "https://api.semanticscholar.org/graph/v1/" # Already in client
+    # recommendations_url: "https://api.semanticscholar.org/recommendations/v1/" # Already in client
+    # user_agent: "tsi-sota-ai/1.0 (research@example.com)" # Update with your contact info
 
 # --- NLP & Keyword Analysis Settings ---
 keyword_analysis:
