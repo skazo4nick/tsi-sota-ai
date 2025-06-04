@@ -51,11 +51,19 @@ def test_semantic_scholar_integration():
     except Exception as e:
         print(f"⚠ Error during API call (expected without API key): {e}")
     
-    # Test fetch_specific_source method
-    print("\nTesting DataAcquirer.fetch_specific_source...")
+    # Test fetch_all_sources method with limited results
+    print("\nTesting DataAcquirer.fetch_all_sources...")
     try:
-        source_results = data_acquirer.fetch_specific_source("SemanticScholar", "machine learning", 2024, 2024, max_results=1)
-        print(f"✓ DataAcquirer retrieved {len(source_results)} results from Semantic Scholar")
+        all_results = data_acquirer.fetch_all_sources("machine learning", 2024, 2024, max_results_per_source=1)
+        semantic_results = all_results.get("SemanticScholar", [])
+        print(f"✓ DataAcquirer retrieved {len(semantic_results)} results from Semantic Scholar")
+        
+        if semantic_results:
+            print("✓ Sample result from DataAcquirer:")
+            first_result = semantic_results[0]
+            for key in ['title', 'doi', 'source', 'citation_count']:
+                if key in first_result:
+                    print(f"  {key}: {first_result[key]}")
         
     except Exception as e:
         print(f"⚠ Error during DataAcquirer call: {e}")

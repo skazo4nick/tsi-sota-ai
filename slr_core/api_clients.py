@@ -228,7 +228,7 @@ class SemanticScholarAPIClient(BaseAPIClient):
 
     def fetch_publications(self, query: str, start_year: int, end_year: int, max_results: int = 100) -> List[Dict[str, Any]]:
         """
-        Fetch publications from Semantic Scholar API using paper bulk search endpoint.
+        Fetch publications from Semantic Scholar API using paper search endpoint.
         
         Args:
             query: Search query string
@@ -241,36 +241,38 @@ class SemanticScholarAPIClient(BaseAPIClient):
         """
         print(f"[SemanticScholarAPIClient] Fetching from {self.base_url}: '{query}' from {start_year}-{end_year} (max: {max_results})")
         
-        # Use paper bulk search endpoint for better performance
-        search_url = f"{self.base_url}paper/search/bulk"
-        
-        # Construct query parameters
-        params = {
-            'query': query,
-            'year': f"{start_year}-{end_year}",
-            'fields': 'title,abstract,authors,year,citationCount,referenceCount,fieldsOfStudy,doi,externalIds,publicationTypes,venue,openAccessPdf'
-        }
+        # Use paper search endpoint
+        search_url = f"{self.base_url}paper/search"
         
         all_results = []
-        retrieved_count = 0
+        offset = 0
+        limit = min(100, max_results)  # API max is 100 per request
         
         try:
-            while retrieved_count < max_results:
+            while len(all_results) < max_results:
                 # Calculate remaining results needed
-                batch_size = min(1000, max_results - retrieved_count)  # Semantic Scholar max per request
+                current_limit = min(limit, max_results - len(all_results))
                 
-                # Add pagination token if we have one
-                current_params = params.copy()
-                if hasattr(self, '_current_token') and self._current_token:
-                    current_params['token'] = self._current_token
+                # Construct query parameters
+                params = {
+                    'query': query,
+                    'offset': offset,
+                    'limit': current_limit,
+                    'fields': 'title,authors,year,citationCount'
+                }
+                
+                # Add year filter if start_year and end_year are the same
+                if start_year == end_year:
+                    params['year'] = str(start_year)
+                # For range queries, we'll need to filter post-response or use a different approach
                 
                 # Make the request
                 response_data = make_request_with_retry(
                     search_url, 
-                    params=current_params, 
+                    params=params, 
                     headers=self.headers,
                     max_retries=3,
-                    delay_seconds=1  # Respect 1 req/sec rate limit
+                    delay_seconds=1  # Respect rate limit
                 )
                 
                 if not response_data:
@@ -285,20 +287,16 @@ class SemanticScholarAPIClient(BaseAPIClient):
                 # Process the batch
                 batch_results = [self._parse_publication_data(item) for item in response_data["data"]]
                 all_results.extend(batch_results)
-                retrieved_count += len(batch_results)
                 
-                print(f"Retrieved {len(batch_results)} papers in this batch, total: {retrieved_count}")
+                print(f"Retrieved {len(batch_results)} papers in this batch, total: {len(all_results)}")
                 
-                # Check for continuation token
-                if "token" in response_data and retrieved_count < max_results:
-                    self._current_token = response_data["token"]
-                    time.sleep(1)  # Rate limiting
-                else:
+                # Check if we got fewer results than requested (end of results)
+                if len(batch_results) < current_limit:
+                    print("Reached end of available results")
                     break
-            
-            # Clean up token
-            if hasattr(self, '_current_token'):
-                delattr(self, '_current_token')
+                
+                offset += current_limit
+                time.sleep(1)  # Rate limiting
                 
             return all_results[:max_results]  # Ensure we don't exceed max_results
             
@@ -516,6 +514,68 @@ class SemanticScholarAPIClient(BaseAPIClient):
             "paper_id": item.get("paperId"),
             "source": "Semantic Scholar"
         }
+
+    def fetch_bulk_publications(self, paper_ids: List[str], fields: Optional[List[str]] = None) -> List[Dict[str, Any]]:
+        """
+        Fetch multiple papers by their IDs using bulk search.
+        
+        Args:
+            paper_ids: List of paper IDs to retrieve
+            fields: Optional list of fields to retrieve (uses basic set if None)
+        
+        Returns:
+            List of standardized publication dictionaries
+        """
+        if not paper_ids:
+            return []
+        
+        if fields is None:
+            fields = ['title', 'authors', 'year', 'citationCount']
+        
+        print(f"[SemanticScholarAPIClient] Bulk fetching {len(paper_ids)} papers")
+        
+        # Split into batches of 500 (API limit)
+        batch_size = 500
+        all_results = []
+        
+        try:
+            for i in range(0, len(paper_ids), batch_size):
+                batch_ids = paper_ids[i:i + batch_size]
+                
+                # Use POST request for bulk search
+                bulk_url = f"{self.base_url}paper/batch"
+                data = {'ids': batch_ids}
+                params = {
+                    'fields': ','.join(fields)
+                }
+                
+                response_data = make_request_with_retry(
+                    bulk_url,
+                    method='POST',
+                    data=data,
+                    params=params,
+                    headers=self.headers,
+                    max_retries=3,
+                    delay_seconds=1
+                )
+                
+                if response_data:
+                    # The bulk endpoint returns a list directly
+                    batch_results = [
+                        self._parse_publication_data(item) 
+                        for item in response_data 
+                        if item and isinstance(item, dict)  # Filter out None results and ensure dict type
+                    ]
+                    all_results.extend(batch_results)
+                    print(f"Retrieved {len(batch_results)} papers in this batch")
+                
+                time.sleep(1)  # Rate limiting
+                
+            return all_results
+            
+        except Exception as e:
+            print(f"Error in bulk fetch: {e}")
+            return []
 
 if __name__ == '__main__':
     # Ensure slr_core is in PYTHONPATH or adjust path for testing
