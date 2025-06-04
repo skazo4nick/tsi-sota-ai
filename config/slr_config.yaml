@@ -41,25 +41,86 @@ api_settings:
 # --- NLP & Keyword Analysis Settings ---
 keyword_analysis:
   # For NLP-based keyword extraction (e.g., TF-IDF, RAKE, YAKE!)
-  # min_df: 2 # Minimum document frequency for TF-IDF
-  # max_df: 0.85 # Maximum document frequency for TF-IDF
-  # ngram_range: [1, 2] # Consider unigrams and bigrams
-  # stop_words: "english" # Or a custom list path
-  # top_n_keywords: 20 # Number of top keywords to extract per document or globally
+  nlp:
+    methods: ['tfidf', 'rake', 'yake']
+    tfidf:
+      ngram_range: [1, 3]
+      max_features: 1000
+      min_df: 2
+      max_df: 0.85
+      stop_words: "english"
+    rake:
+      min_length: 1
+      max_length: 4
+      stopwords_file: null  # Use default English stopwords
+    yake:
+      language: "en"
+      max_ngram_size: 3
+      deduplication_threshold: 0.7
+      num_keywords: 20
+  
+  # Output settings
+  output:
+    top_n_keywords: 20
+    export_formats: ['csv', 'json']
+    save_raw_extractions: true
 
 # --- Semantic Embedding & Clustering Settings ---
 semantic_analysis:
-  # embedding_model_name: "BAAI/bge-m3" # As specified in requirements
-  # embedding_device: "cpu" # or "cuda" if GPU is available
-  # KMeans:
-  #  default_n_clusters: 10 # Example, needs tuning
-  #  random_state: 42
-  # UMAP: # For dimensionality reduction for visualization
-  #  n_neighbors: 15
-  #  min_dist: 0.1
-  #  n_components: 2
-  #  metric: "cosine"
-  #  random_state: 42
+  # Embedding model configuration
+  embedding:
+    model_name: "BAAI/bge-m3"
+    cache_dir: "./data/embeddings_cache"
+    batch_size: 32
+    device: "cpu"  # or "cuda" if GPU available
+    max_length: 512  # Maximum sequence length
+  
+  # Clustering algorithms
+  clustering:
+    methods: ['kmeans', 'dbscan']
+    kmeans:
+      n_clusters: 10
+      random_state: 42
+      init: 'k-means++'
+      max_iter: 300
+    dbscan:
+      eps: 0.5
+      min_samples: 5
+      metric: 'cosine'
+  
+  # Dimensionality reduction for visualization
+  dimensionality_reduction:
+    umap:
+      n_neighbors: 15
+      min_dist: 0.1
+      n_components: 2
+      metric: "cosine"
+      random_state: 42
+    pca:
+      n_components: 2
+      random_state: 42
+
+# --- Visualization Settings ---
+visualization:
+  output_dir: "./data/visualizations"
+  formats: ['png', 'svg']
+  dpi: 300
+  figsize: [12, 8]
+  style: "whitegrid"  # seaborn style
+  color_palette: "husl"
+
+# --- Test Queries for Development ---
+test_search_queries:
+  limited_scope:
+    - "LangGraph supply chain"
+    - "YAKE keyword extraction SCM"
+    - "BGE-M3 embeddings logistics"
+  development:
+    - "agentic AI SCM"
+    - "LLM logistics"
+  timeframe:
+    start: "2023-01-01"
+    end: "2024-12-31"
 
 # --- Logging Configuration (Basic) ---
 # For more advanced logging, a logging.conf file might be better.
