@@ -135,6 +135,15 @@ class OpenAlexAPIClient(BaseAPIClient):
 
     def __init__(self, config_manager: Optional[ConfigManager] = None):
         super().__init__()
+        
+        # Try to import pyalex, fall back to dummy if not available
+        try:
+            from pyalex import Works
+            self.Works = Works
+            self.pyalex_available = True
+        except ImportError:
+            print("Warning: pyalex not installed. OpenAlexAPIClient will return dummy data.")
+            self.pyalex_available = False
 
         email_for_polite_pool: str = "your_email@example.com" # Default polite pool email
         effective_base_url: str = self.BASE_URL
@@ -154,43 +163,143 @@ class OpenAlexAPIClient(BaseAPIClient):
 
         self.base_url = effective_base_url
         self.headers = {'User-Agent': f'SLRAnalyticsApp/0.1 (mailto:{email_for_polite_pool})'}
+        self.mailto = email_for_polite_pool
 
     def fetch_publications(self, query: str, start_year: int, end_year: int, max_results: int = 100) -> List[Dict[str, Any]]:
-        print(f"[OpenAlexAPIClient] Fetching from {self.base_url} with User-Agent {self.headers.get('User-Agent')}: '{query}' from {start_year}-{end_year} (max: {max_results})")
-        # params = {
-        #     'search': query,
-        #     'filter': f'publication_year:{start_year}-{end_year}',
-        #     'per_page': min(max_results, 200),
-        #     # 'mailto': email_for_polite_pool # OpenAlex doesn't use mailto in query params, it's for User-Agent
-        # }
-        # search_url = f"{self.base_url}works"
-        # response_data = make_request_with_retry(search_url, params=params, headers=self.headers)
-        # if response_data and "results" in response_data:
-        #     return [self._parse_publication_data(item) for item in response_data["results"]]
-        return [{"title": "Dummy OpenAlex Paper 1", "doi": "10.xxxx/oa1", "publication_year": start_year}]
+        print(f"[OpenAlexAPIClient] Fetching from OpenAlex: '{query}' from {start_year}-{end_year} (max: {max_results})")
+        
+        if not self.pyalex_available:
+            # Fallback to dummy data if pyalex not available
+            return [{"title": "Dummy OpenAlex Paper 1", "doi": "10.xxxx/oa1", "publication_year": start_year}]
+        
+        try:
+            # Use pyalex to fetch real data
+            results = []
+            collected = 0
+            per_page = min(200, max_results)  # OpenAlex max per page is 200
+            
+            # Configure search with year range filter
+            filter_params = {
+                'publication_year': f'{start_year}-{end_year}' if start_year != end_year else str(start_year)
+            }
+            
+            # Perform search with pagination
+            works_query = self.Works().search(query).filter(**filter_params)
+            
+            for work in works_query.paginate(per_page=per_page):
+                if collected >= max_results:
+                    break
+                    
+                parsed_work = self._parse_publication_data(work)
+                results.append(parsed_work)
+                collected += 1
+                
+                # Progress logging for large queries
+                if collected % 50 == 0:
+                    print(f"[OpenAlexAPIClient] Collected {collected}/{max_results} papers...")
+            
+            print(f"[OpenAlexAPIClient] Successfully retrieved {len(results)} papers from OpenAlex")
+            return results
+            
+        except Exception as e:
+            print(f"[OpenAlexAPIClient] Error fetching from OpenAlex: {e}")
+            return []
 
-    def _parse_publication_data(self, item: Dict[str, Any]) -> Dict[str, Any]:
-        doi_url = item.get("doi")
-        doi = doi_url.replace("https://doi.org/", "") if doi_url else None
+    def _parse_publication_data(self, item: Any) -> Dict[str, Any]:
+        """Parse OpenAlex work data into standardized format"""
+        # Handle DOI - pyalex objects can be accessed like dictionaries
+        try:
+            doi_url = item["doi"] if "doi" in item else None
+            doi = doi_url.replace("https://doi.org/", "") if doi_url else None
+        except (KeyError, TypeError):
+            doi = None
 
-        abstract = "N/A" # Placeholder for abstract reconstruction
-        if item.get("abstract_inverted_index"):
-             # This is a very simplified reconstruction. Real one is complex.
-            aii = item["abstract_inverted_index"]
-            words = [""] * sum(len(positions) for positions in aii.values())
-            for word, positions in aii.items():
-                for pos in positions:
-                    if pos < len(words): words[pos] = word
-            abstract = " ".join(filter(None, words))
+        # Handle abstract reconstruction from inverted index
+        abstract = ""
+        try:
+            if "abstract_inverted_index" in item and item["abstract_inverted_index"]:
+                aii = item["abstract_inverted_index"]
+                # Find the maximum position to determine array size
+                max_pos = 0
+                for positions in aii.values():
+                    if positions:
+                        max_pos = max(max_pos, max(positions))
+                
+                # Create array and place words
+                words = [""] * (max_pos + 1)
+                for word, positions in aii.items():
+                    for pos in positions:
+                        if 0 <= pos <= max_pos:
+                            words[pos] = word
+                
+                abstract = " ".join(filter(None, words))
+        except Exception as e:
+            print(f"Warning: Error reconstructing abstract: {e}")
+            abstract = ""
 
+        # Extract authors
+        authors = []
+        try:
+            authorships = item["authorships"] if "authorships" in item else []
+            for authorship in authorships:
+                if isinstance(authorship, dict) and "author" in authorship:
+                    author_info = authorship["author"]
+                    if isinstance(author_info, dict) and "display_name" in author_info:
+                        author_name = author_info["display_name"]
+                        if author_name:
+                            authors.append(author_name)
+        except Exception as e:
+            print(f"Warning: Error extracting authors: {e}")
+
+        # Extract concepts/keywords
+        keywords = []
+        try:
+            concepts = item["concepts"] if "concepts" in item else []
+            for concept in concepts:
+                if isinstance(concept, dict) and "display_name" in concept:
+                    concept_name = concept["display_name"]
+                    if concept_name:
+                        keywords.append(concept_name)
+        except Exception as e:
+            print(f"Warning: Error extracting keywords: {e}")
+
+        # Extract venue information
+        venue = ""
+        try:
+            host_venue = item["host_venue"] if "host_venue" in item else {}
+            if isinstance(host_venue, dict) and "display_name" in host_venue:
+                venue = host_venue["display_name"]
+        except Exception as e:
+            print(f"Warning: Error extracting venue: {e}")
+
+        # Extract citation count
+        citation_count = 0
+        try:
+            citation_count = item["cited_by_count"] if "cited_by_count" in item else 0
+        except Exception as e:
+            print(f"Warning: Error extracting citation count: {e}")
+
+        # Extract other fields safely
+        try:
+            title = item["display_name"] if "display_name" in item else ""
+            publication_year = item["publication_year"] if "publication_year" in item else ""
+            openalex_id = item["id"] if "id" in item else ""
+        except Exception as e:
+            print(f"Warning: Error extracting basic fields: {e}")
+            title = ""
+            publication_year = ""
+            openalex_id = ""
 
         return {
             "doi": doi,
-            "title": item.get("display_name"),
+            "title": title,
             "abstract": abstract,
-            "authors": [author.get("author", {}).get("display_name") for author in item.get("authorships", []) if isinstance(author, dict)],
-            "publication_date": str(item.get("publication_year")),
-            "keywords": [concept.get("display_name") for concept in item.get("concepts", []) if isinstance(concept, dict) and concept.get("display_name")],
+            "authors": authors,
+            "publication_date": str(publication_year),
+            "keywords": keywords,
+            "citation_count": citation_count,
+            "venue": venue,
+            "openalex_id": openalex_id,
             "source": "OpenAlex"
         }
 
