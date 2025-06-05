@@ -209,7 +209,7 @@ class SemanticAnalyzer:
             Dictionary with clustering results and metadata
         """
         if embeddings is None or embeddings.size == 0:
-            return {'labels': [], 'method': method, 'metadata': {'error': 'No embeddings provided'}}
+            return {'cluster_labels': [], 'labels': [], 'method': method, 'metadata': {'error': 'No embeddings provided'}}
         
         try:
             if method == 'both':
@@ -234,7 +234,7 @@ class SemanticAnalyzer:
                 
         except Exception as e:
             self.logger.error(f"Error in clustering: {e}")
-            return {'labels': [], 'method': method, 'metadata': {'error': str(e)}}
+            return {'cluster_labels': [], 'labels': [], 'method': method, 'metadata': {'error': str(e)}}
     
     def _perform_kmeans_clustering(self, embeddings: np.ndarray, **kwargs) -> Dict[str, Any]:
         """Perform K-means clustering"""
@@ -270,7 +270,8 @@ class SemanticAnalyzer:
         cluster_stats = self._calculate_cluster_statistics(embeddings, labels)
         
         return {
-            'labels': labels.tolist(),
+            'cluster_labels': labels.tolist(),
+            'labels': labels.tolist(),  # Keep for backward compatibility
             'method': 'kmeans',
             'model': kmeans,
             'cluster_centers': kmeans.cluster_centers_.tolist(),
@@ -324,7 +325,8 @@ class SemanticAnalyzer:
         cluster_stats = self._calculate_cluster_statistics(embeddings, labels)
         
         return {
-            'labels': labels.tolist(),
+            'cluster_labels': labels.tolist(),
+            'labels': labels.tolist(),  # Keep for backward compatibility
             'method': 'dbscan',
             'model': dbscan,
             'n_clusters': n_clusters,
