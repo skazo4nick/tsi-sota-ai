@@ -40,6 +40,31 @@ The project is organized into several key components:
 - **Agent-Based Workflows**: Orchestrated research and analysis workflows using smolagents
 - **Interactive Dashboard**: Visual interface for system insights and data exploration
 
+## Recent Achievements: Temporal Keyword Analysis
+
+### Comprehensive Research Analysis (June 2025)
+The project has successfully completed a comprehensive temporal keyword analysis of **38,229 OpenAlex publications** spanning 30 years (1994-2024), providing groundbreaking insights into AI agents in logistics research:
+
+#### Key Discoveries
+- **149.3% Growth**: AI Agents in Supply Chain Management research showed 149.3% growth (2020-2024 vs 2015-2019)
+- **1,082 Core Publications**: Identified publications at the strategic intersection of AI, agents, and supply chain management
+- **Market Validation**: Research domain positioned at optimal convergence point of established and emerging technologies
+- **327.8% AI-SCM Growth**: AI applications in supply chain management showing explosive growth, indicating market readiness for agent integration
+
+#### Strategic Insights
+- **Technology Convergence**: 71.2% of AI-SCM research incorporates agent concepts vs 15.9% of Agent-SCM research incorporating AI
+- **Research Acceleration**: Field entered acceleration phase around 2020 (71.8 articles/year vs previous 28.8 articles/year)
+- **Peak Activity**: 2024 identified as peak publication year, indicating optimal market timing
+
+#### Deliverables Generated
+- **Interactive Dashboards**: Comprehensive Plotly-based analysis interfaces ([baseline](reports/baseline_analysis_dashboard.html), [strategic](reports/strategic_intersection_dashboard.html))
+- **Strategic Analysis Report**: Executive insights and growth metrics ([strategic_insights_report.md](reports/strategic_insights_report.md))
+- **Baseline Analysis Report**: Detailed category breakdown ([baseline_analysis_report.md](reports/baseline_analysis_report.md))
+- **Publication-Ready Visualizations**: High-resolution summary plots and temporal evolution charts
+- **Complete Analysis Framework**: Reusable temporal analysis pipeline in [keyword_temporal_analysis.ipynb](notebooks/keyword_temporal_analysis.ipynb)
+
+This analysis provides empirical validation for the strategic importance of AI agents in logistics research and establishes a solid foundation for future systematic literature review work.
+
 ## Getting Started
 
 1. Clone the repository
@@ -73,6 +98,13 @@ For detailed information about the system architecture, implementation details, 
 - [Design and Architecture](memory_bank/design_and_architecture.txt)
 - [Project Description](memory_bank/project_description.txt)
 - [Project Backlog and Publication Selection](memory_bank/project_management/backlog.md)
+
+### Recent Analysis Reports
+- [Strategic Insights Report](reports/strategic_insights_report.md) - AI Agents in Logistics Research analysis
+- [Baseline Analysis Report](reports/baseline_analysis_report.md) - Comprehensive category breakdown
+- [Temporal Analysis Development Report](reports/keyword_temporal_analysis_development_report.md) - Technical implementation details
+- [Interactive Baseline Dashboard](reports/baseline_analysis_dashboard.html) - Category distribution analysis
+- [Interactive Strategic Dashboard](reports/strategic_intersection_dashboard.html) - Growth trends and intersections
 
 ## Checking Development Status
 
